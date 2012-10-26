@@ -1,6 +1,0 @@
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\bin\Debug\IntroSamples.XML
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\bin\Debug\IntroSamples.dll
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\bin\Debug\IntroSamples.pdb
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\obj\Debug\IntroSamples.fsprojResolveAssemblyReference.cache
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\obj\Debug\IntroSamples.dll
-C:\Users\rachel\Dropbox\Projects\Intro-to-F--samples\IntroSamples\obj\Debug\IntroSamples.pdb
