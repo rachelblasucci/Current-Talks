@@ -37,9 +37,6 @@
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
     <None Include="Talk.fsx" />
-    <None Include="Exercises.fsx" />
-    <Compile Include="weather-type-provider.fs" />
-    <Compile Include="WsdlServiceConnection1.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

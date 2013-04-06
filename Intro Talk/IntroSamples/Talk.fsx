@@ -35,13 +35,17 @@ let sum_evens_plus_three =
 sum_evens_plus_three [1..10]
 
 
-// RECURSION, PATTERN MATCHING 
+// RECURSION, PATTERN MATCHING, DISCRIMINATED UNIONS/OPTION
 let rec factorial x = 
     match x with 
         | 0 | 1 -> 1
         | _ when x < 0 -> 0
         | _ -> x * factorial (x - 1)
 factorial 10
+
+//type 'a option = 
+//    | None
+//    | Some of 'a
 
 let find_num num list = 
     let attempt = List.tryFind(fun x -> x = num) list
@@ -55,8 +59,21 @@ find_num 4 [0..5..40]
 
 
 // SEQUENCES
-let fibonnacci = Seq.unfold(fun (a,b) -> Some( a+b, (b, a+b) )) (0,1)
-Seq.nth 5 fibonnacci 
+let add2 a = 
+    if (a <= 0) then
+        None
+    else 
+        Some(a, a+2)
+
+let adding2 = Seq.unfold(fun a -> add2 a)
+Seq.take 4 (adding2 4)
+
+let filteredAdding2 = Seq.filter (fun a -> a%4 = 0) (adding2 0)
+Seq.take 4 filteredAdding2
+
+let fibonnacci = Seq.unfold(fun(a,b) ->  Some( a+b, (b, a+b) )) (0,1)
+Seq.nth 4 fibonnacci 
+Seq.take 4 fibonnacci
 
 
 // CURRYING
