@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharpx.TypeProviders.Freebase</name></assembly>
+<members>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseOperators.Where``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+<summary>
+ Synonym for LINQ&apos;s Where
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseOperators.Count``1(System.Linq.IQueryable{``0})">
+<summary>
+ Synonym for LINQ&apos;s Count
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseOperators.ApproximateCount``1(System.Linq.IQueryable{``0})">
+<summary>
+ A Freebase query operation returning an approximate count of the items satisfying a query.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseOperators.ApproximatelyOneOf(System.String,System.String[])">
+<summary>
+ A Freebase query operation that represents approximately matching one of the given strings. See http://www.freebase.com/docs/mql/ch03.html#directives.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseOperators.ApproximatelyMatches(System.String,System.String)">
+<summary>
+ A Freebase query operation that represents a perl-style match of a string, e.g. &quot;book club&quot;, &quot;book*&quot;, &quot;*book&quot;, &quot;*book*&quot;, &quot;^book&quot;, &quot;book$&quot;, &quot;* book *&quot;, &quot;book-club&quot;, &quot;book\-club&quot;. See http://www.freebase.com/docs/mql/ch03.html#directives.
+</summary>
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseOperators">
+<summary>
+ Extension members for operations permitted in queries of the Freebase service
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.typeIdToType">
+<summary>
+ Cache policy for type properties. This will be used at runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetTypeByTypeId(System.String)">
+<summary>
+ Get the types that correspond to type id.   The properties of the type are filled in.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetDomainStructure">
+<summary>
+ Query the structure of common domains and all the type types in that domain.  Design-time only.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetDomainCategories">
+<summary>
+ Query the structure of common domains and all the type types in that domain. 
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetBlurbById(System.String)">
+<summary>
+ Get the &apos;blurb&apos; text for this topic ID 
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetAllTypesInDomainSansProperties(System.String)">
+<summary>
+ Return all typesin a domain. Design-time only.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetAllTypesInAllDomainsSansProperties">
+<summary>
+ Return all types. Design-time only.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection.GetAllObjectsOfType(FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseType)">
+<summary>
+ Get property bags for all the objects of the given type, at the given type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseDomainCategory">
+<summary>
+ The element type returned by GetDomainCategories
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseDomainStructure">
+<summary>
+ The element type returned by GetDomainStructure.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty.UnitOfMeasure">
+<summary>
+ The unit of measure for the property, if any. e.g. /en/kilometer
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="F:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty.Enumeration">
+<summary>
+ Name of the enumeration type. Like /authority/gnis
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty.FSharpPropertyType(FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection,Microsoft.FSharp.Core.FSharpFunc{FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.Type,System.Boolean}}},Microsoft.FSharp.Core.FSharpFunc{FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseType,Microsoft.FSharp.Core.FSharpOption{System.Type}},Microsoft.FSharp.Core.FSharpFunc{System.Type,System.Type},Microsoft.FSharp.Core.FSharpFunc{System.Type,System.Type})">
+<summary>
+ Compute the provided or erased runtime type corresponding to the Freebase property.
+ &apos;typeReprFunction&apos; indicates if erasure is happening or not.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty.FSharpPropertyElementType(FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseSchemaConnection,Microsoft.FSharp.Core.FSharpFunc{FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.Type,System.Boolean}}},Microsoft.FSharp.Core.FSharpFunc{FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseType,Microsoft.FSharp.Core.FSharpOption{System.Type}})">
+<summary>
+ Compute the provided or erased runtime type corresponding to the Freebase property.
+ &apos;typeReprFunction&apos; indicates if erasure is happening or not.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseReflection.units">
+<summary>
+ This table of data was downloaded from www.freebase.com itself. 
+ See www.freebase.com for term and conditions of use.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseReflection.Utilities.dictionaryFromJson(Utilities.Json.JsonValue)">
+<summary>
+ Represents one object&apos;s values for all the properties of one type id.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseReflection.Utilities">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseReflection">
+<summary>
+ This file contains an object model for Freebase schema information
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRequests">
+<summary>
+ This file contains functions to help perform basic REST and JSON query accesses to the Freebase MQL data service.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataContext._GetDomainCategoryById(System.String)">
+<summary>
+ Get the object which represents the Freebase domain with the given object id.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataContext._Create(System.String,System.String,System.String,System.Boolean,System.String,System.Boolean,System.Boolean)">
+<summary>
+ Create a data context
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataContext">
+<summary>
+ Contains public entry points called by provided code.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseIndividuals._GetIndividualsObject(System.Object)">
+<summary>
+ Get all the Freebase objects which have the given Freebase type id.
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseIndividuals._GetIndividualById(System.String,System.String)">
+<summary>
+ Get all the Freebase objects which have the given type id and object id.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDomainCategory._GetDomainById(System.String)">
+<summary>
+ Get all the Freebase objects which have the given Freebase type id.
+ Get the object which represents the Freebase domain with the given object id.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDomainCategory">
+<summary>
+ Represents the contents of a Freebase namespace
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDomain._GetObjectsOfTypeId(System.String)">
+<summary>
+ Get all the Freebase objects which have the given Freebase type id.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDomain">
+<summary>
+ Represents the contents of a Freebase namespace
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject.Name">
+<summary>
+ The Name of this item
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject.MainImage">
+<summary>
+ The main image associated with this item, if any
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject.Id">
+<summary>
+ The ID of this item
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject.Blurb">
+<summary>
+ The Blurb text for this item, if any
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject.GetImages">
+<summary>
+ Images associated with this item. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseObject">
+<summary>
+ Represents a single object drawn from Freebase. 
+</summary>
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.Name">
+<summary>
+ The name of this item
+</summary>
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.MainImage">
+<summary>
+ The main image associated with this item
+</summary>
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.Id">
+<summary>
+ The ID of this item
+</summary>
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.Blurb">
+<summary>
+ The Blurb text for this item, if any
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.GetPropertyByIdTyped``1(System.String,System.String)">
+<summary>
+ Get a property by identifier, with a strong type
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.GetPropertyById(System.String,System.String)">
+<summary>
+ Get a property by identifier, with a strong type
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject.GetImages">
+<summary>
+ Images associated with this item. 
+</summary>
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.IFreebaseObject">
+<summary>
+ Represents a single object drawn from Freebase. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection.TryGetPropertyById(System.String,System.String)">
+<summary>
+ Get the FreebaseProperty object that gives schema information for a particular property of a particular type.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection.GetInitialDataForSpecificObjectOfType(System.String,System.String)">
+<summary>
+ Get a property bag for a specific object, giving values for the properties of the given type 
+</summary>
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection.GetInitialDataForObjectsFromQueryText(Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}},System.String,System.Int32)">
+<summary>
+ Get property bags for all the objects of the given type, at the given type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection.GetInitialDataForAllObjectsForPropertyOfObject(System.String,System.String,FSharpx.TypeProviders.Freebase.FreebaseReflection.FreebaseProperty,System.String,System.Int32)">
+<summary>
+ Get property bags for all the objects in the specific property relation to a given object, giving values for the properties of the given property type 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection">
+<summary>
+ Represents a data connection to Freebase
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebasePropertyBag">
+<summary>
+ Represents data for a single object
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation.FreebasePropAccess">
+<summary>
+ The algebra of different supported  qualifications
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation.formatQueryData(FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection,FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation.FreebaseQueryData)">
+<summary>
+ Format as query text for MQL
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation.formatPropAccessCx``1(FSharpx.TypeProviders.Freebase.FreebaseRuntime.FreebaseDataConnection,Microsoft.FSharp.Collections.FSharpList{System.Tuple{``0,System.String}},System.String,System.String)">
+<summary>
+ with all the non-compound fields filled in.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation.evaluateOnClientSideWhereNecessary">
+<summary>
+ TODO: make this a parameter
+</summary>
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.QueryImplementation">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpx.TypeProviders.Freebase.FreebaseRuntime.RuntimeConversion">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Utilities.Caching.Cache">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Utilities.Json.JsonParser">
+
+</member>
+</members>
+</doc>
