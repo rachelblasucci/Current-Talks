@@ -35,7 +35,7 @@ let sum_evens_plus_three =
 sum_evens_plus_three [1..10]
 
 
-// RECURSION, MATCHING 
+// RECURSION, PATTERN MATCHING 
 let rec factorial x = 
     match x with 
         | 0 | 1 -> 1
@@ -106,6 +106,10 @@ let MontrealWindSpeed = 25.2<km/hr>
 
 WindChill_CA MontrealTemp MontrealWindSpeed
 
+let C_to_F (C:float<C>) = C / 5.0<C> * 9.0<F> + 32.0<F>
+
+WindChill_US (C_to_F -10.0<C>) 45.4<mi/hr>
+
 
 // DECLARING OPERATORS, USING .NET CODE
 open System.Collections.Generic
@@ -122,17 +126,25 @@ type IHuman =
     abstract eyeColor : string
     abstract hairColor : string
 
-type IFriend = 
-    inherit IHuman
+type INeighbor = 
     abstract greetOthers : string -> unit
 
+type IFriend = 
+    inherit IHuman
+    inherit INeighbor
+    abstract sendText : string -> unit
+
 let Ellie = {
-        new IHuman with 
+        new IFriend with 
+            member this.sendText x = printfn "Text sent: %A" x
+        interface INeighbor with
+            member this.greetOthers x = printfn "%A" x
+        interface IHuman with 
             member this.eyeColor = "brown"
             member this.hairColor = "black"
-        interface IFriend with
-            member this.greetOthers x = printfn "%A" x
     }
+
+Ellie.greetOthers "hi"
 
 //TYPE PROVIDERS
 #r "System.Runtime.Serialization"
