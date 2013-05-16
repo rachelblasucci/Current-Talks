@@ -2,20 +2,21 @@
 //Can't mix types: 
 let n = 5
 //let inverse = 1.0 / n 
+//let n = 7
 
 //automatically changes
 let square y = y * y
 let inverse_square y = 1.0/(square y)
 
 
-// LISTS
+// LISTS, ARRAYS
 // ANONYMOUS FUNCTIONS
 // FUNCTION COMPOSITION, PIPELINING
 let first_ten = [1..10] 
-let evens = [2..2..10]
+let evens = [|2..2..10|]
 
 let plus_3 x = x + 3
-let list_plus_3 = List.map plus_3
+let list_plus_3 = List.map plus_3 
 
 let filtered = List.filter (fun x -> x % 2 = 0)
 
@@ -35,13 +36,14 @@ let sum_evens_plus_three =
 sum_evens_plus_three [1..10]
 
 
-// RECURSION, PATTERN MATCHING, DISCRIMINATED UNIONS/OPTION
+// RECURSION, PATTERN MATCHING
+// OPTION, ERROR HANDLING
 let rec factorial x = 
     match x with 
         | 0 | 1 -> 1
-        | _ when x < 0 -> 0
+        | _ when x < 0 -> failwith "lolz, you can't do that."
         | _ -> x * factorial (x - 1)
-factorial 10
+factorial -4
 
 //type 'a option = 
 //    | None
@@ -65,10 +67,15 @@ let add2 a =
     else 
         Some(a, a+2)
 
-let adding2 = Seq.unfold(fun a -> add2 a)
-Seq.take 4 (adding2 4)
+let adding2 = Seq.unfold(fun a -> add2 a) 
 
-let filteredAdding2 = Seq.filter (fun a -> a%4 = 0) (adding2 0)
+let adding2andstartat2 = adding2 6
+
+Seq.take 4 (adding2 6)
+
+let addStart10 = adding2 10
+
+let filteredAdding2 = Seq.filter(fun a -> a%5 = 0) (adding2 10)
 Seq.take 4 filteredAdding2
 
 let fibonnacci = Seq.unfold(fun(a,b) ->  Some( a+b, (b, a+b) )) (0,1)
@@ -143,18 +150,18 @@ type IHuman =
     abstract eyeColor : string
     abstract hairColor : string
 
-type INeighbor = 
+type IFriend = 
     abstract greetOthers : string -> unit
 
-type IFriend = 
+type INeighbor = 
     inherit IHuman
-    inherit INeighbor
+    inherit IFriend
     abstract sendText : string -> unit
 
 let Ellie = {
-        new IFriend with 
+        new INeighbor with 
             member this.sendText x = printfn "Text sent: %A" x
-        interface INeighbor with
+        interface IFriend with
             member this.greetOthers x = printfn "%A" x
         interface IHuman with 
             member this.eyeColor = "brown"
@@ -168,7 +175,7 @@ Ellie.greetOthers "hi"
 #r "System.ServiceModel"
 #r "FSharp.Data.TypeProviders"
 
-let currentZip = "02141"
+let currentZip = "05401"
 
 type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL">
 

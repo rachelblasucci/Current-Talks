@@ -11,7 +11,6 @@ module NextflixSample =
     let NetflixContext = NetflixData.GetDataContext()
 
     NetflixContext.DataContext.SendingRequest.Add(fun e -> printfn "%A" e.Request.RequestUri)
-
     let godzillamovies = 
         query { for t in NetflixContext.Titles do 
                 where (t.Name.Contains "Godzilla")
