@@ -36,8 +36,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
   <ItemGroup>
-    <None Include="load-wpf40.fsx" />
-    <None Include="show-wpf40.fsx" />
     <None Include="WsdlServiceSample.fsx" />
     <None Include="SqlDataConnectionSample.fsx" />
     <None Include="SqlEntityConnectionSample.fsx" />
@@ -50,6 +48,10 @@
   <ItemGroup>
     <Reference Include="BasicTypeProvider">
       <HintPath>..\..\BasicTypeProvider\BasicTypeProvider\bin\Debug\BasicTypeProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.82\lib\net40\FSharp.Charting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="FSharpx.TypeProviders.Freebase, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
