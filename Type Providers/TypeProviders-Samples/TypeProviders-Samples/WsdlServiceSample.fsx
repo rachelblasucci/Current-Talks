@@ -8,34 +8,46 @@ open System.Runtime.Serialization
 open System.ServiceModel
 open Microsoft.FSharp.Data.TypeProviders
 
+/// WSDL ///
 let cityList =  
     [
-    ("Burlington", "VT"); 
+    ("Burlington", "VT");
+    ("Kensington", "MD");
     ("Port Jefferson", "NY"); 
-    ("Kensington", "MD"); 
-    ("Panama City Beach", "FL")
+    ("Panama City Beach", "FL");
+    ("Knoxville", "TN");
+    ("Chicago", "IL");
     ("Casper", "WY"); 
+    ("Denver", "CO");
     ("Phoenix", "AZ"); 
+    ("Seattle", "WA");
     ("Los Angeles", "CA"); 
     ]
 
 module CheckAddress = 
-    type PavAddress = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://pav3.cdyne.com/PavService.svc?wsdl">
+    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx?WSDL">
 
     let GetZip citySt =
-        let (city, state) = citySt 
-        PavAddress.Getpavsoap().GetZipCodesForCityAndState(city, state, "0972B9BB-F217-4AF7-AEB1-D4FEAE10253F").ZipCodes.[0]
+        let (city, state) = citySt
+        //.SelectSingleNode("/Table/ZIP/text()").Value
+
+        let findCorrectState (node:System.Xml.XmlNode) = 
+            state = node.SelectSingleNode("STATE/text()").Value
+
+        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") |> Seq.cast<System.Xml.XmlNode> |> Seq.filter findCorrectState
+        (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
     type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL">
 
-    let temp_in cities = 
-        let weather x = WeatherService.GetWeatherSoap().GetCityWeatherByZIP(x)
+    let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
+    let temp_in zipList = 
         let convertCitiesToZips city = 
             let zip = CheckAddress.GetZip city
             ((weather zip).City, zip, (weather zip).Temperature)
 
-        List.map convertCitiesToZips cities
+        List.map convertCitiesToZips cityList
 
-    temp_in <| cityList |> Chart.Bubble
+    temp_in <| cityList |> Chart.Bubble 
+
