@@ -9,7 +9,7 @@ open System.ServiceModel
 open Microsoft.FSharp.Data.TypeProviders
 
 /// WSDL ///
-let cityList =  
+let cities =  
     [
     ("Burlington", "VT");
     ("Kensington", "MD");
@@ -29,12 +29,13 @@ module CheckAddress =
 
     let GetZip citySt =
         let (city, state) = citySt
-        //.SelectSingleNode("/Table/ZIP/text()").Value
 
         let findCorrectState (node:System.Xml.XmlNode) = 
             state = node.SelectSingleNode("STATE/text()").Value
 
-        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") |> Seq.cast<System.Xml.XmlNode> |> Seq.filter findCorrectState
+        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
+                        |> Seq.cast<System.Xml.XmlNode> 
+                        |> Seq.filter findCorrectState
         (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
@@ -42,12 +43,12 @@ module GetTemps =
 
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
-    let temp_in zipList = 
+    let temp_in cityList = 
         let convertCitiesToZips city = 
             let zip = CheckAddress.GetZip city
             ((weather zip).City, zip, (weather zip).Temperature)
 
         List.map convertCitiesToZips cityList
 
-    temp_in <| cityList |> Chart.Bubble 
-
+    let data = temp_in <| cities
+    Chart.Bubble(data, Title="Temperature by Zip", UseSizeForLabel=false).WithYAxis(Enabled=true, Max=100000., Min=0.).WithXAxis(Enabled=true).WithDataPointLabels()

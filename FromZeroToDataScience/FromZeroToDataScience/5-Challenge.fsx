@@ -1,5 +1,5 @@
-﻿#load @"C:\Users\rachel\Dropbox\Github\Talks & Samples\Try F#\FromZeroToDataScience\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
-#r @"C:\Users\rachel\Dropbox\Github\Talks & Samples\Try F#\FromZeroToDataScience\packages\FSharp.Data.1.1.8\lib\net40\FSharp.Data.dll"
+﻿#load @"..\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
+#r @"..\packages\FSharp.Data.1.1.8\lib\net40\FSharp.Data.dll"
 open FSharp.Charting
 open FSharp.Data
 

@@ -1,4 +1,4 @@
-﻿#load @"C:\Users\rachel\Dropbox\Github\Talks & Samples\Try F#\FromZeroToDataScience\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
+﻿#load @"..\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
 open FSharp.Charting
 open System
 

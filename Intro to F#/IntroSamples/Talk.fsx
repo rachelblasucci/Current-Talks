@@ -43,7 +43,7 @@ let rec factorial x =
         | 0 | 1 -> 1
         | _ when x < 0 -> failwith "lolz, you can't do that."
         | _ -> x * factorial (x - 1)
-factorial -4
+factorial 4
 
 //type 'a option = 
 //    | None
@@ -69,9 +69,9 @@ let add2 a =
 
 let adding2 = Seq.unfold(fun a -> add2 a) 
 
-let adding2andstartat2 = adding2 6
+let adding2andstartat2 = adding2 2
 
-Seq.take 4 (adding2 6)
+Seq.take 4 (adding2 10)
 
 let addStart10 = adding2 10
 
@@ -83,7 +83,7 @@ Seq.nth 4 fibonnacci
 Seq.take 4 fibonnacci
 
 
-// CURRYING
+// PARTIAL APPLICATION
 let list_difference = List.map2 (fun x y -> x - y)
 
 //minkowski metric 
@@ -171,16 +171,58 @@ let Ellie = {
 Ellie.greetOthers "hi"
 
 //TYPE PROVIDERS
-#r "System.Runtime.Serialization"
-#r "System.ServiceModel"
 #r "FSharp.Data.TypeProviders"
+#r "System.ServiceModel"
+#r "System.Runtime.Serialization"
+#load @"C:\Users\rachel\Dropbox\Github\Talks & Samples\FromZeroToDataScience\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
 
-let currentZip = "05401"
+open FSharp.Charting
+open System.Runtime.Serialization
+open System.ServiceModel
+open Microsoft.FSharp.Data.TypeProviders
 
-type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL">
+/// WSDL ///
+let cities =  
+    [
+    ("Burlington", "VT");
+    ("Kensington", "MD");
+    ("Port Jefferson", "NY"); 
+    ("Panama City Beach", "FL");
+    ("Knoxville", "TN");
+    ("Chicago", "IL");
+    ("Casper", "WY"); 
+    ("Denver", "CO");
+    ("Phoenix", "AZ"); 
+    ("Seattle", "WA");
+    ("Los Angeles", "CA"); 
+    ]
 
-let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP(currentZip)
+module CheckAddress = 
+    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx?WSDL">
 
-let temp = weather.Temperature
-let description = weather.Description
-let humidity = weather.RelativeHumidity
+    let GetZip citySt =
+        let (city, state) = citySt
+
+        let findCorrectState (node:System.Xml.XmlNode) = 
+            state = node.SelectSingleNode("STATE/text()").Value
+
+        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
+                        |> Seq.cast<System.Xml.XmlNode> 
+                        |> Seq.filter findCorrectState
+        (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
+
+module GetTemps = 
+    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL">
+
+    let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
+
+    let temp_in cityList = 
+        let convertCitiesToZips city = 
+            let zip = CheckAddress.GetZip city
+            ((weather zip).City, zip, (weather zip).Temperature)
+
+        List.map convertCitiesToZips cityList
+
+    let data = temp_in <| cities
+    Chart.Bubble(data, Title="Temperature by Zip", UseSizeForLabel=false).WithYAxis(Enabled=true, Max=100000., Min=0.).WithXAxis(Enabled=true).WithDataPointLabels()
+
