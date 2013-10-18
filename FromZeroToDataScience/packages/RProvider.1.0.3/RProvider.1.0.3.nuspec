@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RProvider</id>
+    <version>1.0.3</version>
+    <authors>BlueMountain Capital</authors>
+    <owners>BlueMountain Capital</owners>
+    <licenseUrl>https://github.com/BlueMountainCapital/FSharpRProvider/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/BlueMountainCapital/FSharpRProvider</projectUrl>
+    <iconUrl>https://raw.github.com/BlueMountainCapital/FSharpRProvider/master/Documentation/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>R Type Provider</description>
+    <summary>An F# Type Provider providing strongly typed access to the R statistical package.</summary>
+    <language>en-US</language>
+    <tags>F# R TypeProvider</tags>
+    <dependencies>
+      <dependency id="R.NET" version="1.5.5" />
+      <dependency id="RDotNet.FSharp" version="0.1.2.1" />
+    </dependencies>
+  </metadata>
+</package>

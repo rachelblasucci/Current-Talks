@@ -33,7 +33,9 @@ module CheckAddress =
         let findCorrectState (node:System.Xml.XmlNode) = 
             state = node.SelectSingleNode("STATE/text()").Value
 
-        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") |> Seq.cast<System.Xml.XmlNode> |> Seq.filter findCorrectState
+        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
+                        |> Seq.cast<System.Xml.XmlNode>     
+                        |> Seq.filter findCorrectState
         (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
@@ -41,12 +43,12 @@ module GetTemps =
 
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
-    let temp_in zipList = 
+    let temp_in zipList =   
         let convertCitiesToZips cityName = 
             let zip = CheckAddress.GetZip cityName
             ((weather zip).City, zip, (weather zip).Temperature)
 
-        List.map convertCitiesToZips cityList
+        List.map convertCitiesToZips zipList
 
     temp_in <| cityList |> Chart.Bubble 
 

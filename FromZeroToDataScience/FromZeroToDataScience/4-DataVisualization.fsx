@@ -1,4 +1,5 @@
-﻿#load @"..\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
+﻿#r "System.Windows.dll"
+#load @"..\packages\FSharp.Charting.0.87\FSharp.Charting.fsx"
 open FSharp.Charting
 open System
 
@@ -36,16 +37,46 @@ let tanX = ChartFunction (-3., 3.) (fun x -> tan x)
 /////
 
 // Using DateTime.Now.Ticks, find the difference in processing time for the final samples.
+open System
+open System.Collections.ObjectModel
+open System.Threading
+
+let data1 = new ObservableCollection<float*int>()
+data1 |> Chart.Point
+
+type Sensor(src:seq<float * int>) =
+  let terminate = ref false
+  let data = src.GetEnumerator()
+  let sample = new Event<float * int>()
+  let t = new Thread(fun () -> 
+    while not !terminate && data.MoveNext() do
+      sample.Trigger(data.Current)
+      Thread.Sleep(1000)
+  )  
+  member x.DataAvailable = sample.Publish
+  member x.Start () = t.Start()
+  member x.Stop () = terminate := true
+
 let rnd = new System.Random()
-let uniform = seq { while (true) do yield rnd.NextDouble() }
+let gaussianBoxMuller mean variance =
+  seq {
+    while (true) do
+      let u = rnd.NextDouble()
+      let v = rnd.NextDouble()
+      yield mean + variance * sqrt(-2. * log(u)) * cos(2. * System.Math.PI * v)
+  }
+let sample precision count dist =
+  let p = System.Math.Pow(10., precision)
+  dist
+    |> Seq.take count
+    |> Seq.countBy (fun v -> floor(v * p) / p)
 
-let start = DateTime.Now.Ticks
-//[ for x in { -3.14 .. 0.1 .. 3.14 } -> (x, sin x) ] |> Chart.Point
-[| for x in { -3.14 .. 0.1 .. 3.14 } -> (x, sin x) |] |> Chart.Point
-//seq { for x in { -3.14 .. 0.1 .. 3.14 } -> (x, sin x) } |> Chart.Point
-let finish = DateTime.Now.Ticks
+let values = sample 3. 100000 (gaussianBoxMuller 0. 1.)
+let s = new Sensor(values)
+s.DataAvailable.Add(fun v -> data1.Add(v))
+s.Start()
 
-let time = finish - start
+s.Stop()
 
 
 //Also. From: http://infsharpmajor.wordpress.com/2013/07/03/going-artistic-with-fsharp-charting/

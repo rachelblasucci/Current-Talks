@@ -1,8 +1,7 @@
-﻿#load @"..\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
-#r @"..\packages\FSharp.Data.1.1.8\lib\net40\FSharp.Data.dll"
+﻿#load @"..\packages\FSharp.Charting.0.87\FSharp.Charting.fsx"
+#r @"..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.dll"
 open FSharp.Charting
 open FSharp.Data
-
 
 let data = WorldBankData.GetDataContext()
 
@@ -20,4 +19,3 @@ let (highest_name, highest_price) = sorted_prices.[0]
 highest_name
 
 let top_10 = Array.sub sorted_prices 0 10 |> Chart.Column
-
