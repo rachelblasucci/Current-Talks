@@ -1,25 +1,22 @@
-﻿#r "FSharp.Data.TypeProviders"
-#r @"..\packages\FSharpx.TypeProviders.Freebase.1.7.9\lib\40\FSharpx.TypeProviders.Freebase.dll"
-#r @"..\packages\FSharpx.TypeProviders.Freebase.1.7.9\lib\40\FSharpx.TypeProviders.Freebase.DesignTime.dll"
-#load @"..\packages\FSharp.Charting.0.82\FSharp.Charting.fsx"
+﻿#r @"..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.dll"
+#r "System.Data.Linq"
+#load @"..\packages\FSharp.Charting.0.87\FSharp.Charting.fsx"
 
-open Microsoft.FSharp.Data.TypeProviders
-open FSharpx.TypeProviders.Freebase
+open FSharp.Data
 open FSharp.Charting
+open System.Data.Linq
 
 module FreeBaseQuarksSample = 
-    let data = FSharpx.TypeProviders.Freebase.FreebaseData.GetDataContext()
+    let data = FreebaseData.GetDataContext()
 
-    let getfliteredParticles = 
+    let getParticles = 
         query { for particle in data.``Science and Technology``.Physics.``Subatomic particles`` do
-                where (particle.Spin.HasValue && particle.Mass.Mass.HasValue && particle.``Electric charge``.HasValue) 
-                select (particle.Name, particle.Spin.Value)}
-        |> Chart.Line
-
-module FreeBaseSample = 
-    let data = FSharpx.TypeProviders.Freebase.FreebaseData.GetDataContext()
-
-    let getfliteredParticles = 
-        query { for player in data.Sports.``Martial Arts``.``Martial Arts Organizations`` do
-                select (player. }
-        |> Chart.Column
+                where (particle.Spin.HasValue && particle.``Electric charge``.HasValue)
+                select (particle.Name, particle.``Electric charge``.Value, particle.Spin.Value, particle.Family)}
+        |> Seq.toArray
+    
+    let somethingElse =
+        query { for manufacturers in data.Transportation.Aviation.``Aircraft manufacturers`` do
+                select (manufacturers.Name, manufacturers.``Aircraft Models Manufactured``)
+        }
+        |> Seq.toArray

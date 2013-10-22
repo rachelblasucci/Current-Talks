@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProviders-Samples", "TypeProviders-Samples\TypeProviders-Samples.fsproj", "{07018AF0-6FC0-4FB6-9C47-0FD9396359BD}"
 EndProject
 Global

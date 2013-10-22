@@ -13,10 +13,9 @@ module OneTypeSample =
 module HelloWorldSample = 
     let getData = 
         let thirtysix = Type36("36")
-        let fortyfive = Type45("45")
         let twentytwo = Type22("twentytwo")
         let fortysix = Type46("FORTY-SIX")
         let nineteen = Type19("19")
         let ninetyeight = Type98("@halibut!")
 
-        (thirtysix, fortyfive, twentytwo, fortysix, nineteen, ninetyeight)
+        (thirtysix, twentytwo, fortysix, nineteen, ninetyeight)
