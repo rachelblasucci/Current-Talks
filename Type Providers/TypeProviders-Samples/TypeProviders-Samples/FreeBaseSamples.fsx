@@ -15,8 +15,8 @@ module FreeBaseQuarksSample =
                 select (particle.Name, particle.``Electric charge``.Value, particle.Spin.Value, particle.Family)}
         |> Seq.toArray
     
-    let somethingElse =
+    let aircraftModels =
         query { for manufacturers in data.Transportation.Aviation.``Aircraft manufacturers`` do
-                select (manufacturers.Name, manufacturers.``Aircraft Models Manufactured``)
+                select (manufacturers.Name, manufacturers.``Aircraft Models Manufactured``|> Seq.toArray)
         }
         |> Seq.toArray
