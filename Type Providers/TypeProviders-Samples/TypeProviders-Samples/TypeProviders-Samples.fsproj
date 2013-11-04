@@ -83,11 +83,6 @@
       <HintPath>..\packages\PowerShellTypeProvider.0.2.2\lib\net45\PowerShellTypeProvider.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PowerShellTypeProvider.ExternalRuntime, Version=0.2.2.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\PowerShellTypeProvider.0.2.2\lib\net45\PowerShellTypeProvider.ExternalRuntime.exe</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
-    </Reference>
     <Reference Include="RDotNet">
       <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.dll</HintPath>
       <Private>True</Private>

@@ -25,7 +25,7 @@ let cities =
     ]
 
 module CheckAddress = 
-    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx">
+    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx", ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema">
 
     let GetZip citySt =
         let (city, state) = citySt
@@ -39,7 +39,7 @@ module CheckAddress =
         (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
-    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx">
+    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx", ForceUpdate=false, LocalSchemaFile = "WeatherService.wsdlschema">
 
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
