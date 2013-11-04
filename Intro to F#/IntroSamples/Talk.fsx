@@ -1,13 +1,12 @@
 ﻿//IMMUTABLE, TYPE INFERENCE
 //Can't mix types: 
-let n = 5
+let n = 5 
 //let inverse = 1.0 / n 
 //let n = 7
 
 //automatically changes
 let square y = y * y
-let inverse_square y = 1.0/(square y)
-
+let inverse_square x = 1.0/(square x)
 
 // LISTS, ARRAYS
 // ANONYMOUS FUNCTIONS
