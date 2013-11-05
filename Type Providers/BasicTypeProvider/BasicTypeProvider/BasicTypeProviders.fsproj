@@ -43,9 +43,9 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProvidedTypes-0.3.fs" />
-    <Compile Include="HelloWorldTypeProvider.fs" />
+    <Compile Include="ProvidedTypes.fs" />
     <Compile Include="OneType.fs" />
+    <Compile Include="HelloWorldTypeProvider.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

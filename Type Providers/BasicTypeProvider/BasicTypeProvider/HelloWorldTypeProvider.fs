@@ -45,7 +45,7 @@ namespace BasicTypeProviders
 
 open System
 open System.Reflection
-open Samples.FSharp.ProvidedTypes
+open ProviderImplementation.ProvidedTypes
 open Microsoft.FSharp.Core.CompilerServices
 open Microsoft.FSharp.Quotations
 

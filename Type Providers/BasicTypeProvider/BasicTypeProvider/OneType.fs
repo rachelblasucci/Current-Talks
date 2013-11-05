@@ -1,7 +1,7 @@
 ﻿namespace BasicTypeProviders
 
 open System.Reflection
-open Samples.FSharp.ProvidedTypes
+open ProviderImplementation.ProvidedTypes
 open Microsoft.FSharp.Core.CompilerServices
 
 [<TypeProvider>]
@@ -10,14 +10,14 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
     inherit TypeProviderForNamespaces()
 
     let makeType = 
-        let myType = ProvidedTypeDefinition(Assembly.GetExecutingAssembly(), 
-                                            "Samples.OneType", 
-                                            "OnePropertyType", 
-                                            Some typeof<obj>)
+        let myType = ProvidedTypeDefinition(Assembly.GetExecutingAssembly(), //assembly
+                                            "Samples.OneType", //namespace
+                                            "OnePropertyType", //class name
+                                            Some typeof<obj>) //base type
 
-        let myProperty = ProvidedProperty("Name", 
-                                    typeof<string>, 
-                                    IsStatic = true, 
+        let myProperty = ProvidedProperty("HelloProperty",  //property name
+                                    typeof<string>, //property type
+                                    IsStatic = true, //parameters..
                                     GetterCode = (fun args -> <@@ "Hello" @@>))
 
         myType.AddMember myProperty
