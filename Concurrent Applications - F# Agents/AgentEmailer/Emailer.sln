@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Emailer", "Emailer\Emailer.fsproj", "{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Intro", "Intro\Intro.fsproj", "{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}"
