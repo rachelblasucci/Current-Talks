@@ -6,9 +6,8 @@ open Samples.HelloWorldTypeProvider
 open Samples.OneType
 
 module OneTypeSample = 
-    type name = OnePropertyType
-    let getData = 
-        name.Name
+    type oneType = OnePropertyType
+    let showHello = oneType.HelloProperty
 
 module HelloWorldSample = 
     let getData = 
