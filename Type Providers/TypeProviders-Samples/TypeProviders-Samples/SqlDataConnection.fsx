@@ -25,6 +25,8 @@ module SqlDataConnectionSample =
                 }
         |> Seq.filter (fun x -> x <> "United Airlines") // high numbers throw off the chart
 
+    // find (month, landingCount) for domestic, passenger flights by airline param
+    // return line chart
     let GetData airline = 
         let info = query { for data in SFOContext.SFO do
                             where (data.PublishedAirline = airline && data.RegionSummary = "Domestic" && data.AircraftType="Passenger")

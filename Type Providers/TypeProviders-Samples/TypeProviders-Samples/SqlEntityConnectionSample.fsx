@@ -8,8 +8,7 @@ open System.Data.Linq
 open System.Data.Entity
 open FSharp.Charting
 
-// Sum & graph landing counts by airline
-// Add landing counts for a new airline.
+// Sum & graph landing counts by airline -- all flights, for all time 
 module SqlDataConnectionSample = 
     type internal SFOData = SqlEntityConnection<ConnectionStringName = "SFO", ForceUpdate=true, Pluralize=false, SuppressForeignKeyProperties=false>
     let internal SFOContext = SFOData.GetDataContext()
@@ -23,6 +22,7 @@ module SqlDataConnectionSample =
                 }
                 |> Chart.Column
 
+    // Add landing counts for a new airline.
     let internal NewSFO =
         SFOData.ServiceTypes.SFO.CreateSFO(0, 201310, "AirBerlin", "AB", "AirBerlin", "AB", "International", "Germany", "Passenger", "Wide Body", "Boeing")
     NewSFO.LandingCount <- System.Nullable(40000)

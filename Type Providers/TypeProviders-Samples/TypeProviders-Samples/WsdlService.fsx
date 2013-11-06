@@ -8,7 +8,7 @@ open System.Runtime.Serialization
 open System.ServiceModel
 open Microsoft.FSharp.Data.TypeProviders
 
-/// WSDL ///
+// show temps by zip code for following cities
 let cities =  
     [
     ("Burlington", "VT");
@@ -25,14 +25,16 @@ let cities =
     ]
 
 module CheckAddress = 
-    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx", ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema">
+    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx", ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
 
+    // get zip for (city, state) pair
     let GetZip citySt =
         let (city, state) = citySt
 
         let findCorrectState (node:System.Xml.XmlNode) = 
             state = node.SelectSingleNode("STATE/text()").Value
 
+        // return top zip code
         let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
                         |> Seq.cast<System.Xml.XmlNode> 
                         |> Seq.filter findCorrectState
@@ -41,11 +43,13 @@ module CheckAddress =
 module GetTemps = 
     type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx", ForceUpdate=false, LocalSchemaFile = "WeatherService.wsdlschema">
 
+    // alias
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
     let temp_in zipList = 
         let convertCitiesToZips cityName = 
             let zip = CheckAddress.GetZip cityName
+            // return triple (city, zip, temp) 
             ((weather zip).City, zip, (weather zip).Temperature)
 
         List.map convertCitiesToZips zipList

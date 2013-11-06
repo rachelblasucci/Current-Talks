@@ -8,16 +8,18 @@ open System.Data.Linq
 
 module FreeBaseQuarksSample = 
     let data = FreebaseData.GetDataContext()
+
+    // (Name, charge, spin, family) for each subatomic particle
     let getParticles = 
         query { for particle in data.``Science and Technology``.Physics.``Subatomic particles`` do
                 where (particle.Spin.HasValue && particle.``Electric charge``.HasValue)
                 select (particle.Name, particle.``Electric charge``.Value, particle.Spin.Value, particle.Family)}
         |> Seq.toArray
     
+    // (Name, Productions) for each opera house
     let operaHouses =
         query { for opera in data.``Arts and Entertainment``.Opera.``Opera houses`` do
-                select (opera.Name, opera.Productions)
-        }
+                select (opera.Name, opera.Productions)}
         |> Seq.toArray
 
     operaHouses
