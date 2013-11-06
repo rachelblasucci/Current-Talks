@@ -21,7 +21,6 @@ module SqlDataConnectionSample =
                 let total = query { for group in g do sumByNullable group }
                 select (g.Key, total.Value)
                 }
-                |> Seq.toList
                 |> Chart.Column
 
     let internal NewSFO =

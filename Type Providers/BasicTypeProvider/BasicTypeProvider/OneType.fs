@@ -4,7 +4,7 @@ open System.Reflection
 open ProviderImplementation.ProvidedTypes
 open Microsoft.FSharp.Core.CompilerServices
 
-[<TypeProvider>] // <- attribute
+[<TypeProvider>] // <- add attribute
 type OneTypeProvider(config: TypeProviderConfig) as this = 
     
     inherit TypeProviderForNamespaces() // <- include ProviderImplementation.ProvidedTypes and inherit
@@ -24,5 +24,5 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
 
         do this.AddNamespace("Oredev.OneType", [myType]) // <- add to namespace
 
-[<assembly:TypeProviderAssembly>] // <- assembly attribute
+[<assembly:TypeProviderAssembly>] // <- add assembly attribute
 do()

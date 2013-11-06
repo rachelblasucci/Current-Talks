@@ -23,8 +23,7 @@ module SqlDataConnectionSample =
                 select data.PublishedAirline
                 distinct
                 }
-        |> Seq.toList
-        |> List.filter (fun x -> x <> "United Airlines") // high numbers throw off the chart
+        |> Seq.filter (fun x -> x <> "United Airlines") // high numbers throw off the chart
 
     let GetData airline = 
         let info = query { for data in SFOContext.SFO do
@@ -44,7 +43,7 @@ module SqlDataConnectionSample =
     let combine charts = 
         Chart.Combine(charts).WithLegend().WithXAxis(Min = 38500., Title="Month").WithYAxis(Title="Landing Count")
 
-    let chartlist = List.map GetData airlineList 
-                    |> List.filter (fun x -> x.IsSome)
-                    |> List.map (fun x -> x.Value)
+    let chartlist = Seq.map GetData airlineList 
+                    |> Seq.filter (fun x -> x.IsSome)
+                    |> Seq.map (fun x -> x.Value)
                     |> combine

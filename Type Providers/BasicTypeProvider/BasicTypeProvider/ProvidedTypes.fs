@@ -7,6 +7,7 @@
 // of ITypeProvider.
 //
 // This code is a sample for use in conjunction with the F# 3.0 Beta release of March 2012
+
 // 11-4-2013: Copied from https://github.com/fsharp/FSharp.Data/blob/master/src/CommonProviderImplementation/ProvidedTypes.fs
 
 namespace ProviderImplementation.ProvidedTypes
