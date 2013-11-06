@@ -4,14 +4,14 @@ open System.Reflection
 open ProviderImplementation.ProvidedTypes
 open Microsoft.FSharp.Core.CompilerServices
 
-[<TypeProvider>]
+[<TypeProvider>] // <- attribute
 type OneTypeProvider(config: TypeProviderConfig) as this = 
     
-    inherit TypeProviderForNamespaces()
+    inherit TypeProviderForNamespaces() // <- include ProviderImplementation.ProvidedTypes and inherit
 
     let makeType = 
         let myType = ProvidedTypeDefinition(Assembly.GetExecutingAssembly(), //assembly
-                                            "Samples.OneType", //namespace
+                                            "Oredev.OneType", //namespace
                                             "OnePropertyType", //class name
                                             Some typeof<obj>) //base type
 
@@ -22,7 +22,7 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
 
         myType.AddMember myProperty
 
-        do this.AddNamespace("Samples.OneType", [myType])
+        do this.AddNamespace("Oredev.OneType", [myType]) // <- add to namespace
 
-[<assembly:TypeProviderAssembly>] 
+[<assembly:TypeProviderAssembly>] // <- assembly attribute
 do()
