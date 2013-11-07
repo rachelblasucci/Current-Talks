@@ -8,7 +8,7 @@ open FSharp.Charting
 
 // Using data from SFO, find landing counts over time for domestic passenger flights by airline
 module SqlDataConnectionSample = 
-    type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", ForceUpdate=true, Pluralize=false>
+    type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", Pluralize=false>
     let internal SFOContext = SFOData.GetDataContext()
 
     let processDate (airlineMonth:int) = // parse airlineMonth from yyyymm
