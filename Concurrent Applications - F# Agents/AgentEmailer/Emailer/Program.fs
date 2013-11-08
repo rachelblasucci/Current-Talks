@@ -1,5 +1,4 @@
 ﻿namespace Emailer
-open Data
 open Agents
 
 module main = 
@@ -12,7 +11,7 @@ module main =
         // *sending agent* "sends"
         // at any point can post to *erroring agent*
 
-        filterAgent.Post GetData
+        filterAgent.Post Data.GetData
 
         printfn "Type any key to continue.." 
         System.Console.ReadKey() |> ignore

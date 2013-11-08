@@ -37,6 +37,7 @@ module Agents =
                 let actionEn = async {
                     printfn "Message %d failed permanently." number
                 }
+
                 if (message.Contains "Cannot send") then
                     printfn "Retrying failure: %s" message 
                     Some(actionAn)
