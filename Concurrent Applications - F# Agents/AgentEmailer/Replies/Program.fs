@@ -5,5 +5,4 @@
 let main argv = 
     GetReplies.postAndReply
 
-    printfn "%A" argv
     0 // return an integer exit code
