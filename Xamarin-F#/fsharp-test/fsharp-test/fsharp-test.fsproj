@@ -103,7 +103,7 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="FSharp.Core">
-      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\FSharp.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\FSharp.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -114,8 +114,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FinalViewController.fs" />
-    <Compile Include="AppDelegate.fs" />
     <Compile Include="FirstViewController.fs" />
+    <Compile Include="AppDelegate.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
