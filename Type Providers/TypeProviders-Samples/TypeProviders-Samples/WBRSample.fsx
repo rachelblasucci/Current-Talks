@@ -1,7 +1,7 @@
 ﻿// inspired/borrowed from @brandewinder: http://www.clear-lines.com/blog/post/Visualize-WorldBank-data-with-R-and-FSharp-Type-Providers.aspx
-#r @"..\packages\RProvider.1.0.3\lib\RDotNet.dll"
-#r @"..\packages\RProvider.1.0.3\lib\RProvider.dll"
-#r @"..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.dll"
+#r @"..\packages\RProvider.1.0.5\lib\RDotNet.dll"
+#r @"..\packages\RProvider.1.0.5\lib\RProvider.dll"
+#r @"..\packages\FSharp.Data.2.0.5\lib\net40\FSharp.Data.dll"
 
 open RDotNet
 open FSharp.Data
@@ -38,11 +38,13 @@ let consumptionPC = [for country in countries -> country.Indicators.``Electric p
 let production = [for country in countries -> country.Indicators.``Electricity production (kWh)``.[2010]]
 let renewable = [for country in countries -> country.Indicators.``Electricity production from renewable sources (kWh)``.[2010]]
 let oil = [for country in countries -> country.Indicators.``Electricity production from oil sources (kWh)``.[2010]]
+let length = [for country in countries -> country.Name.Length]
 
 let data = ["consumption", R.c(consumptionPC); 
             "production", R.c(production); 
             "renewable", R.c(renewable); 
-            "oil", R.c(oil)]
+            "oil", R.c(oil);
+            "name_length", R.c(length)]
 
 //let consumption = [for country in countries -> (country.Name, R.c(country.Indicators.``Electric power consumption (kWh per capita)``.Values))]
 let df = R.data_frame(namedParams data)
