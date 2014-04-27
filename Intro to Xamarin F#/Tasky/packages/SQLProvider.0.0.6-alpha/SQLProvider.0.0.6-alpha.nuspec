@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>SQLProvider</id>
+    <version>0.0.6-alpha</version>
+    <authors>Ross McKinlay</authors>
+    <owners>Ross McKinlay</owners>
+    <licenseUrl>http://github.com/pezipink/SQLProvider/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://pezipink.github.com/SQLProvider</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Type providers for SQL Server access.</description>
+    <summary>Type providers for SQL Server access.</summary>
+    <releaseNotes>MS Access support added!
+Various fixes for SQLite and Oracle
+Added support for head / First()</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>F# fsharp typeproviders sql sqlserver oracle postgresql msaccess mysql sqlite</tags>
+  </metadata>
+</package>
