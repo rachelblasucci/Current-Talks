@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{662C35B7-2A6F-4CD1-8AA1-7F00ECA47B92}</ProjectGuid>
+    <ProjectGuid>{122204D0-B1B1-4014-9F70-D32EC9E14632}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{4925A630-B079-445D-BCD4-3A9C94FE9307}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Tasky</RootNamespace>
@@ -102,18 +102,30 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="FSharp.Core">
+      <HintPath>..\..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\FSharp.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Data.SqlProvider">
+      <HintPath>..\..\..\..\Third Party\SQLProvider\bin\FSharp.Data.SqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="data.fs" />
     <Compile Include="TaskyViewController.fs" />
     <Compile Include="AppDelegate.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\task.sqlite" />
+  </ItemGroup>
 </Project>

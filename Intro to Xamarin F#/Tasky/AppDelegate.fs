@@ -12,6 +12,7 @@ type AppDelegate () =
 
     // This method is invoked when the application is ready to run.
     override this.FinishedLaunching (app, options) =
+        // If you have defined a root view controller, set it here:
         window.RootViewController <- new TaskyViewController ()
         window.MakeKeyAndVisible ()
         true

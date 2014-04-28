@@ -1,24 +1,25 @@
 ﻿namespace Tasky
 
-open System
-open System.Drawing
-
 open MonoTouch.UIKit
 open MonoTouch.Foundation
+open FSharp.Data.Sql
+open System
+open System.Data
+open System.IO
+
+type sql = SqlDataProvider<ConnectionString = @"Data Source=/Users/rachel/Dropbox/Code/Github/Current-Talks/Intro to Xamarin F#/Tasky/Resources/task.sqlite;Version=3;",
+                                              DatabaseVendor = Common.DatabaseProviderTypes.SQLITE,
+                                              ResolutionPath = @"/Library/Frameworks/Mono.framework/Libraries/mono/4.5/",
+                                              IndividualsAmount = 1000,
+                                              UseOptionTypes = true >
+
 
 [<Register ("TaskyViewController")>]
 type TaskyViewController () =
     inherit UIViewController ()
 
-    // Release any cached data, images, etc that aren't in use.
-    override this.DidReceiveMemoryWarning () =
-        base.DidReceiveMemoryWarning ()
-
-    // Perform any additional setup after loading the view, typically from a nib.
     override this.ViewDidLoad () =
         base.ViewDidLoad ()
-
-    // Return true for supported orientations
-    override this.ShouldAutorotateToInterfaceOrientation (orientation) =
-        orientation <> UIInterfaceOrientation.PortraitUpsideDown
-
+        let ctx = sql.GetDataContext()
+        let tasks = ctx.``[main].[tasks]``.Individuals.``1``
+        tasks |> ignore 
