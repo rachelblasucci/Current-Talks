@@ -1,0 +1,3 @@
+[submodule "Intro to Xamarin F#/Minesweeper"]
+	path = "Intro to Xamarin F#/Minesweeper"
+	url = git@github.com:rachelreese/Minesweeper.git
