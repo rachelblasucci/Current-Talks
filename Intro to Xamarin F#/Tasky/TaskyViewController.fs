@@ -7,7 +7,7 @@ open System
 open System.Data
 open System.IO
 
-type sql = SqlDataProvider<ConnectionString = @"Data Source=/Users/rachel/Dropbox/Code/Github/Current-Talks/Intro to Xamarin F#/Tasky/Resources/task.sqlite;Version=3;",
+type sql = SqlDataProvider<ConnectionString = @"Data Source=Resources/task.sqlite;Version=3;",
                                               DatabaseVendor = Common.DatabaseProviderTypes.SQLITE,
                                               ResolutionPath = @"/Library/Frameworks/Mono.framework/Libraries/mono/4.5/",
                                               IndividualsAmount = 1000,
