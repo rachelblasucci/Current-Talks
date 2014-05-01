@@ -2,36 +2,30 @@
 
 open MonoTouch.UIKit
 open MonoTouch.Foundation
-open FSharp.Data.Sql
 open System
-open System.Data
 open System.IO
+open Data
 
-type sql = SqlDataProvider<ConnectionString = @"Data Source=/Users/rachel/Dropbox/Code/Github/Current-Talks/Intro to Xamarin F#/Tasky/Resources/task.sqlite;Version=3;",
-                                              DatabaseVendor = Common.DatabaseProviderTypes.SQLITE,
-                                              ResolutionPath = @"/Library/Frameworks/Mono.framework/Libraries/mono/4.5/",
-                                              IndividualsAmount = 1000,
-                                              UseOptionTypes = true>
-
-type TaskDataSource(tasks:sql.SqlService.``main.tasks.Individuals``) = 
-    inherit UITableViewDataSource()
+type TaskDataSource(tasks: task[]) = 
+    inherit UITableViewSource()
     member x.cellIdentifier = "TaskCell"
-    override x.RowsInSection(view, section) = 2
+    override x.RowsInSection(view, section) = tasks.Length
     override x.GetCell(view, indexPath) = 
+        let t = tasks.[indexPath.Item]
         let cell = 
             match view.DequeueReusableCell x.cellIdentifier with 
-                | null -> view.DequeueReusableCell x.cellIdentifier
-                | _ -> new UITableViewCell(UITableViewCellStyle.Default, x.cellIdentifier)
-        cell.TextLabel.Text <- tasks.``As task``.``1, get groceries``.task.ToString()
+                | null -> new UITableViewCell(UITableViewCellStyle.Default, x.cellIdentifier)
+                | _ -> view.DequeueReusableCell x.cellIdentifier
+        cell.TextLabel.Text <- t.Description
         cell
 
 [<Register ("TaskyViewController")>]
-type TaskyViewController () =
+type TaskyViewController () as this =
     inherit UIViewController ()
 
     let addNewTask = 
         new EventHandler(fun sender eventargs -> 
-            //add new task.
+            this.NavigationController.PushViewController <| (new AddTaskViewController(), false)
             0 |> ignore
         )
 
@@ -39,10 +33,9 @@ type TaskyViewController () =
         base.ViewDidLoad ()
         this.NavigationItem.SetRightBarButtonItem (new UIBarButtonItem(UIBarButtonSystemItem.Add, addNewTask), false)
 
-        let ctx = sql.GetDataContext()
-        let tasks = ctx.``[main].[tasks]``.Individuals
+        let tasks = Data.GetIncompleteTasks
 
-        let table = new UITableView()
-        table.DataSource <- new TaskDataSource(tasks)
+        let table = new UITableView(this.View.Bounds)
+        table.Source <- new TaskDataSource(tasks)
         this.View.Add(table)
 
