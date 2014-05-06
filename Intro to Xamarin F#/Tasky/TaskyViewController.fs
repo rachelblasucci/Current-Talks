@@ -37,5 +37,5 @@ type TaskyViewController () as this =
 
         let table = new UITableView(this.View.Bounds)
         table.Source <- new TaskDataSource(tasks)
-        this.View.Add(table)
+        this.View.Add table 
 

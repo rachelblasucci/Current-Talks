@@ -22,6 +22,7 @@ module FreeBaseQuarksSample =
                 select (opera.Name, opera.Productions)}
         |> Seq.toArray
 
-    operaHouses
+    operaHouses //(Name, Current Productions) for each opera house
         |> Array.map (fun (x,y) -> (x, y |> Seq.toArray))
         |> Array.filter (fun (x,y) -> y.Length > 0)
+

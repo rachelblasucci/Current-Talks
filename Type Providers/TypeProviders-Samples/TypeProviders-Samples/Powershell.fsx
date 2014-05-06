@@ -19,3 +19,4 @@ let find choice = match (choice:Choice<List<System.DateTime>, List<string>>) wit
 let today = PS.``Get-Date``()
 
 printfn "%s" <| find today
+
