@@ -26,14 +26,13 @@ type TaskyViewController () as this =
     let addNewTask = 
         new EventHandler(fun sender eventargs -> 
             this.NavigationController.PushViewController <| (new AddTaskViewController(), false)
-            0 |> ignore
         )
 
     override this.ViewDidLoad () =
         base.ViewDidLoad ()
         this.NavigationItem.SetRightBarButtonItem (new UIBarButtonItem(UIBarButtonSystemItem.Add, addNewTask), false)
 
-        let tasks = Data.GetIncompleteTasks
+        let tasks = Data.GetIncompleteTasks()
 
         let table = new UITableView(this.View.Bounds)
         table.Source <- new TaskDataSource(tasks)
