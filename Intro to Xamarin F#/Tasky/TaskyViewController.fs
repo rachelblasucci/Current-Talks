@@ -7,7 +7,7 @@ open System.IO
 open Data
 
 type TaskDataSource(tasks: task[]) = 
-    inherit UITableViewSource()
+    inherit UITableViewDataSource()
     member x.cellIdentifier = "TaskCell"
     override x.RowsInSection(view, section) = tasks.Length
     override x.GetCell(view, indexPath) = 
@@ -23,6 +23,8 @@ type TaskDataSource(tasks: task[]) =
 type TaskyViewController () as this =
     inherit UIViewController ()
 
+    let table = new UITableView()
+
     let addNewTask = 
         new EventHandler(fun sender eventargs -> 
             this.NavigationController.PushViewController <| (new AddTaskViewController(), false)
@@ -31,10 +33,11 @@ type TaskyViewController () as this =
     override this.ViewDidLoad () =
         base.ViewDidLoad ()
         this.NavigationItem.SetRightBarButtonItem (new UIBarButtonItem(UIBarButtonSystemItem.Add, addNewTask), false)
-
-        let tasks = Data.GetIncompleteTasks()
-
-        let table = new UITableView(this.View.Bounds)
-        table.Source <- new TaskDataSource(tasks)
+        table.Frame <- this.View.Bounds
+        table.DataSource <- new TaskDataSource(Data.GetIncompleteTasks())
         this.View.Add table 
 
+    override this.ViewWillAppear animated =
+        base.ViewWillAppear animated
+        table.DataSource <- new TaskDataSource(Data.GetIncompleteTasks())
+        table.ReloadData()

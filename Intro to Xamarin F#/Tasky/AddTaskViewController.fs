@@ -15,8 +15,16 @@ type AddTaskViewController () =
         let addView = new UIView(this.View.Bounds)
         addView.BackgroundColor <- UIColor.White
 
+        let label = new UILabel(new RectangleF(20.f, 164.f, 200.f, 50.f))
+        addView.Add label
+
         let description = new UITextField(new RectangleF(20.f, 64.f, 280.f, 50.f))
         description.Placeholder <- "task description"
+        let clearLabel = 
+            new EventHandler(fun sender eventargs -> 
+                label.Text <- ""
+            )
+        description.TouchDown.AddHandler clearLabel
         addView.Add description
 
         let button = UIButton.FromType(UIButtonType.RoundedRect)
@@ -24,12 +32,12 @@ type AddTaskViewController () =
         let submitTask = 
             new EventHandler(fun sender eventargs -> 
                 Data.AddTask description.Text
-                this.NavigationController.PushViewController(this.NavigationController.PopViewControllerAnimated(false), false)
+                description.Text <- ""
+                label.Text <- "Added!"
             )
         button.TouchUpInside.AddHandler submitTask
         button.SetTitle("Add task", UIControlState.Normal)
         addView.Add button
 
         this.View.Add addView
-        this.View.BringSubviewToFront addView
        
