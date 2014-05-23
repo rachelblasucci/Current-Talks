@@ -1,7 +1,7 @@
 ﻿#r "FSharp.Data.TypeProviders"
 #r "System.ServiceModel"
 #r "System.Runtime.Serialization"
-#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
+#load @"../packages/FSharp.Charting.0.90.6/FSharp.Charting.fsx"
 
 open FSharp.Charting
 open System.Runtime.Serialization
@@ -25,7 +25,10 @@ let cities =
     ]
 
 module CheckAddress = 
-    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://www.webservicex.net/uszip.asmx", ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
+    type ZipLookup = 
+    Microsoft.FSharp.Data.TypeProviders.WsdlService<
+        ServiceUri = "http://www.webservicex.net/uszip.asmx", 
+        ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
 
     // get zip for (city, state) pair
     let GetZip citySt =

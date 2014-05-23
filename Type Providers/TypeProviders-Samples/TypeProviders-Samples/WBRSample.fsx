@@ -1,7 +1,7 @@
 ﻿// inspired/borrowed from @brandewinder: http://www.clear-lines.com/blog/post/Visualize-WorldBank-data-with-R-and-FSharp-Type-Providers.aspx
-#r @"..\packages\RProvider.1.0.5\lib\RDotNet.dll"
-#r @"..\packages\RProvider.1.0.5\lib\RProvider.dll"
-#r @"..\packages\FSharp.Data.2.0.5\lib\net40\FSharp.Data.dll"
+#r @"../packages/R.NET.1.5.5/lib/net40/RDotNet.dll"
+#r @"../packages/RProvider.1.0.9/lib/RProvider.dll"
+#r @"../packages/FSharp.Data.2.0.8/lib/net40/FSharp.Data.dll"
 
 open RDotNet
 open FSharp.Data

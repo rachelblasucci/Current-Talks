@@ -4,8 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>07018af0-6fc0-4fb6-9c47-0fd9396359bd</ProjectGuid>
+    <ProjectGuid>07018AF0-6FC0-4FB6-9C47-0FD9396359BD</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TypeProviders_Samples</RootNamespace>
     <AssemblyName>TypeProviders_Samples</AssemblyName>
@@ -60,54 +59,59 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BasicTypeProvider">
-      <HintPath>..\..\BasicTypeProvider\BasicTypeProvider\bin\Debug\BasicTypeProvider.dll</HintPath>
-    </Reference>
     <Reference Include="FSharp.Charting">
       <HintPath>..\packages\FSharp.Charting.0.90.6\lib\net40\FSharp.Charting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="FSharp.Data">
-      <HintPath>..\packages\FSharp.Data.2.0.5\lib\net40\FSharp.Data.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="PowerShellTypeProvider">
-      <HintPath>..\packages\PowerShellTypeProvider.0.3.0\lib\net45\PowerShellTypeProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PowerShellTypeProvider.ExternalRuntime">
-      <HintPath>..\packages\PowerShellTypeProvider.0.3.0\lib\net45\PowerShellTypeProvider.ExternalRuntime.exe</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet">
-      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.FSharp">
-      <HintPath>..\packages\RDotNet.FSharp.0.1.2.1\lib\net40\RDotNet.FSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.NativeLibrary">
-      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RProvider">
-      <HintPath>..\packages\RProvider.1.0.5\lib\RProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.0.8\lib\net40\FSharp.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="FSharp.Management">
+      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Management.PowerShell">
+      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Management.PowerShell.ExternalRuntime">
+      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.ExternalRuntime.exe</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Management.WMI.DesignTime">
+      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.DesignTime.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Management.WMI">
+      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.dll</HintPath>
+    </Reference>
+    <Reference Include="RDotNet">
+      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RDotNet.NativeLibrary">
+      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="RDotNet.FSharp">
+      <HintPath>..\packages\RDotNet.FSharp.0.1.2.1\lib\net40\RDotNet.FSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RProvider.Server">
+      <HintPath>..\packages\RProvider.1.0.9\lib\RProvider.Server.exe</HintPath>
+    </Reference>
+    <Reference Include="RProvider.DesignTime">
+      <HintPath>..\packages\RProvider.1.0.9\lib\RProvider.DesignTime.dll</HintPath>
+    </Reference>
+    <Reference Include="RProvider.Runtime">
+      <HintPath>..\packages\RProvider.1.0.9\lib\RProvider.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="RProvider">
+      <HintPath>..\packages\RProvider.1.0.9\lib\RProvider.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
