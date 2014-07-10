@@ -1,6 +1,6 @@
-﻿#r "FSharp.Data.TypeProviders"
+#r "FSharp.Data.TypeProviders"
 #r "System.Data.Linq"
-#load @"..\packages\FSharp.Charting.0.87\FSharp.Charting.fsx"
+#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
 
 open Microsoft.FSharp.Data.TypeProviders
 open System.Data.Linq
@@ -11,30 +11,28 @@ module SqlDataConnectionSample =
     type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", Pluralize=false>
     let internal SFOContext = SFOData.GetDataContext()
 
-    let processDate (airlineMonth:int) = // parse airlineMonth from yyyymm
+    let processDate (airlineMonth:float) = // parse airlineMonth from yyyymm
         let year = System.Convert.ToInt32(airlineMonth.ToString().[0..3])
         let month = System.Convert.ToInt32(airlineMonth.ToString().[4..5])
         new System.DateTime(year, month, 01)
 
     let airlineList = 
-        query { for data in SFOContext.SFO do
-                where (data.LandingCount.HasValue)
+        query { for data in SFOContext.SFO1 do
                 sortBy data.PublishedAirline
                 select data.PublishedAirline
                 distinct
                 }
-        |> Seq.filter (fun x -> x <> "United Airlines") // high numbers throw off the chart
+        |> Seq.filter (fun x -> not <| x.Contains("United Airlines")) // high numbers throw off the chart
 
     // find (month, landingCount) for domestic, passenger flights by airline param
     // return line chart
     let GetData airline = 
-        let info = query { for data in SFOContext.SFO do
-                            where (data.PublishedAirline = airline && data.RegionSummary = "Domestic" && data.AircraftType="Passenger")
-                            groupValBy data.LandingCount data.Month into g
-                            let total = query {for landing in g do sumByNullable landing}
-                            where (total.HasValue)
+        let info = query { for data in SFOContext.SFO1 do
+                            where (data.PublishedAirline = airline && data.GEOSummary = "Domestic" && data.LandingAircraftType="Passenger")
+                            groupValBy data.LandingCount data.ActivityPeriod into g
+                            let total = query {for landing in g do sumBy landing}
                             sortBy g.Key
-                            select (processDate g.Key, total.Value)
+                            select (processDate g.Key, total)
                             }
                             |> Seq.toArray
         if (info.Length > 0) then

@@ -25,10 +25,9 @@ let cities =
     ]
 
 module CheckAddress = 
-    type ZipLookup = 
-    Microsoft.FSharp.Data.TypeProviders.WsdlService<
-        ServiceUri = "http://www.webservicex.net/uszip.asmx", 
-        ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
+    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<
+                        ServiceUri = "http://www.webservicex.net/uszip.asmx", 
+                        ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
 
     // get zip for (city, state) pair
     let GetZip citySt =

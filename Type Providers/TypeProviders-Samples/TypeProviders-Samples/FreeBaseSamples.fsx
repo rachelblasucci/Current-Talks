@@ -1,6 +1,6 @@
-﻿#r @"../packages/FSharp.Data.2.0.8/lib/net40/FSharp.Data.dll"
-#r "System.Data.Linq"
-#load @"../packages/FSharp.Charting.0.90.6/FSharp.Charting.fsx"
+﻿#r "System.Data.Linq"
+#r @"..\packages\FSharp.Data.2.0.9\lib\net40\FSharp.Data.dll"
+#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
 
 open FSharp.Data
 open FSharp.Charting
@@ -17,12 +17,11 @@ module FreeBaseQuarksSample =
         |> Seq.toArray
     
     // (Name, Productions) for each opera house
-//    let operaHouses =
-//        query { for opera in data.``Arts and Entertainment``.Opera.``Opera houses`` do
-//                select (opera.Name, opera.Productions)}
-//        |> Seq.toArray
-//
-//    operaHouses //(Name, Current Productions) for each opera house
-//        |> Array.map (fun (x,y) -> (x, y |> Seq.toArray))
-//        |> Array.filter (fun (x,y) -> y.Length > 0)
+    let operaHouses =
+        query { for opera in data.``Arts and Entertainment``.Opera.``Opera houses`` do
+                select (opera.Name, opera.Productions)}
+        |> Seq.toArray
 
+    operaHouses
+        |> Array.map (fun (x,y) -> (x, y |> Seq.toArray))
+        |> Array.filter (fun (x,y) -> y.Length > 0)
