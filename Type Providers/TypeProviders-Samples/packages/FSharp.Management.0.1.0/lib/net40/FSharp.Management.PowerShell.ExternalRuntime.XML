@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <doc>
 <assembly><name>FSharp.Management.PowerShell.ExternalRuntime</name></assembly>
@@ -10,3 +11,17 @@
 </member>
 </members>
 </doc>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Management.PowerShell.ExternalRuntime</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="T:Program">
+
+</member>
+</members>
+</doc>
+>>>>>>> Updates for CodeStock.
