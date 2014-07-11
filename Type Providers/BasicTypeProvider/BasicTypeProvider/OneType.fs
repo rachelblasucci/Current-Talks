@@ -9,9 +9,11 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
     
     inherit TypeProviderForNamespaces() // <- include ProviderImplementation.ProvidedTypes and inherit
 
+    let mynamespace = "CodeStock.OneType";
+
     let makeType = 
         let myType = ProvidedTypeDefinition(Assembly.GetExecutingAssembly(), //assembly
-                                            "Oredev.OneType", //namespace
+                                            mynamespace, //namespace
                                             "OnePropertyType", //class name
                                             Some typeof<obj>) //base type
 
@@ -22,7 +24,7 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
 
         myType.AddMember myProperty
 
-        do this.AddNamespace("Oredev.OneType", [myType]) // <- add to namespace
+        do this.AddNamespace(mynamespace, [myType]) // <- add to namespace
 
 [<assembly:TypeProviderAssembly>] // <- add assembly attribute
 do()
