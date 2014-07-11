@@ -1,5 +1,5 @@
 #r "System.ServiceModel"
-#r @"..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.dll"
+#r @"..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.PowerShell.dll"
 #r "System.Management.Automation"
 #r "Microsoft.PowerShell.Commands.Utility"
 #r "FSharp.Core"

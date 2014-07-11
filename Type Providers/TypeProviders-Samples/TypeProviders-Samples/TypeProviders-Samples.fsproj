@@ -61,14 +61,26 @@
   <ItemGroup>
     <Reference Include="FSharp.Charting">
       <HintPath>..\packages\FSharp.Charting.0.90.6\lib\net40\FSharp.Charting.dll</HintPath>
-<<<<<<< HEAD
-=======
+    </Reference>
+    <Reference Include="FSharp.Management">
+      <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FSharp.Core">
-      <HintPath>..\packages\RProvider.1.0.13\lib\net40\FSharp.Core.dll</HintPath>
+    <Reference Include="FSharp.Management.PowerShell">
+      <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.PowerShell.dll</HintPath>
       <Private>True</Private>
->>>>>>> Fixing Type Providers samples for CodeStock
+    </Reference>
+    <Reference Include="FSharp.Management.PowerShell.ExternalRuntime">
+      <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.PowerShell.ExternalRuntime.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Management.WMI">
+      <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.WMI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Management.WMI.DesignTime">
+      <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.WMI.DesignTime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -80,100 +92,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="FSharp.Core" />
-    <Reference Include="FSharp.Data">
-<<<<<<< HEAD
-      <HintPath>..\packages\FSharp.Data.2.0.8\lib\net40\FSharp.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="FSharp.Management">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Management.PowerShell">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Management.PowerShell.ExternalRuntime">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.ExternalRuntime.exe</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Management.WMI.DesignTime">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.DesignTime.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Management.WMI">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.dll</HintPath>
-=======
-      <HintPath>..\packages\FSharp.Data.2.0.9\lib\net40\FSharp.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Management">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Management.PowerShell">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Management.PowerShell.ExternalRuntime">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.PowerShell.ExternalRuntime.exe</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Management.WMI">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Management.WMI.DesignTime">
-      <HintPath>..\packages\FSharp.Management.0.1.0\lib\net40\FSharp.Management.WMI.DesignTime.dll</HintPath>
-      <Private>True</Private>
->>>>>>> Fixing Type Providers samples for CodeStock
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="RDotNet">
-      <HintPath>..\packages\R.NET.Community.1.5.15\lib\net40\RDotNet.dll</HintPath>
-<<<<<<< HEAD
-    </Reference>
-    <Reference Include="RDotNet.NativeLibrary">
-      <HintPath>..\packages\R.NET.Community.1.5.15\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="RDotNet.FSharp">
-      <HintPath>..\packages\R.NET.Community.FSharp.0.1.8\lib\net40\RDotNet.FSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="RProvider.Server">
-      <HintPath>..\packages\RProvider.1.0.10\lib\RProvider.Server.exe</HintPath>
-    </Reference>
-    <Reference Include="RProvider.DesignTime">
-      <HintPath>..\packages\RProvider.1.0.10\lib\RProvider.DesignTime.dll</HintPath>
-    </Reference>
-    <Reference Include="RProvider.Runtime">
-      <HintPath>..\packages\RProvider.1.0.10\lib\RProvider.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="RProvider">
-      <HintPath>..\packages\RProvider.1.0.10\lib\RProvider.dll</HintPath>
-=======
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.FSharp">
-      <HintPath>..\packages\R.NET.Community.FSharp.0.1.8\lib\net40\RDotNet.FSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.NativeLibrary">
-      <HintPath>..\packages\R.NET.Community.1.5.15\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RProvider">
-      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RProvider.DesignTime">
-      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.DesignTime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RProvider.Runtime">
-      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RProvider.Server">
-      <HintPath>..\packages\RProvider.1.0.13\lib\net40\RProvider.Server.exe</HintPath>
-      <Private>True</Private>
->>>>>>> Fixing Type Providers samples for CodeStock
-    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
