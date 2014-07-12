@@ -26,5 +26,6 @@ module SqlDataConnectionSample =
     let internal NewSFO =
         SFOData.ServiceTypes.SFO.CreateSFO(201407., "AirBerlin", "AirBerlin", "International", "Europe", "Passenger", "Wide Body", 400000., 400000., "2014", "July", 0)
 
+
     SFOContext.DataContext.AddObject("SFO", NewSFO)
     SFOContext.DataContext.SaveChanges()

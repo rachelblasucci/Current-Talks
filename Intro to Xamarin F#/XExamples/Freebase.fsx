@@ -1,10 +1,8 @@
 ﻿//TYPE PROVIDERS **AND** UNITS OF MEASURE
 #r @"packages/FSharp.Data.2.0.8/lib/net40/FSharp.Data.dll"
 #r "System.Data.Linq" 
-#load @"packages/FSharp.Charting.0.90.6/FSharp.Charting.fsx"
 
 open FSharp.Data
-open FSharp.Charting
 open System.Data.Linq
 
 module FreeBaseQuarksSample = 
