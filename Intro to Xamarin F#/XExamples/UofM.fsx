@@ -21,6 +21,6 @@ let MontrealWindSpeed = 25.2<km/hr>
 
 WindChill_CA MontrealTemp MontrealWindSpeed
 
-let C_to_F (C:float<C>) = C / 5.0<C> * 9.0<F> + 32.0<F>
+let C_to_F C = C / 5.0<C> * 9.0<F> + 32.0<F>
 
 WindChill_US (C_to_F -10.0<C>) 45.4<mi/hr>

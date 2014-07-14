@@ -8,7 +8,7 @@ open System.Data.Linq
 module FreeBaseQuarksSample = 
     let data = FreebaseData.GetDataContext()
 
-    // (Name, charge, spin, family) for each subatomic particle. In coulombs! 
+        // (Name, charge, spin, family) for each subatomic particle. In coulombs! 
     let getParticles = 
         query { for particle in data.``Science and Technology``.Physics.``Subatomic particles`` do
                 where (particle.Spin.HasValue && particle.``Electric charge``.HasValue)
