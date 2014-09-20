@@ -1,6 +1,6 @@
 #r "FSharp.Data.TypeProviders"
 #r "System.Data.Linq"
-#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
+#load @"../packages/FSharp.Charting.0.90.7/FSharp.Charting.fsx"
 
 open Microsoft.FSharp.Data.TypeProviders
 open System.Data.Linq
@@ -10,7 +10,7 @@ open FSharp.Charting
 module SqlDataConnectionSample = 
     type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", Pluralize=false>
     let internal SFOContext = SFOData.GetDataContext()
-    
+        
     let processDate (airlineMonth:float) = // parse airlineMonth from yyyymm
         let year = System.Convert.ToInt32(airlineMonth.ToString().[0..3])
         let month = System.Convert.ToInt32(airlineMonth.ToString().[4..5])

@@ -40,3 +40,4 @@ module Data =
            EmailType3Message {Email="paul@test.org"; Number=34};
            EmailType2Message {FirstName="Hunter"; Email="hunter@test.org"; Number=35};
     |]
+

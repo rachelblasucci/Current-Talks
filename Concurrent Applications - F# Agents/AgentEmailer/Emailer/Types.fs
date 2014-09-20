@@ -1,4 +1,4 @@
-namespace Emailer 
+﻿namespace Emailer 
 module Types = 
     // EmailType1: Sign-up, what's new, weekly specials
     // EmailType2: Shopping list, daily deals, receipt

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>07018AF0-6FC0-4FB6-9C47-0FD9396359BD</ProjectGuid>
+    <ProjectGuid>{07018AF0-6FC0-4FB6-9C47-0FD9396359BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TypeProviders_Samples</RootNamespace>
     <AssemblyName>TypeProviders_Samples</AssemblyName>
@@ -59,28 +59,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Charting">
-      <HintPath>..\packages\FSharp.Charting.0.90.6\lib\net40\FSharp.Charting.dll</HintPath>
-    </Reference>
     <Reference Include="FSharp.Management">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Management.PowerShell">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.PowerShell.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Management.PowerShell.ExternalRuntime">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.PowerShell.ExternalRuntime.exe</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Management.WMI">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.WMI.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Management.WMI.DesignTime">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.WMI.DesignTime.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -91,8 +83,28 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="FSharp.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="RProvider.Server">
+      <HintPath>..\packages\RProvider.1.0.15\lib\net40\RProvider.Server.exe</HintPath>
+    </Reference>
+    <Reference Include="RProvider.DesignTime">
+      <HintPath>..\packages\RProvider.1.0.15\lib\net40\RProvider.DesignTime.dll</HintPath>
+    </Reference>
+    <Reference Include="RProvider.Runtime">
+      <HintPath>..\packages\RProvider.1.0.15\lib\net40\RProvider.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="RProvider">
+      <HintPath>..\packages\RProvider.1.0.15\lib\net40\RProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\RProvider.1.0.15\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.0.10\lib\net40\FSharp.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.90.7\lib\net40\FSharp.Charting.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

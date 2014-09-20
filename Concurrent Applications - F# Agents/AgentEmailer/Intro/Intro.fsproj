@@ -4,8 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>32ba04ac-08c1-468b-8e1d-9d0e16b66b7b</ProjectGuid>
+    <ProjectGuid>{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Intro</RootNamespace>
     <AssemblyName>Intro</AssemblyName>
@@ -33,13 +32,13 @@
     <DocumentationFile>bin\Release\Intro.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Intro.fsx" />

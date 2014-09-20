@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{165023B9-C2F3-44D1-9570-1695039E3F8B}</ProjectGuid>
+    <ProjectGuid>{154AE3C9-F7D7-4A49-813D-9D9E726601B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Emailer</RootNamespace>
-    <AssemblyName>Emailer</AssemblyName>
+    <RootNamespace>Scanner</RootNamespace>
+    <AssemblyName>Scanner</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,10 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Types.fs" />
-    <Compile Include="Templates.fs" />
-    <Compile Include="Data.fs" />
-    <Compile Include="Agents.fs" />
+    <Compile Include="Scanning.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />

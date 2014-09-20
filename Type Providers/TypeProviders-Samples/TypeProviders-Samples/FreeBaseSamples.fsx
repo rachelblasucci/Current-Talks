@@ -1,6 +1,6 @@
 ﻿#r "System.Data.Linq"
-#r @"..\packages\FSharp.Data.2.0.9\lib\net40\FSharp.Data.dll"
-#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
+#r @"..\packages\FSharp.Data.2.0.10\lib\net40\FSharp.Data.dll"
+#load @"..\packages\FSharp.Charting.0.90.7\FSharp.Charting.fsx"
 
 open FSharp.Data
 open FSharp.Charting

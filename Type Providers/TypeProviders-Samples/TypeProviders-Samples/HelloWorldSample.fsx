@@ -3,7 +3,7 @@
 
 open Microsoft.FSharp.Data.TypeProviders
 open Samples.HelloWorldTypeProvider
-open CodeStock.OneType
+open DevLink.OneType
 
 module OneTypeSample = 
     type oneType = OnePropertyType

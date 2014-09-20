@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{165023B9-C2F3-44D1-9570-1695039E3F8B}</ProjectGuid>
+    <ProjectGuid>{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Emailer</RootNamespace>
-    <AssemblyName>Emailer</AssemblyName>
+    <RootNamespace>Replier</RootNamespace>
+    <AssemblyName>Replier</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,10 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Types.fs" />
-    <Compile Include="Templates.fs" />
-    <Compile Include="Data.fs" />
-    <Compile Include="Agents.fs" />
+    <Compile Include="GetReplies.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />

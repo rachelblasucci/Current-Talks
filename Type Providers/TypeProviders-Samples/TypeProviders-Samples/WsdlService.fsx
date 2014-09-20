@@ -1,7 +1,7 @@
 ﻿#r "FSharp.Data.TypeProviders"
 #r "System.ServiceModel"
 #r "System.Runtime.Serialization"
-#load @"../packages/FSharp.Charting.0.90.6/FSharp.Charting.fsx"
+#load @"../packages/FSharp.Charting.0.90.7/FSharp.Charting.fsx"
 
 open FSharp.Charting
 open System.Runtime.Serialization
@@ -56,5 +56,5 @@ module GetTemps =
 
         List.map convertCitiesToZips zipList
 
-    let data = temp_in <| cities
+    let data = temp_in cities
     Chart.Bubble(data, Title="Temperature by Zip", UseSizeForLabel=false).WithYAxis(Enabled=true, Max=100000., Min=0.).WithXAxis(Enabled=true).WithDataPointLabels()

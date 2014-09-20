@@ -1,7 +1,7 @@
 #r "FSharp.Data.TypeProviders"
 #r "System.Data.Linq"
 #r "System.Data.Entity"
-#load @"..\packages\FSharp.Charting.0.90.6\FSharp.Charting.fsx"
+#load @"..\packages\FSharp.Charting.0.90.7\FSharp.Charting.fsx"
 
 open Microsoft.FSharp.Data.TypeProviders
 open System.Data.Linq
@@ -24,7 +24,7 @@ module SqlDataConnectionSample =
 
     // Add landing counts for a new airline.
     let internal NewSFO =
-        SFOData.ServiceTypes.SFO.CreateSFO(201407., "AirBerlin", "AirBerlin", "International", "Europe", "Passenger", "Wide Body", 400000., 400000., "2014", "July", 0)
+        SFOData.ServiceTypes.SFO.CreateSFO(201407., "RachelsAirline", "RachelsAirline", "International", "Europe", "Passenger", "Wide Body", 800000., 800000., "2014", "July", 0)
 
 
     SFOContext.DataContext.AddObject("SFO", NewSFO)

@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 2012
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Emailer", "Emailer\Emailer.fsproj", "{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Intro", "Intro\Intro.fsproj", "{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Intro", "Intro\Intro.fsproj", "{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Scanner", "Scanner\Scanner.fsproj", "{154AE3C9-F7D7-4A49-813D-9D9E726601B4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Replies", "Replies\Replies.fsproj", "{E81C2700-5C16-4F83-9F63-7458BEB434A1}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Replier", "Replier\Replier.fsproj", "{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scanning", "Scanning\Scanning.fsproj", "{0018089F-7FEC-4E46-931B-4F24CF75B007}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Emailer", "Emailer\Emailer.fsproj", "{165023B9-C2F3-44D1-9570-1695039E3F8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4A0A1AD-F22B-4ED5-B386-C87A9C2F658F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32BA04AC-08C1-468B-8E1D-9D0E16B66B7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E81C2700-5C16-4F83-9F63-7458BEB434A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E81C2700-5C16-4F83-9F63-7458BEB434A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E81C2700-5C16-4F83-9F63-7458BEB434A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E81C2700-5C16-4F83-9F63-7458BEB434A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0018089F-7FEC-4E46-931B-4F24CF75B007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0018089F-7FEC-4E46-931B-4F24CF75B007}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0018089F-7FEC-4E46-931B-4F24CF75B007}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0018089F-7FEC-4E46-931B-4F24CF75B007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Emailer\Emailer.fsproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
