@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "EvolveXamForms.iOS", "EvolveXamForms\EvolveXamForms.iOS.fsproj", "{F724945E-869C-4DB8-88B0-FE392A71EC6C}"
+EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "EvolveXamForms.Core", "EvolveXamForms.Core\EvolveXamForms.Core.fsproj", "{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Release|iPhone.Build.0 = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{AC3DACD1-ED89-4EB3-8ACE-BAF12C86780B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Release|iPhone.Build.0 = Release|iPhone
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F724945E-869C-4DB8-88B0-FE392A71EC6C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = EvolveXamForms\EvolveXamForms.iOS.fsproj
+	EndGlobalSection
+EndGlobal

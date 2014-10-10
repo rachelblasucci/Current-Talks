@@ -1,6 +1,0 @@
-[submodule "Intro to Xamarin F#/Minesweeper"]
-	path = "Intro to Xamarin F#/Minesweeper"
-	url = git@github.com:rachelreese/Minesweeper.git
-[submodule "Intro to Xamarin F#/Tasky"]
-	path = "Intro to Xamarin F#/Tasky"
-	url = git@github.com:rachelreese/Tasky.git
