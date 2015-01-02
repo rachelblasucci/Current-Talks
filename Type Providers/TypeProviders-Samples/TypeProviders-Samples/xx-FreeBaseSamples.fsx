@@ -18,7 +18,7 @@ module FreeBaseQuarksSample =
     
     // (Name, Productions) for each opera house
     let operaHouses =
-        query { for opera in data.``Arts and Entertainment``.Opera.``Opera houses`` do
+        query { for opera in data.``Arts and Entertainment``.Opera do
                 select (opera.Name, opera.Productions)}
         |> Seq.toArray
 

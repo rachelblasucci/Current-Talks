@@ -1,10 +1,12 @@
 #r "FSharp.Data.TypeProviders"
 #r "System.Data.Linq"
+
 #load @"../packages/FSharp.Charting.0.90.7/FSharp.Charting.fsx"
 
 open Microsoft.FSharp.Data.TypeProviders
 open System.Data.Linq
 open FSharp.Charting
+open System.Data.SqlClient
 
 // Using data from SFO, find landing counts over time for domestic passenger flights by airline
 module SqlDataConnectionSample = 
@@ -17,7 +19,7 @@ module SqlDataConnectionSample =
         new System.DateTime(year, month, 01)
 
     let airlineList = 
-        query { for data in SFOContext.SFO1 do
+        query { for data in SFOContext.RawLandingsData do
                 sortBy data.PublishedAirline
                 select data.PublishedAirline
                 distinct
@@ -27,7 +29,7 @@ module SqlDataConnectionSample =
     // find (month, landingCount) for domestic, passenger flights by airline param
     // return line chart
     let GetData airline = 
-        let info = query { for data in SFOContext.SFO1 do
+        let info = query { for data in SFOContext.RawLandingsData do
                             where (data.PublishedAirline = airline && data.GEOSummary = "Domestic" && data.LandingAircraftType="Passenger")
                             groupValBy data.LandingCount data.ActivityPeriod into g
                             let total = query {for landing in g do sumBy landing}

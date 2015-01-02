@@ -14,9 +14,9 @@ module SqlDataConnectionSample =
     let internal SFOContext = SFOData.GetDataContext()
 
     let internal SFOInfo = 
-        query { for data in SFOContext.SFO do
-                where (not (data.Published_Airline.Contains("United Airlines"))) // again, numbers too big
-                groupValBy data.Landing_Count data.Published_Airline into g
+        query { for data in SFOContext.RawLandingsData do
+                where (not (data.PublishedAirline.Contains("United Airlines"))) // again, numbers too big
+                groupValBy data.LandingCount data.PublishedAirline into g
                 let total = query { for group in g do sumBy group }
                 select (g.Key, total)
                 }
@@ -24,8 +24,8 @@ module SqlDataConnectionSample =
 
     // Add landing counts for a new airline.
     let internal NewSFO =
-        SFOData.ServiceTypes.SFO.CreateSFO(201407., "RachelsAirline", "RachelsAirline", "International", "Europe", "Passenger", "Wide Body", 800000., 800000., "2014", "July", 0)
+        SFOData.ServiceTypes.RawLandingsData.CreateRawLandingsData(0, 201407., "RachelsAirline", "RachelsAirline", "International", "Europe", "Passenger", "Wide Body", 800000., 800000., "2014", "July")
 
 
-    SFOContext.DataContext.AddObject("SFO", NewSFO)
+    SFOContext.DataContext.AddObject("RawLandingsData", NewSFO)
     SFOContext.DataContext.SaveChanges()

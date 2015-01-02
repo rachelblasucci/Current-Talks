@@ -11,17 +11,17 @@ open Microsoft.FSharp.Data.TypeProviders
 // show temps by zip code for following cities
 let cities =  
     [
-    ("Burlington", "VT");
-    ("Kensington", "MD");
-    ("Port Jefferson", "NY"); 
-    ("Panama City Beach", "FL");
-    ("Knoxville", "TN");
-    ("Chicago", "IL");
-    ("Casper", "WY"); 
-    ("Denver", "CO");
-    ("Phoenix", "AZ"); 
-    ("Los Angeles", "CA"); 
-    ("Seattle", "WA");
+    ("Burlington", "VT")
+    ("Kensington", "MD")
+    ("Port Jefferson", "NY")
+    ("Panama City Beach", "FL")
+    ("Knoxville", "TN")
+    ("Chicago", "IL")
+    ("Casper", "WY") 
+    ("Denver", "CO")
+    ("Phoenix", "AZ")
+    ("Los Angeles", "CA")
+    ("Seattle", "WA")
     ]
 
 module CheckAddress = 
