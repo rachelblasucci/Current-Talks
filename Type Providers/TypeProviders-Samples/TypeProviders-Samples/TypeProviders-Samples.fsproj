@@ -54,7 +54,6 @@
     <None Include="Powershell.fsx" />
     <None Include="WBRSample.fsx" />
     <None Include="HelloWorldSample.fsx" />
-    <None Include="xx-FreeBaseSamples.fsx" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
