@@ -3,7 +3,7 @@
 #r @"../packages/RProvider.1.0.17/lib/net40/RProvider.Runtime.dll"
 #r @"../packages/R.NET.Community.1.5.15/lib/net40/RDotNet.dll"
 
-#r @"../packages/FSharp.Data.2.0.15/lib/net40/FSharp.Data.dll"
+#r @"../packages/FSharp.Data.2.1.1/lib/net40/FSharp.Data.dll"
 
 open RDotNet
 open FSharp.Data

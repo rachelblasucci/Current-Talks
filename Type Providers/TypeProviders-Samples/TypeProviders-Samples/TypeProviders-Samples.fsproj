@@ -50,6 +50,7 @@
   <ItemGroup>
     <None Include="WsdlService.fsx" />
     <None Include="SqlDataConnection.fsx" />
+    <None Include="SQLData2.fsx" />
     <None Include="SqlEntityConnectionSample.fsx" />
     <None Include="Powershell.fsx" />
     <None Include="WBRSample.fsx" />
@@ -58,6 +59,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.90.9\lib\net40\FSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.1.1\lib\net40\FSharp.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Data.SqlProvider">
+      <HintPath>..\packages\SQLProvider.0.0.9-alpha\lib\net40\FSharp.Data.SqlProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FSharp.Management">
       <HintPath>..\packages\FSharp.Management.0.1.1\lib\net40\FSharp.Management.dll</HintPath>
     </Reference>
@@ -75,6 +88,7 @@
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -84,9 +98,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Management" />
-    <Reference Include="FSharp.Charting">
-      <HintPath>..\packages\FSharp.Charting.0.90.7\lib\net40\FSharp.Charting.dll</HintPath>
-    </Reference>
     <Reference Include="RProvider.Server">
       <HintPath>..\packages\RProvider.1.0.17\lib\net40\RProvider.Server.exe</HintPath>
     </Reference>
@@ -101,9 +112,6 @@
     </Reference>
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\RProvider.1.0.17\lib\net40\FSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Data">
-      <HintPath>..\packages\FSharp.Data.2.0.15\lib\net40\FSharp.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
