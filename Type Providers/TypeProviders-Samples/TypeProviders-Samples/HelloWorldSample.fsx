@@ -3,7 +3,7 @@
 
 open Microsoft.FSharp.Data.TypeProviders
 open Samples.HelloWorldTypeProvider
-open DevLink.OneType
+open CodeMash.OneType
 
 module OneTypeSample = 
     type oneType = OnePropertyType
@@ -14,7 +14,7 @@ module HelloWorldSample =
         let thirtysix = Type36("36")
         let twentytwo = Type22("twentytwo")
         let fortysix = Type46("FORTY-SIX")
-        let nineteen = Type19("19")
+        let nineteen = Type19("76")
         let ninetyeight = Type98("@halibut!")
 
         (thirtysix, twentytwo, fortysix, nineteen, ninetyeight)

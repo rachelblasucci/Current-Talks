@@ -50,7 +50,6 @@
   <ItemGroup>
     <None Include="WsdlService.fsx" />
     <None Include="SqlDataConnection.fsx" />
-    <None Include="SQLData2.fsx" />
     <None Include="SqlEntityConnectionSample.fsx" />
     <None Include="Powershell.fsx" />
     <None Include="WBRSample.fsx" />

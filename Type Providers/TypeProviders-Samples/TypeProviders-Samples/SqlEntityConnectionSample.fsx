@@ -24,7 +24,7 @@ module SqlDataConnectionSample =
 
     // Add landing counts for a new airline.
     let internal NewSFO =
-        SFOData.ServiceTypes.RawLandingsData.CreateRawLandingsData(0, 201407., "RachelsAirline", "RachelsAirline", "International", "Europe", "Passenger", "Wide Body", 800000., 800000., "2014", "July")
+        SFOData.ServiceTypes.RawLandingsData.CreateRawLandingsData(0, 201501., "RachelsAirline", "RachelsAirline", "International", "Europe", "Passenger", "Wide Body", 800000., 800000., "2015", "January")
 
 
     SFOContext.DataContext.AddObject("RawLandingsData", NewSFO)

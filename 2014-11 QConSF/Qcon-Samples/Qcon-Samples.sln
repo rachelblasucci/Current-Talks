@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Qcon-Samples", "Qcon-Samples\Qcon-Samples.fsproj", "{C0F68237-02ED-4767-B891-DC14DD5743DF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Emailer", "..\..\Concurrent Applications - F# Agents\AgentEmailer\Emailer\Emailer.fsproj", "{165023B9-C2F3-44D1-9570-1695039E3F8B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Replier", "..\..\Concurrent Applications - F# Agents\AgentEmailer\Replier\Replier.fsproj", "{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scanner", "..\..\Concurrent Applications - F# Agents\AgentEmailer\Scanner\Scanner.fsproj", "{154AE3C9-F7D7-4A49-813D-9D9E726601B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0F68237-02ED-4767-B891-DC14DD5743DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F68237-02ED-4767-B891-DC14DD5743DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F68237-02ED-4767-B891-DC14DD5743DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F68237-02ED-4767-B891-DC14DD5743DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165023B9-C2F3-44D1-9570-1695039E3F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B073845-A8A7-486D-AFB3-4B4AC2BE6CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154AE3C9-F7D7-4A49-813D-9D9E726601B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

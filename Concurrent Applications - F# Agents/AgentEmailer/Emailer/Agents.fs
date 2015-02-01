@@ -32,11 +32,8 @@ module Agents =
                     Data.GetData 
                         |> Array.choose (fun x -> if (number = getId x) then Some(x) else None)
                         |> Array.map replaceAn // because "failure" is simulated by checking for 'an' 
-                        |> (filterAgent:Agent<Message array>).Post 
-                }
-                let actionEn = async {
-                    printfn "Message %d failed permanently." number
-                }
+                        |> (filterAgent:Agent<Message array>).Post }
+                let actionEn = async { printfn "Message %d failed permanently." number }
 
                 if (message.Contains "Cannot send") then
                     printfn "Retrying failure: %s" message 
@@ -48,8 +45,7 @@ module Agents =
                 ) |> Async.RunSynchronously
             return! loop ()
             }
-        loop ()
-        )
+        loop ())
 
     /// SENDING AGENT
     and sendingAgent = Agent.Start(fun sendingInbox -> 

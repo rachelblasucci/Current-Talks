@@ -16,6 +16,7 @@ let cities =
     ("Port Jefferson", "NY")
     ("Panama City Beach", "FL")
     ("Knoxville", "TN")
+    ("Sandusky", "OH")
     ("Chicago", "IL")
 //    ("Casper", "WY") 
     ("Denver", "CO")

@@ -29,9 +29,9 @@ module Scanning
             async {
                 let! (id, result) = inbox.Receive()
                 printfn "The result of job #%d is %f" id result
-                do! loop (n + 1)
+                do! loop <| n + 1
             }
-        loop (0))
+        loop 0)
 
     // inprogressAgent maintains a queue of in-progress jobs that can be 
     // scanned to remove canceled jobs. It never runs its processor function, 

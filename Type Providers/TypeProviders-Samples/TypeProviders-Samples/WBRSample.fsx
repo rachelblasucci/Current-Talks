@@ -2,7 +2,6 @@
 #r @"../packages/RProvider.1.0.17/lib/net40/RProvider.dll"
 #r @"../packages/RProvider.1.0.17/lib/net40/RProvider.Runtime.dll"
 #r @"../packages/R.NET.Community.1.5.15/lib/net40/RDotNet.dll"
-
 #r @"../packages/FSharp.Data.2.1.1/lib/net40/FSharp.Data.dll"
 
 open RDotNet
@@ -35,7 +34,6 @@ let countries = [|
     wb.Countries.``United Arab Emirates``;
     wb.Countries.``Cote d'Ivoire``;
     |]
-
 
 let consumptionPC = [for country in countries -> country.Indicators.``Electric power consumption (kWh per capita)``.[2010]]
 let production = [for country in countries -> country.Indicators.``Electricity production (kWh)``.[2010]]
