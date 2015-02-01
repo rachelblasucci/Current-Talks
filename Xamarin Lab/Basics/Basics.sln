@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Basics", "Basics\Basics.fsproj", "{F8DB7407-689D-4FF8-93A5-F13E64437B98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8DB7407-689D-4FF8-93A5-F13E64437B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DB7407-689D-4FF8-93A5-F13E64437B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DB7407-689D-4FF8-93A5-F13E64437B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DB7407-689D-4FF8-93A5-F13E64437B98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
