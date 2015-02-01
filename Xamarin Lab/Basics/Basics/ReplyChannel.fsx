@@ -4,9 +4,9 @@ type Message = string * AsyncReplyChannel<string> //Tuple
 let agent = MailboxProcessor<Message>.Start(fun inbox ->
     let rec loop () =
         async {
-                let! (message, replyChannel) = inbox.Receive();
+                let! message, replyChannel = inbox.Receive();
                 replyChannel.Reply(String.Format("Received message: {0}", message))
-                do! loop ()
+                return! loop ()
         }
     loop ())
 
