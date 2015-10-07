@@ -12,9 +12,9 @@ open System.Management.Automation
 
 type PS = PowerShellProvider<PSSnapIns = "", Is64BitRequired = false>
 
-let find choice = match (choice:Choice<List<System.DateTime>, List<string>, List<PSObject>>) with 
-                        | Choice1Of3 ch -> ch.Head.Date.ToLongDateString() + " " + ch.Head.Date.ToLongTimeString()
-                        | Choice2Of3 ch -> ch.Head
+let find choice = match (choice:Choice<List<string>, List<System.DateTime>, List<PSObject>>) with 
+                        | Choice1Of3 ch -> ch.Head
+                        | Choice2Of3 ch -> ch.Head.Date.ToLongDateString() + " " + ch.Head.Date.ToLongTimeString()
                         | Choice3Of3 ch -> ch.Head.BaseObject.ToString()
 
 let today = PS.``Get-Date``()

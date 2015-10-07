@@ -6,7 +6,7 @@ open System
 type App = class
  static member GetMainPage =
    let lbl = new Label()
-   lbl.Text <- "Hey there, Evolve!"
+   lbl.Text <- "Hi O'Reilly!"
    lbl.VerticalOptions <- LayoutOptions.CenterAndExpand
    lbl.HorizontalOptions <- LayoutOptions.CenterAndExpand
  

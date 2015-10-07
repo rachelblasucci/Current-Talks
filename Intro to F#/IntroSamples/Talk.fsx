@@ -2,7 +2,6 @@
 //Can't mix types: 
 let n = 5 
 //let inverse = 1.0 / n 
-//let n = 7
 
 //automatically changes
 let square y = y * y
@@ -16,7 +15,6 @@ let evens = [|2..2..10|]
 
 let plus_3 x = x + 3
 let list_plus_3 = List.map plus_3 
-
 let filtered = List.filter (fun x -> x % 2 = 0)
 
 [1..10]
@@ -29,8 +27,7 @@ let sum_evens_plus_three =
     >> list_plus_3
     >> List.sum
 
-[1..10] 
-  |> sum_evens_plus_three
+[1..10] |> sum_evens_plus_three
 
 sum_evens_plus_three [1..10]
 
@@ -223,3 +220,4 @@ module GetTemps =
 
     let data = temp_in <| cities
     Chart.Bubble(data, Title="Temperature by Zip", UseSizeForLabel=false).WithYAxis(Enabled=true, Max=100000., Min=0.).WithXAxis(Enabled=true).WithDataPointLabels()
+

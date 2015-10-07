@@ -46,7 +46,7 @@ module AsyncCatch =
             do! file.AsyncRead(numBytes) |> Async.Ignore
         }
 
-    let filename = "BigFile.dat" 
+    let filename = "Users/rach/Dropbox (Personal)/Code/Github/Current-Talks/2014-11 QConSF/Qcon-Samples/Qcon-Samples/BigFile.dat" 
     let numBytes = 100000000
 
     let result1 = writeToFile filename numBytes
@@ -68,5 +68,5 @@ module AsyncCatch =
     | Choice2Of2 exn ->
         printfn "Exception occurred reading from file %s: %s" filename (exn.Message)
 
+// Also see Scanner, Replier for Async.StartWithContinuations.
 // Also see Emailer for more supervisor handling.
-// Also see Replier for Async.StartWithContinuations. * 

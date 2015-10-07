@@ -1,0 +1,14 @@
+﻿torchVer: 2.0.0
+subSystem: PriceCheck
+
+name: PriceCheckNile
+description: Checks prices on Nile
+ver: 0.0.1
+
+autoStart: always
+compile: true
+ha: ap #active-passive. Could be aa for active-active
+
+scriptPath: PriceCheckNile\PriceCheckNileService.fsx
+libPath: bin\Release
+args: 

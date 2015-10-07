@@ -21,7 +21,6 @@
     </PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
@@ -37,12 +36,12 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="FSharp.Data">
-      <HintPath>..\packages\FSharp.Data.2.0.15\lib\net40\FSharp.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.1.1\lib\net40\FSharp.Data.dll</HintPath>
+    </Reference>
     <Reference Include="FSharp.Charting">
-      <HintPath>..\packages\FSharp.Charting.0.90.7\lib\net40\FSharp.Charting.dll</HintPath>
+      <HintPath>..\packages\FSharp.Charting.0.90.9\lib\net40\FSharp.Charting.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

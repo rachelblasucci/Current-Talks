@@ -1,8 +1,8 @@
 ﻿```xml
 <Manifest>
   <AgentType>Mac_Cocoa</AgentType>
-  <Guid>9d2f350c-2200-4b96-bf56-8c21ef1ed688</Guid>
   <Resources />
+  <TimeoutSeconds>30</TimeoutSeconds>
 </Manifest>
 ```
 ```fsharp
@@ -12,7 +12,7 @@ open AppKit
 open Foundation
 open CoreGraphics
 
-//let x = 4+5
+let x = 4+5
 
 //[1..10]
 //   |> List.filter (fun x -> x % 2 = 0)

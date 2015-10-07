@@ -1,5 +1,4 @@
-﻿#r @"../packages/FSharp.Data.2.0.15/lib/net40/FSharp.Data.dll"
-#load "../packages/FSharp.Charting.0.90.7/FSharp.Charting.fsx"
+﻿#r @"../packages/FSharp.Data.2.1.1/lib/net40/FSharp.Data.dll"
 
 module WorldBank =
     open FSharp.Data
@@ -39,4 +38,3 @@ module WorldBank =
 
     internetstats
         |> Array.minBy (fun (name,population,internet) -> internet)
-

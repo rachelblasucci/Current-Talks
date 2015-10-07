@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Marvel.Json.FSharp</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharp.Data.JsonExtensions.TryGetProperty(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not an object or if the property is not present.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Properties(FSharp.Data.JsonValue)">
+<summary>
+ Get a sequence of key-value pairs representing the properties of an object
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Item(FSharp.Data.JsonValue,System.Int32)">
+<summary>
+ Try to get the value at the specified index, if the value is a JSON array.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Item(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Assuming the value is an object, get value with the specified name
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.InnerText(FSharp.Data.JsonValue)">
+<summary>
+ Get inner text of an element
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.GetProperty(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Get property of a JSON object. Fails if the value is not an object
+ or if the property is not present
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.GetEnumerator(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value (assuming that the value is an array)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsString(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the string value of an element (assuming that the value is a scalar)
+ Returns the empty string for JsonValue.Null
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsInteger64(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a 64-bit integer (assuming that the value fits in 64-bit integer)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsInteger(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as an integer (assuming that the value fits in integer)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsGuid(FSharp.Data.JsonValue)">
+<summary>
+ Get the guid value of an element (assuming that the value is a guid)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsFloat(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.String[]})">
+<summary>
+ Get a number as a float (assuming that the value is convertible to a float)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsDecimal(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a decimal (assuming that the value fits in decimal)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsDateTime(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the datetime value of an element (assuming that the value is a string
+ containing well-formed ISO date or MSFT JSON date)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsBoolean(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the boolean value of an element (assuming that the value is a boolean)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsArray(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value.
+ Returns an empty array if the value is not a JSON array.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:FSharp.Data.JsonSaveOptions.DisableFormatting">
+<summary>
+ Print the JsonValue in one line in a compact way
+</summary>
+</member>
+<member name="F:FSharp.Data.JsonSaveOptions.None">
+<summary>
+ Format (indent) the JsonValue
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Data.JsonSaveOptions">
+<summary>
+ Specifies the formatting behaviour of JSON values
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:FSharp.Data.JsonValue._Print">
+<summary>
+ [omit]
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.WriteTo(System.IO.TextWriter,FSharp.Data.JsonSaveOptions)">
+<summary>
+ Serializes the JsonValue to the specified System.IO.TextWriter.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharp.Data.JsonValue.Parse(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Parses the specified JSON string
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Load(System.IO.TextReader,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Loads JSON from the specified reader
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Load(System.IO.Stream,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Loads JSON from the specified stream
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Data.JsonValue">
+<summary>
+ Represents a JSON value. Large numbers that do not fit in the
+ Decimal type are represented using the Float case, while
+ smaller numbers are represented as decimals to avoid precision loss.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FSharp.Data.JsonExtensionsModule.op_Dynamic(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Get property of a JSON object (assuming that the value is an object)
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonExtensionsModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Data.JsonSchemaModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Data.Runtime.JsonConversions">
+<summary>
+ Conversions from JsonValue to string/int/int64/decimal/float/boolean/datetime/guid options
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.ExplicitUnionCaseNameConverter">
+<summary>
+ For type PingPong = Ping of int | Pong and value Ping 1 genereates &quot;{&quot;case&quot;:&quot;Ping&quot;,&quot;value&quot;:1}&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonCursor">
+<summary>
+ A node within a JsonValue: a record property or an array item (indexed by i).
+</summary>
+</member>
+<member name="T:Marvel.Json.JsonField">
+<summary>
+ A field of a JSON object.
+</summary>
+</member>
+<member name="T:Marvel.Json.JsonPath.Node">
+<summary>
+ The root of the JsonValue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonResult`1">
+<summary>
+ JSON parse result - either a parsed value or an error message.
+</summary>
+</member>
+<member name="T:Marvel.Json.JsonValueCodec`1">
+<summary>
+ A codec for JsonValue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.ListConverter">
+<summary>
+ For [1;2;3] generates &quot;[1,2,3]&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.OptionConverter">
+<summary>
+ For Some 1 genereates &quot;1&quot;, for None generates &quot;null&quot;
+</summary>
+</member>
+<member name="T:Marvel.Json.ParseResult`1">
+<summary>
+ JSON parse result - either a parsed value or an error message.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.TupleArrayConverter">
+<summary>
+ For (1,&quot;b&quot;,3) generates [1,&quot;b&quot;,3]
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.UnionCaseNameConverter">
+<summary>
+ For type PingPong = Ping of int | Pong and value Ping 1 genereates &quot;{&quot;Ping&quot;:1}&quot;
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.fromJsonChild``2(Microsoft.FSharp.Core.FSharpFunc{System.Collections.Generic.IEnumerable{``0},``1},FSharp.Data.JsonValue)">
+<summary>
+ Creates a function which decodes a JSON record into an object based on decoding individual fields.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.toJsonChild``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1[]},``0)">
+<summary>
+ Creates a function which encodes a value of type &apos;a as a record of fields of type &apos;b.    
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.Helpers.jmerge(FSharp.Data.JsonValue,FSharp.Data.JsonValue)">
+<summary>
+ Merges two Json records, matching properties are overriden in &apos;a&apos;, nonmatching properties of &apos;b&apos; added.
+ Arrays are just concatenated
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.Helpers.jgetopt``1(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Optionally parses a JSON property into a specified type.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.jget``1(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Parses a JSON property into a specified type.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.tryParseBytes``1(System.Byte[])">
+<summary>
+ Parses a byte array to &apos;T option
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.tryParseJson``1(System.String)">
+<summary>
+ Parses a JSON string to &apos;T option
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.parseJsonBytes``1(System.Byte[])">
+<summary>
+ Parses a byte array.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.parseJson``1(System.String)">
+<summary>
+ Parses a JSON string.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.fromJsonTo``2(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpFunc{``0,``1})">
+<summary>
+ Parse a JsonValue into a specified type and applies a mapping.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.fromJson``1(FSharp.Data.JsonValue)">
+<summary>
+ Parses a JsonValue into a specified type containing a FromJson function.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.Helpers.fail``1(System.String)">
+<summary>
+ Creates a failed JsonResult.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.succeed``1(``0)">
+<summary>
+ Creates a successful JsonResult.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.jobj(System.Tuple{System.String,FSharp.Data.JsonValue}[])">
+<summary>
+ Creates a JSON object.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.jprop``1(System.String,``0)">
+<summary>
+ Creates a JSON property.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.toJsonBytes``1(``0)">
+<summary>
+ Encodes a value into a JSON byte array.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.toJsonString``1(``0)">
+<summary>
+ Encodes a value into a JSON string.
+</summary>
+</member>
+<member name="M:Marvel.Json.Helpers.toJson``1(``0)">
+<summary>
+ Encodes a value of a type containing a ToJson function into a JsonValue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.Helpers">
+
+</member>
+<member name="M:Marvel.Json.HttpReq.withBodyJsonArray(System.Collections.Generic.IEnumerable{FSharp.Data.JsonValue},System.Net.Http.HttpRequestMessage)">
+<summary>
+ Writes an array of JsonValue into the body of an HTTP request.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.HttpReq.withBodyJson(FSharp.Data.JsonValue,System.Net.Http.HttpRequestMessage)">
+<summary>
+ Writes a JsonValue into the body of an HTTP request.
+</summary>
+</member>
+<member name="T:Marvel.Json.HttpReq">
+
+</member>
+<member name="M:Marvel.Json.HttpRes.okBodyToJson(System.Net.Http.HttpResponseMessage)">
+<summary>
+ Decodes a JsonValue from the HTTP body if the response is OK, otherwise returns None.
+</summary>
+</member>
+<member name="M:Marvel.Json.HttpRes.bodyToJson(System.Net.Http.HttpResponseMessage)">
+<summary>
+ Decodes a JsonValue from the HTTP body.
+</summary>
+</member>
+<member name="T:Marvel.Json.HttpRes">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JValue">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.Json.serializeToStringU``1(``0)">
+<summary>
+ serializeToString unformatted
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.Json">
+
+</member>
+<member name="M:Marvel.Json.JsonLens.update(FSharp.Data.JsonValue,Marvel.State{FSharp.Data.JsonValue,Microsoft.FSharp.Core.Unit})">
+<summary>
+ Applies a change to a JsonValue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonLens">
+<summary>
+ JsonValue lens combinators.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonLensSyntax">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.TryGetProperty(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not an object or if the property is not present.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.Properties(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Get a sequence of key-value pairs representing the properties of an object
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.Item(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},System.Int32)">
+<summary>
+ Try to get the value at the specified index, if the value is a JSON array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.Item(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not a JSON object or if the property is not present.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.InnerText(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Get inner text of an element
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.GetEnumerator(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Get all the elements of a JSON value (assuming that the value is an array)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsString(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the string value of an element (assuming that the value is a scalar)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsInteger64(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a 64-bit integer (assuming that the value fits in 64-bit integer)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsInteger(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as an integer (assuming that the value fits in integer)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsGuid(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Get the guid value of an element (assuming that the value is a guid)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsFloat(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.String[]})">
+<summary>
+ Get a number as a float (assuming that the value is convertible to a float)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsDecimal(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a decimal (assuming that the value fits in decimal)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsDateTime(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the datetime value of an element (assuming that the value is a string
+ containing well-formed ISO date or MSFT JSON date)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsBoolean(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue},Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the boolean value of an element (assuming that the value is a boolean)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValueOptionExtensions.AsArray(Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Get all the elements of a JSON value.
+ Returns an empty array if the value is not a JSON array.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.get_InnerText(FSharp.Data.JsonValue)">
+<summary>
+ Get inner text of an element
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsGuid(FSharp.Data.JsonValue)">
+<summary>
+ Get the guid value of an element (assuming that the value is a guid)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsDateTime(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the datetime value of an element (assuming that the value is a string
+ containing well-formed ISO date or MSFT JSON date)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsBoolean(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the boolean value of an element (assuming that the value is a boolean)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsFloat(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.String[]})">
+<summary>
+ Get a number as a float (assuming that the value is convertible to a float)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsDecimal(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a decimal (assuming that the value fits in decimal)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsInteger64(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a 64-bit integer (assuming that the value fits in 64-bit integer)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsInteger(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as an integer (assuming that the value fits in integer)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsString(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the string value of an element (assuming that the value is a scalar)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.get_Item(FSharp.Data.JsonValue,System.Int32)">
+<summary>
+ Try to get the value at the specified index, if the value is a JSON array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.GetEnumerator(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value (assuming that the value is an array)
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.AsArray(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value.
+ Returns an empty array if the value is not a JSON array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.get_Item(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not a JSON object or if the property is not present.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.TryGetProperty(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not an object or if the property is not present.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonOptions.JsonValue.get_Properties(FSharp.Data.JsonValue)">
+<summary>
+ Get a sequence of key-value pairs representing the properties of an object
+</summary>
+</member>
+<member name="T:Marvel.Json.JsonOptions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.JsonResult.get``1(Microsoft.FSharp.Core.FSharpChoice{``0,System.String})">
+<summary>
+ Gets the result of a successful parse or throws.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonResult">
+<summary>
+ Operations on JsonResult.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonValueCodec.toBytes``1(Microsoft.FSharp.Core.FSharpFunc{FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{``0,FSharp.Data.JsonValue})">
+<summary>
+ Maps a JsonValue codec to a byte array codec.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonValueCodec">
+<summary>
+ Operations on JsonValue codecs.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonValueMappingEx.|JsonRecordFieldExact|_|(System.String,FSharp.Data.JsonValue)">
+<summary>
+ An active pattern which matches a JsonValue.Record having exactly one property property with the specified name.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonValueMappingEx.|JsonRecordField|_|(System.String,FSharp.Data.JsonValue)">
+<summary>
+ An active pattern which matches a JsonValue.Record having a property of the specified name
+ and allowing for additional fields before and after.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonValueMappingEx.|OneJsonMember|_|(System.String,FSharp.Data.JsonValue)">
+<summary>
+ A partial active pattern which matches a JsonValue.Record with a single property of a specified name.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonValueMappingEx">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonZip">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.JsonZipper.addItem(FSharp.Data.JsonValue,Marvel.Json.JsonCursor)">
+<summary>
+ Adds an to the current JsonValue.Array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.addProp(System.String,FSharp.Data.JsonValue,Marvel.Json.JsonCursor)">
+<summary>
+ Adds a property to the current JsonValue.Record.
+</summary>
+</member>
+<member name="P:Marvel.Json.JsonZipper.delete">
+<summary>
+ Deletes the current node and moves the zipper to the youngest sibling.
+</summary>
+</member>
+<member name="P:Marvel.Json.JsonZipper.nullify">
+<summary>
+ Sets JsonValue.Null to the current node.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.set(FSharp.Data.JsonValue)">
+<summary>
+ Sets the current node to the specified value.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.splicePath(FSharp.Data.JsonValue)">
+<summary>
+ Replaces the JsonValue context of a path.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.update(Microsoft.FSharp.Core.FSharpFunc{FSharp.Data.JsonValue,FSharp.Data.JsonValue},Marvel.Json.JsonCursor)">
+<summary>
+ Updates the JsonValue at the current position returning a new zipper pointing to the updated node.          
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.right(Marvel.Json.JsonCursor)">
+<summary>
+ Moves the zipper to the right of the current position in the array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.left(Marvel.Json.JsonCursor)">
+<summary>
+ Moves the zipper to the left of the current position in the array.
+</summary>
+</member>
+<member name="P:Marvel.Json.JsonZipper.first">
+<summary>
+ Selects the first element of the current JsonValue.Array.    
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.nth(System.Int32,Marvel.Json.JsonCursor)">
+<summary>
+ Selects the nth element of the current JsonValue.Array.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.fieldSib(System.String,Marvel.Json.JsonCursor)">
+<summary>
+ Selects a sibling property.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.field(System.String,Marvel.Json.JsonCursor)">
+<summary>
+ Focuses onto a field of the current JsonValue.Record.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.JsonZipper.up(Marvel.Json.JsonCursor)">
+<summary>
+ Moves the cursor to the parent node.
+</summary>
+</member>
+<member name="P:Marvel.Json.JsonZipper.unwind">
+<summary>
+ Moves the cursor to the top and returns the JsonValue.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.top(Marvel.Json.JsonCursor)">
+<summary>
+ Moves the zipper to the top of the JsonValue.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.focus(Marvel.Json.JsonCursor)">
+<summary>
+ Gets the current focus.
+</summary>
+</member>
+<member name="M:Marvel.Json.JsonZipper.unit(FSharp.Data.JsonValue)">
+<summary>
+ Creates a rooted zipper for a JsonValue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.JsonZipper">
+<summary>
+ The current focus and how we got there.
+</summary>
+</member>
+<member name="M:Marvel.Json.Ops.op_PlusPlus(FSharp.Data.JsonValue,FSharp.Data.JsonValue)">
+<summary>
+ Merges two Json arrays or records.
+</summary>
+</member>
+<member name="M:Marvel.Json.Ops.op_DotAtGreater``1(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Parses a property from a JSON value, which may be absent.
+</summary>
+</member>
+<member name="M:Marvel.Json.Ops.op_DotAtQmark``1(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Parses a property from a JSON value, which may be absent.
+</summary>
+</member>
+<member name="M:Marvel.Json.Ops.op_DotAt``1(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Parses a property from a JSON value.
+</summary>
+</member>
+<member name="M:Marvel.Json.Ops.op_DotEquals``1(System.String,``0)">
+<summary>
+ Creates a JSON property given a key (property name) and corresponding value.
+</summary>
+</member>
+<member name="T:Marvel.Json.Ops">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.Json.ParseResult.get``1(Microsoft.FSharp.Core.FSharpChoice{``0,System.String})">
+<summary>
+ Gets the result of a successful parse or throws.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.ParseResult">
+<summary>
+ Operations on JsonResult.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.Json.Util">
+
+</member>
+</members>
+</doc>

@@ -41,10 +41,10 @@ module CheckAddress =
         let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
                         |> Seq.cast<System.Xml.XmlNode> 
                         |> Seq.filter findCorrectState
-        (results |> Seq.nth 0).SelectSingleNode("ZIP/text()").Value
+        (results |> Seq.item 0).SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
-    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx", ForceUpdate=false, LocalSchemaFile = "WeatherService.wsdlschema">
+    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx">
 
     // alias
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP

@@ -36,14 +36,14 @@ let countries = [|
     |]
 
 let consumptionPC = [for country in countries -> country.Indicators.``Electric power consumption (kWh per capita)``.[2010]]
-let production = [for country in countries -> country.Indicators.``Electricity production (kWh)``.[2010]]
-let renewable = [for country in countries -> country.Indicators.``Electricity production from renewable sources (kWh)``.[2010]]
-let oil = [for country in countries -> country.Indicators.``Electricity production from oil sources (kWh)``.[2010]]
+let oil = [for country in countries -> country.Indicators.``Electricity production from oil sources (% of total)``.[2010]]
+let renewable = [for country in countries -> country.Indicators.``Electricity production from renewable sources, excluding hydroelectric (kWh)``.[2010]]
+let hydro = [for country in countries -> country.Indicators.``Electricity production from hydroelectric sources (% of total)``.[2010]]
 
 let data = ["consumption", R.c(consumptionPC); 
-            "production", R.c(production); 
+            "oil", R.c(oil); 
             "renewable", R.c(renewable); 
-            "oil", R.c(oil)]
+            "hydro", R.c(hydro)]
 
 //let consumption = [for country in countries -> (country.Name, R.c(country.Indicators.``Electric power consumption (kWh per capita)``.Values))]
 let df = R.data_frame(namedParams data)

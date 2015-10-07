@@ -28,4 +28,3 @@ let scalingAgent : Agent<(string * string) list> = Agent.Start(fun inbox ->
 
 scalingAgent.Post urlList
 
-

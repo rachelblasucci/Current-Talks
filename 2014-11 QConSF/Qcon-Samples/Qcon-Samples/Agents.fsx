@@ -15,6 +15,6 @@ let alloftheagents =
 for agent in alloftheagents do
     agent.Post "ping!"
 
-// Also see Scanner. 
-// Also see Cricket. 
+// Also see Replier for replying. 
+// Also see Scanner for scanning.
     

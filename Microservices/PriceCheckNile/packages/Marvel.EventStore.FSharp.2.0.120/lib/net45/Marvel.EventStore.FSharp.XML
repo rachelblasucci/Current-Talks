@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Marvel.EventStore.FSharp</name></assembly>
+<members>
+<member name="T:Marvel.EventStore.BatchSize">
+<summary>
+ Event batch size.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.EventCodec`1">
+<summary>
+ Encoder/decoder functions.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.EventMetaJson`1">
+<summary>
+ A type which augments an existing type with a defined codec with event metadata decoded as JsonValue.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventStoreAppender`2">
+<summary>
+ Defines how an output is appended to a stream.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventStoreEncoder`2">
+<summary>
+ Defines how an output is encoded to a stream Id and EventData structure within a context.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.ExpectedVersion">
+<summary>
+ Expected stream version number.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.Offset">
+<summary>
+ Event stream offset.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Projection">
+<summary>
+ A projection of an event onto a projection action.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.ProjectionAction">
+<summary>
+ A projection action.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.ProjectionJson">
+<summary>
+ A projection on a ResolvedEvent with body and metadata decoded into JsonValue.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.ProjectionRaw">
+<summary>
+ A projection on a raw ResolvedEvent.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.ResolvedEventJson">
+<summary>
+ A ResolvedEvent together with the body and metadata decoded into JsonValue.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.StreamId">
+<summary>
+ Stream name.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.Bridges.SQL.FromStream.sqlBulkCopySink``2(System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,Microsoft.FSharp.Core.FSharpFunc{``0,System.Object}}},Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,``1})">
+<summary>
+ Creates an async consumer of a ResolvedEvent batch which writes to SqlBulkCopy with the specified mappings.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Bridges.SQL.FromStream">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Bridges.SQL.FromQuery">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.Checkpoints.maxPut(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Keeps track of the maximum checkpoint value and ensures that no lesser value is stored.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Checkpoints.SqlDatabase">
+<summary>
+ Database based checkpoint store.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Checkpoints.Consul">
+<summary>
+ Consul based checkpoints.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Checkpoints.Stream.fromQueueName(EventStore.ClientAPI.IEventStoreConnection,System.String,System.String)">
+<summary>
+ Creates a checkpoint store which stores checkpoints in an event stream the name of which is based on the source stream and a logical queue name.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Checkpoints.Stream.forQueue(EventStore.ClientAPI.IEventStoreConnection,System.String)">
+<summary>
+ Creates a checkpoint store for the specified queue.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Checkpoints.Stream.checkpointStream(System.String,System.String)">
+<summary>
+ must be set in stone!
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Checkpoints.Stream.All">
+<summary>
+ Checkpoint storage for the $all stream.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.Checkpoints.Stream">
+<summary>
+ Single-event stream backed checkpoint store.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Checkpoints.Local">
+<summary>
+ File system based checkpoint store.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.Checkpoints">
+<summary>
+ Event stream consumption checkpoints.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventCodec.codecMetaId``3(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,System.Guid},Microsoft.FSharp.Core.FSharpFunc{``0,System.Tuple{``1,``2}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``1,``2},``0})">
+ <summary>
+ Creates a codec for an event type.
+ </summary>
+ <param name="eventType"></param>
+ <param name="eventId">A function which when given an event produces an event Id.</param>
+ <param name="f">A function which given an event of type 'a returns the event Id and the data/metadata components.</param>
+ <param name="g">A function which given data/metadata components creates an event of type 'a.</param>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.encodeStreamT``1(``0)">
+<summary>
+ Gets the stream Id and an EventData structure for a value:&apos;a based on StreamId and EventCodec static members.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.encodeStream``1(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{``0,EventStore.ClientAPI.EventData},Microsoft.FSharp.Core.FSharpFunc{``0,System.String},``0)">
+<summary>
+ Gets the stream Id and an EventData structure for a value.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.streamId``1(``0)">
+<summary>
+ Gets the stream Id.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventCodec.decodeAll``1(System.Collections.Generic.IEnumerable{Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}}},EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Creates a decoder for a union type based on a set of decoders for individual cases.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.encodeT_``1(``0,System.String,System.Byte[])">
+<summary>
+ Encodes an event using static EventCodec property an also returns the event Id and metadata.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.encodeT``1(``0)">
+<summary>
+ Encodes a value using a codec specified by a type constraint.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventCodec.decode``1(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{``0,EventStore.ClientAPI.EventData},EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Decodes a value using a codec.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.encode``1(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{``0,EventStore.ClientAPI.EventData},``0)">
+<summary>
+ Encodes a value using a codec.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.jsonValueCodec``1(System.String)">
+<summary>
+ Creates a codec for the specified event type code and corresponding F# type based on JsonValue.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.codecT``1(System.String)">
+<summary>
+ Creates a codec for the specified event type code and corresponding F# type.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventCodec.codec``1(System.String)">
+<summary>
+ Creates a codec for the specified event type code and corresponding F# type using Newtonsoft.Json.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventCodec">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventData.withMetadata(System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}},EventStore.ClientAPI.EventData)">
+<summary>
+ Unwraps the EventData structure and adds the specified key/value pairs to the metadata.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.EventData">
+<summary>
+ Utilities for EventData.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreAppender.appendAsyncSeq``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}},``0,Microsoft.FSharp.Control.FSharpAsync{Marvel.AsyncSeqInner{``1}})">
+<summary>
+ Creates an appender for an output async sequence using the specified encoder.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreAppender.appendOpt``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}},``0,Microsoft.FSharp.Core.FSharpOption{``1})">
+<summary>
+ Creates an appender for an output option using the specified encoder.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreAppender.appendSeq``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}},``0,System.Collections.Generic.IEnumerable{``1})">
+<summary>
+ Creates an appender for an output sequence using the specified encoder.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreAppender.append``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}},``0,``1)">
+<summary>
+ Creates an appender for an output using the specified encoder.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventStoreAppender">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreEncoder.withTimestampUtcNow``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}})">
+<summary>
+ Modifies the encoder to include a timestamp based on DateTime.UtcNow.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreEncoder.withCausedBy``1(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpFunc{``0,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}})">
+<summary>
+ Modifies the encoder to include a causation Id in the event metadata.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreEncoder.withMetadata``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}}},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Collections.Generic.IEnumerable{System.Tuple{System.String,EventStore.ClientAPI.EventData}}}},``0,``1)">
+<summary>
+ Augments the encoder with metadata based on the specified provider.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreEncoder.ofMany``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},``2,``0)">
+<summary>
+ Creates an encoder using a function to encode an output to many events.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreEncoder.ofSingle``2(Microsoft.FSharp.Core.FSharpFunc{``0,System.Tuple{System.String,EventStore.ClientAPI.EventData}},``1,``0)">
+<summary>
+ Creates an encoder using a function to encode an output to a single event.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventStoreEncoder">
+<summary>
+ Operations on EventStore encoders.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.sequenceByEventId``1">
+<summary>
+ Ensures that inputs to a service which have the same event stream id, get processed in FIFO order.    
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.checkpoint``2(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.FSharpOption{System.Int32}}},Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Core.FSharpFunc{``0,EventStore.ClientAPI.ResolvedEvent})">
+ <summary>
+ Writes a checkpoint to a checkpoint store after the service completes.
+ </summary>
+ <param name="cps"></param>
+ <param name="evt"></param>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.appendSeq``3(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,``1},System.Tuple{System.String,EventStore.ClientAPI.EventData}})">
+ <summary>
+ Appends a potentially empty sequence of outputs.
+ </summary>
+ <param name="conn"></param>
+ <param name="enc"></param>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.appendOpt``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,``1},System.Tuple{System.String,EventStore.ClientAPI.EventData}})">
+ <summary>
+ Appends an event if the service produces an event, otherwise NOOP.
+ </summary>
+ <param name="conn"></param>
+ <param name="enc"></param>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.appendVer``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,``1},System.Tuple{System.String,System.Int32,EventStore.ClientAPI.EventData}})">
+ <summary>
+ Appends an event to a stream using both the input and output values of a service.
+ </summary>
+ <param name="conn">The EventStore to write to.</param>
+ <param name="enc">A function which given a service input and output, produces a stream name, expected version and EventData to write.</param>
+ <remarks>The input may be used to include additional metadata in the outgoing event.</remarks>
+</member>
+<member name="M:Marvel.EventStore.EventStoreFilter.append``2(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,``1},System.Tuple{System.String,EventStore.ClientAPI.EventData}})">
+ <summary>
+ Appends an event encoded using both the input and output of a service.
+ </summary>
+ <param name="conn"></param>
+ <param name="enc"></param>
+ <remarks>The input may be used to include additional metadata in the outgoing event.</remarks>
+</member>
+<member name="T:Marvel.EventStore.EventStoreFilter">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.subscribeAllFromAsyncSeqBuffered(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,System.Int32,System.TimeSpan,EventStore.ClientAPI.Position)">
+<summary>
+ Exposes a subscription to the $all stream starting from the specified subscription as an AsyncSeq.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.subscribeFromAsAsyncSeqBuffered(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.TimeSpan,System.Int32)">
+<summary>
+ Subscribes to a stream as an async sequence, initially reading events from the specified position then switching to a live subscription.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.subscribeAsAsyncSeqBuffered(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.TimeSpan)">
+<summary>
+ Subscribes to a stream as an async sequence, buffering incoming events in a blocking queue, batching when reaching a specified size or time period.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.subscribeFromAsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)">
+<summary>
+ Subscribes to a stream as an async sequence, initially reading events from the specified position then switching to a live subscription.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.subscribeAsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+<summary>
+ Subscribes to a stream as an async sequence, buffering incoming events in a blocking queue.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeFrom(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Exposes an event stream as a cold IObservable&lt;ResolveEvent&gt;. Each IObserver&lt;ResolveEvent&gt; is associated with a new subscription.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeAllFromAsyncSeqBuffered(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,System.TimeSpan,Microsoft.FSharp.Core.FSharpOption{EventStore.ClientAPI.Position})">
+<summary>
+ Exposes a live subscription to $all events as an AsyncSeq, buffering by count and time.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeAllAsyncSeqBuffered(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,System.TimeSpan)">
+<summary>
+ Exposes a live subscription to $all events as an AsyncSeq, buffering by count and time.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeAllAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32)">
+<summary>
+ Exposes a live subscription to $all events as an AsyncSeq.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeAllFrom(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,Microsoft.FSharp.Core.FSharpOption{EventStore.ClientAPI.Position})">
+<summary>
+ Exposes an event stream as a cold IObservable&lt;ResolveEvent&gt;. Each IObserver&lt;ResolveEvent&gt; is associated with a new subscription.
+ When the subscription drops, the process will sleep for 10 seconds and re-subscribe from the last processed position.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeAll(EventStore.ClientAPI.IEventStoreConnection,System.Boolean)">
+<summary>
+ Exposes a live subscription to $all events as an IObservable.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.streamAllEventsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.Int32,System.Int32,EventStore.ClientAPI.Position)">
+<summary>
+ Creates an AsyncSeq which incrementally reads events from the $all stream with the specified read batch size.
+ When the end of the stream is reached, it continues to poll the stream sleeping for 200ms between attempts.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.streamEventsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32)">
+<summary>
+ Creates an AsyncSeq which incrementally reads events from the specified stream stream with the specified read batch size.
+ When the end of the stream is reached, it continues to poll the stream sleeping for 200ms between attempts.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readAllEventsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,EventStore.ClientAPI.Position)">
+<summary>
+ Creates an AsyncSeq which incrementally reads events from the $all stream with the specified read batch size.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readAllEventSlice(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,System.Int32,EventStore.ClientAPI.Position)">
+<summary>
+ Reads a slice of events of a specified size from the $all stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.observeStream(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean)">
+<summary>
+ Exposes an event stream as a cold IObservable&lt;ResolveEvent&gt;. Each IObserver&lt;ResolveEvent&gt; is associated with a new subscription.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readAsyncSeqPar(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.Int32)">
+<summary>
+ Performs @parallelism contiguous reads in parallel.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.forwardAsAsyncSeq(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32)">
+<summary>
+ Read all events forward in batches from the specified position.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readLastEvents(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Int32)">
+<summary>
+ Reads the last n events in a stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readLastEvent(EventStore.ClientAPI.IEventStoreConnection,System.String)">
+<summary>
+ Reads the last event in a stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readEvent(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Int32,System.Boolean)">
+<summary>
+ Reads a single event.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.readEvents(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Int32,System.Int32,System.Boolean)">
+<summary>
+ Reads a slice of events from a stream.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.appendEventsBatch(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})">
+<summary>
+ Appends events to a stream in batches of 100.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.appendEventsWithResults(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})">
+<summary>
+ Appends a collection of events to a stream.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.appendEventData(EventStore.ClientAPI.IEventStoreConnection,System.String,EventStore.ClientAPI.EventData)">
+<summary>
+ Appends an event to a stream.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.appendEvent(EventStore.ClientAPI.IEventStoreConnection,System.String,System.String,System.Byte[],System.Byte[])">
+<summary>
+ Appends an event to a stream.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.appendEventVersion(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Int32,System.String,System.Byte[],System.Byte[])">
+<summary>
+ Appends an event to a stream with an expected version.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.eventDataJson(System.String,System.Object,System.Object)">
+<summary>
+ Creates an event data object by serializing provided data as JSON.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.eventData(System.String,System.Boolean,System.Byte[],System.Byte[])">
+<summary>
+ Creates an event data object.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDnsCustomPort(System.String,System.Int32)">
+<summary>
+ Connects to EventStore cluster via DNS on a custom gossip port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDnsCustomPortAuth(System.String,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore cluster via DNS on a custom gossip port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDns2(System.String)">
+<summary>
+ Connects to EventStore cluster via DNS on the standard manager port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDns(System.String)">
+<summary>
+ Connects to EventStore cluster via DNS on the standard manager port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDnsAuth2(System.String,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore cluster via DNS on the standard manager port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterDnsAuth(System.String,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore cluster via DNS on the standard manager port
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHostCluster(System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.Int32}})">
+<summary>
+ Connects to EventStore cluster.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHostClusterAuth(System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.Int32}},Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore cluster.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connCluster(System.Collections.Generic.IEnumerable{System.Net.IPEndPoint})">
+<summary>
+ Connects to EventStore cluster.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connClusterAuth(System.Collections.Generic.IEnumerable{System.Net.IPEndPoint},Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore cluster.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connLoopback">
+<summary>
+ Connects to EventStore on localhost.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHost(System.String)">
+<summary>
+ Connects to EventStore at the specified host.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHostAuth(System.String,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore at the specified host.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHostWithPort(System.String,System.Int32)">
+<summary>
+ Connects to EventStore at the specified host.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connHostWithPortAuth(System.String,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore at the specified host.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.conn(System.Net.IPEndPoint)">
+<summary>
+ Connects to EventStore at the specified endpoint.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.connAuth(System.Net.IPEndPoint,Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.String,System.String}})">
+<summary>
+ Connects to EventStore at the specified endpoint.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.Util.appendFakeRandomEvents``1(EventStore.ClientAPI.IEventStoreConnection,System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Int32,Marvel.State{System.Random,System.Tuple{System.String,System.String,``0}}})">
+ <summary>Appends a specified number of events generated by the specified function.</summary>
+ <param name="conn">EventStore connection.</param>
+ <param name="count">The number of events to append.</param>
+ <param name="generator">A function which generates events based on a sequence number returning a stream, event type and data object.</param>
+</member>
+<member name="M:Marvel.EventStore.EventStoreModule.Util.appendFakeEvents(EventStore.ClientAPI.IEventStoreConnection,System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Int32,System.Tuple{System.String,System.String,System.Byte[]}})">
+ <summary>Appends a specified number of events generated by the specified function.</summary>
+ <param name="conn">EventStore connection.</param>
+ <param name="count">The number of events to append.</param>
+ <param name="generator">A function which generates events based on a sequence number returning a stream, event type and data object.</param>
+</member>
+<member name="T:Marvel.EventStore.EventStoreModule.Util">
+<summary>
+ EventStore helper utilities.
+</summary>
+</member>
+<member name="P:Marvel.EventStore.EventStoreModule.Constants.MaxReadBatchSize">
+<summary>
+ The maximum number of events to read with a single request.
+</summary>
+</member>
+<member name="P:Marvel.EventStore.EventStoreModule.Constants.ReSubscribeTimeoutMs">
+<summary>
+ The time to wait, in milliseconds, before re-subscribing to a stream after a dropped subscription.
+</summary>
+</member>
+<member name="T:Marvel.EventStore.EventStoreModule.Constants">
+
+</member>
+<member name="T:Marvel.EventStore.EventStoreModule">
+<summary>
+ EventStore API.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeBufferedWithCheckpointSqlDatabase(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.TimeSpan,System.String,System.String,System.String)">
+<summary>
+ Subscribes to a buffered stream and stores checkpoints in a sql database which you provide the connection the table and the column.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeWithCheckpointSqlDatabase(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.String,System.String,System.String)">
+<summary>
+ Subscribes to a stream and stores checkpoints in a sql database which you provide the connection the table and the column.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeWithCheckpoints2(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.FSharpOption{System.Int32}}},Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},System.Threading.CancellationToken)">
+<summary>
+ testing EventStore catch-up subscription
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeBufferedWithCheckpointStream(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.TimeSpan,System.String)">
+<summary>
+ Subscribes to a stream and stores checkpoints in a checkpoint stream identified by the queue name.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeBufferedWithCheckpoints(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.TimeSpan,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.FSharpOption{System.Int32}}},Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Subscribes to a stream and stores checkpoints.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeWithCheckpointStream(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+<summary>
+ Subscribes to a stream and stores checkpoints in a checkpoint stream identified by the queue name.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.subscribeWithCheckpoints(EventStore.ClientAPI.IEventStoreConnection,System.String,System.Boolean,System.Int32,System.Int32,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.FSharpOption{System.Int32}}},Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},System.Threading.CancellationToken)">
+<summary>
+ Subscribes to a stream and stores checkpoints.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.withBatchCheckpoints(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Control.FSharpAsync{Marvel.AsyncSeqInner{EventStore.ClientAPI.ResolvedEvent[]}})">
+<summary>
+ Checkpoints the stream position after emiting each event.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.withCheckpoints(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Control.FSharpAsync{Marvel.AsyncSeqInner{EventStore.ClientAPI.ResolvedEvent}})">
+<summary>
+ Checkpoints the stream position after emiting each event.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.consumeBatch``2(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{System.Collections.Generic.IEnumerable{``0},Microsoft.FSharp.Control.FSharpAsync{``1}},Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent[],Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}}})">
+<summary>
+ Consumes an event batch by pipelining it through a decoder, a pure handler and an effectful interpretter.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.consume``2(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpOption{``0}},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Control.FSharpAsync{``1}},Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}}})">
+<summary>
+ Consumes an event by pipelining it through a decoder, a pure handler and an effectful interpretter.
+</summary>
+</member>
+<member name="P:Marvel.EventStore.EventStoreQueueModule.batchLoggingFilterDefault">
+<summary>
+ Writes to a log before an event batch is handled and during an exception.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.batchLoggingFilter(NLog.Logger)">
+<summary>
+ Writes to a log before an event batch is handled and during an exception.
+</summary>
+</member>
+<member name="P:Marvel.EventStore.EventStoreQueueModule.loggingFilterDefault">
+<summary>
+ Writes to a log before an event is handled and during an exception.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.EventStoreQueueModule.loggingFilter(NLog.Logger)">
+<summary>
+ Writes to a log before an event is handled and during an exception.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.EventStoreQueueModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Prelude">
+
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.EventTypePrefixRaw``1(``0,EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Emulates the $by_event_type projection with a prefix in EventStore.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.CategoryPrefixRaw``1(``0,EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Emulates the $by_category projection with a prefix in EventStore.
+</summary>
+</member>
+<member name="P:Marvel.EventStore.ProjectionModule.EventType">
+<summary>
+ Emulates the $by_event_type projection in EventStore.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Marvel.EventStore.ProjectionModule.Category">
+<summary>
+ Emulates the $by_category projection in EventStore.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.copyWhenJson(System.String,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{EventStore.ClientAPI.ResolvedEvent,FSharp.Data.JsonValue,System.Lazy{FSharp.Data.JsonValue}},System.Boolean})">
+<summary>
+ Copies events into the specified destination stream when a condition is satisfied.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.copyWhenPrefix(System.String,System.String)">
+<summary>
+ Copies events into the specified destination stream when the stream id of the event has the specified prefix.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.copyWhen(System.String,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.Boolean})">
+<summary>
+ Copies events into the specified destination stream when a condition is satisfied.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.copyRaw(System.String,EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Copies all events into the specified stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.copyRawTo(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.String},EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Copies all events into the specified stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.whenEventTypeRaw(System.String,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.ProjectionAction}})">
+<summary>
+ Runs the specified projection for events with the specified event type.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.whenRaw(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.Boolean},Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.ProjectionAction}})">
+<summary>
+ Runs the specified projection when a condition is met.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.compile(EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.Projection})">
+<summary>
+ Compiles a set of projections into a function which runs the actions on a specified EventStore connection given
+ batches of incoming events.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.interp(EventStore.ClientAPI.IEventStoreConnection)">
+<summary>
+ Performs the actions on the specified EventStore connection.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.apply(Marvel.EventStore.Projection,EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Applies a projection to the specified event.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.mergeAll(Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.Projection})">
+<summary>
+ Merges a list of projections into one, first grouping projections by type and merging the types, 
+ thereby optimizing, then finally merging the resulting projections.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.ProjectionModule.jsonToRaw(Microsoft.FSharp.Core.FSharpFunc{System.Tuple{EventStore.ClientAPI.ResolvedEvent,FSharp.Data.JsonValue,System.Lazy{FSharp.Data.JsonValue}},Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.ProjectionAction}},EventStore.ClientAPI.ResolvedEvent)">
+<summary>
+ Converts a JSON projection into a raw projection.
+ If the incoming event doesn&apos;t contain JSON it will be ignored.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Marvel.EventStore.ProjectionModule.empty">
+<summary>
+ A projection which does nothing.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.ProjectionModule">
+<summary>
+ Operations on projections.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.EventStore.Replicator.project(Marvel.EventStore.Replicator.Args,Microsoft.FSharp.Collections.FSharpList{Marvel.EventStore.Projection})">
+<summary>
+ Replicates an EventStore running it through the specified projections.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Replicator.go(Marvel.EventStore.Replicator.Args,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.Boolean}[],System.String[])">
+<summary>
+ Starts the replicator with the specified arguments.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Replicator.replicate(Marvel.EventStore.Replicator.Args,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.IEventStoreConnection,Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.AllEventsSlice,Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}}}})">
+<summary>
+ Starts the replicator with the specified arguments.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Replicator.writeEventsToSpecificStream(EventStore.ClientAPI.IEventStoreConnection,System.String,EventStore.ClientAPI.ResolvedEvent[])">
+<summary>
+ Writes a batch of events to a specific stream.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Replicator.writeAllSliceToSameStream(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.Boolean}[],System.String[],EventStore.ClientAPI.IEventStoreConnection,EventStore.ClientAPI.IEventStoreConnection,EventStore.ClientAPI.AllEventsSlice)">
+<summary>
+ Writes a batch of events to the same stream from which they originated.
+</summary>
+</member>
+<member name="M:Marvel.EventStore.Replicator.writeEventsToSameStream(Microsoft.FSharp.Core.FSharpFunc{EventStore.ClientAPI.ResolvedEvent,System.Boolean}[],System.String[],EventStore.ClientAPI.IEventStoreConnection,EventStore.ClientAPI.IEventStoreConnection,System.Collections.Generic.IList{EventStore.ClientAPI.ResolvedEvent})">
+<summary>
+ Writes a batch of events to the same stream from which they originated.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.EventStore.Replicator.Predicates">
+
+</member>
+<member name="T:Marvel.EventStore.Replicator">
+
+</member>
+</members>
+</doc>

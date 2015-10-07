@@ -5,11 +5,18 @@ open System
 
 let x = 4+5
 
-[1..10]
-   |> List.filter (fun x -> x % 2 = 0)
-   |> List.map (fun x -> x + 3)
-   |> List.sum
+[|1..10|]
+   |> Array.filter (fun x -> x % 2 = 0)
+   |> Array.map (fun x -> x + 3)
+   |> Seq.sum
  
+let sumEvensPlusThree = 
+    Array.filter (fun x -> x % 2 = 0)
+    >> Array.map (fun x -> x + 3)
+    >> Seq.sum
+
+sumEvensPlusThree [|1..10|]
+
 Some 4 |> Option.map (fun n -> n*3)
 
 let make, model = ("Toyota", "Prius")
@@ -29,3 +36,4 @@ let getThereVia (transport:Transport) =
 getThereVia Bicycle
 getThereVia (Bus(4))
 getThereVia <| Car("toyota", "prius")
+
