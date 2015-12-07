@@ -166,3 +166,7 @@ pip-log.txt
 *.userprefs
 
 Xamarin-F#/fsharp-test/fsharp-test.userprefs
+
+
+#paket
+.paket/paket.exe

@@ -10,16 +10,16 @@ open System.Data.SqlClient
 
 // Using data from SFO, find landing counts over time for domestic passenger flights by airline
 module SqlDataConnectionSample = 
-    type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", Pluralize=false>
-    let internal SFOContext = SFOData.GetDataContext()
+    type internal SFOData = SqlDataConnection<ConnectionStringName = "SFO", ForceUpdate=true>
+    let internal sfoContext = SFOData.GetDataContext()
         
-    let processDate (airlineMonth:float) = // parse airlineMonth from yyyymm
+    let processDate (airlineMonth:int) = // parse airlineMonth from yyyymm
         let year = System.Convert.ToInt32(airlineMonth.ToString().[0..3])
         let month = System.Convert.ToInt32(airlineMonth.ToString().[4..5])
         new System.DateTime(year, month, 01)
 
     let airlineList = 
-        query { for data in SFOContext.RawLandingsData do
+        query { for data in sfoContext.SFO1 do
                 sortBy data.PublishedAirline
                 select data.PublishedAirline
                 distinct
@@ -29,9 +29,9 @@ module SqlDataConnectionSample =
     // find (month, landingCount) for domestic, passenger flights by airline param
     // return line chart
     let GetData airline = 
-        let info = query { for data in SFOContext.RawLandingsData do
+        let info = query { for data in sfoContext.SFO1 do
                             where (data.PublishedAirline = airline && data.GEOSummary = "Domestic" && data.LandingAircraftType="Passenger")
-                            groupValBy data.LandingCount data.ActivityPeriod into g
+                            groupValBy data.Landing_Count data.ActivityPeriod into g
                             let total = query {for landing in g do sumBy landing}
                             sortBy g.Key
                             select (processDate g.Key, total)

@@ -12,7 +12,7 @@ open Logging
 
 let [<Literal>] Service = "Check_price_on_Nile"
 
-type Input =  
+type Input = 
   | Product of Product
 
 type Output = 
@@ -37,4 +37,3 @@ let consume =
 EventStoreQueue.subscribeBufferedWithCheckpointStream (EventStore.connHost "MyEventStoreConnection") "$myeventstream" true 500 100 (TimeSpan.FromSeconds 1.0) Service
 |> AsyncSeq.concatSeq
 |> AsyncSeq.iterAsyncParThrottled 200 consume
-

@@ -1,0 +1,22 @@
+﻿{
+    "tableConfig": {
+        "tableName": "priceCheckNile",
+        "fields": [
+            "s:sku",
+            "s:productId",
+            "s:productDescription",
+            "s:costPer"
+        ]
+    },
+    "kafkaTopic": "price_check_updated",
+    "rowKeyPath": [ "sku", "productId", "productDescription", "costPer" ],
+    "timestampPath": "timestamp",
+    "consumerGroup": "price_check_nile",
+    "fieldMappings": [
+	{ "jsonPath": "sku", "columnName": "s:sku" },
+	{ "jsonPath": "productId", "columnName": "s:productId" },
+	{ "jsonPath": "productDescription", "columnName": "s:productDescription" },
+	{ "jsonPath": "costPer", "columnName": "s:costPer" }
+    ]
+}
+

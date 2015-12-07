@@ -13,15 +13,19 @@ type Product = {
     }
 
 type Product with
-    
-    static member ToJson (_:Product) : JsonValue = failwith ""
-
+    static member ToJson(x:Product) =
+        jobj [|
+            "sku" .= x.Sku
+            "productId" .= x.ProductId
+            "productDescription" .= x.ProductDescription
+            "costper" .= x.CostPer
+        |]
     static member FromJson (_:Product) =
         parseObj <| fun json -> jsonParse {
-            let! sku = json .@ "sku"
-            let! productid = json .@ "productId"
-            let! productdescription = json .@ "productDescription"
-            let! costper = json .@ "costper"
+            let! sku = jget json "sku"
+            let! productid = jget json "productId"
+            let! productdescription = jget json "productDescription"
+            let! costper = jget json "costper"
             return {
                 Product.Sku = sku
                 ProductId = productid
