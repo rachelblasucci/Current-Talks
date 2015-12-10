@@ -188,7 +188,7 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
 
            // Each nested type contains 100 static properties, provided on-demand.
            // The static properties have constant values.
-           nestedType.AddMembersDelayed (fun () -> 
+           nestedType.AddMembersDelayed (fun () ->
                let staticPropsInNestedType = 
                    [ for i in 1 .. 100 do
                        let valueOfTheProperty = "I am string "  + string i

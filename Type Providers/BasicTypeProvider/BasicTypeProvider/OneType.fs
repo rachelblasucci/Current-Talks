@@ -9,7 +9,7 @@ type OneTypeProvider(config: TypeProviderConfig) as this =
     
     inherit TypeProviderForNamespaces() // <- include ProviderImplementation.ProvidedTypes and inherit
 
-    let mynamespace = "CodeMash.OneType";
+    let mynamespace = "Philly.OneType";
 
     let makeType = 
         let myType = ProvidedTypeDefinition(Assembly.GetExecutingAssembly(), //assembly

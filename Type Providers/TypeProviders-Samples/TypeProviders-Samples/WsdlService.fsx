@@ -9,7 +9,7 @@ open System.ServiceModel
 open Microsoft.FSharp.Data.TypeProviders
 
 // show temps by zip code for following cities
-let cities =  
+let cities = 
     [
     ("Burlington", "VT")
     ("Kensington", "MD")
@@ -49,7 +49,7 @@ module GetTemps =
     // alias
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
 
-    let temp_in zipList = 
+    let tempIn zipList = 
         let convertCitiesToZips cityName = 
             let zip = CheckAddress.GetZip cityName
             // return triple (city, zip, temp) 
@@ -57,6 +57,6 @@ module GetTemps =
 
         List.map convertCitiesToZips zipList
 
-    let data = temp_in cities
+    let data = tempIn cities
 
     Chart.Bubble(data, Title="Temperature by Zip", UseSizeForLabel=false).WithYAxis(Enabled=true, Max=100000., Min=0.).WithXAxis(Enabled=true).WithDataPointLabels()
