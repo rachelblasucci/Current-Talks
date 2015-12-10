@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Nova.Api</id>
+    <version>1.0.0057</version>
+    <authors>Ivan Glushchenko</authors>
+    <owners>Ivan Glushchenko</owners>
+    <projectUrl>https://jet-tfs.visualstudio.com/DefaultCollection/Jet/_git/nova-api</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Public API/Contracts for NOVA</description>
+    <summary />
+    <releaseNotes />
+    <copyright>Copyright Jet 2015</copyright>
+    <tags>Nova</tags>
+    <dependencies>
+      <dependency id="Marvel.AzureStorage.FSharp" version="2.0.28" />
+      <dependency id="Marvel.EventStore.FSharp" version="2.0.71" />
+      <dependency id="Marvel.FSharp" version="2.0.376" />
+      <dependency id="Marvel.Json.FSharp" version="1.0.376" />
+    </dependencies>
+  </metadata>
+</package>

@@ -6,8 +6,8 @@ open Samples.HelloWorldTypeProvider
 open Philly.OneType
 
 module OneTypeSample = 
-    type oneType = OnePropertyType
-    let showHello = oneType.HelloProperty
+    type OneType = OnePropertyType
+    let showHello = OneType.HelloProperty
 
 module HelloWorldSample = 
     let getData = 

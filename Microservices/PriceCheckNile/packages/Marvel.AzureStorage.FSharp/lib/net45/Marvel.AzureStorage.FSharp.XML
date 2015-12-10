@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Marvel.AzureStorage.FSharp</name></assembly>
+<members>
+<member name="T:Marvel.AzureStorage.AzureQueueCodec`1">
+<summary>
+ A codec for CloudQueueMessage.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AsyncExtensions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureAccountModule">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.tryGetBytes(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String)">
+<summary>
+ Retrieves the contents of a blob as a byte array.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.getBytes(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String)">
+<summary>
+ Retrieves the contents of a blob as a byte array. If the blob doesn&apos;t exist, then an empty array is returned.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.putBytesAndReturnUri(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.String,System.Byte[])">
+<summary>
+ Uploads a byte array, assings Content-Type and returns blob&apos;s Uri
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.putBytes(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.Byte[])">
+<summary>
+ Uploads a byte array to a blob.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.putFile(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.String,System.IO.FileMode)">
+<summary>
+ Uploads a file to a blob.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.putStream(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.IO.Stream)">
+<summary>
+ Uploads a stream to a blob.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.putText(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.String)">
+<summary>
+ Uploads text to a blob.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.Container.fromConnStr(System.String,System.String)">
+<summary>
+ Gets a reference to a blob container given a storage connection string and container name.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureBlob.Container.fromAccount(Microsoft.WindowsAzure.Storage.CloudStorageAccount,System.String)">
+<summary>
+ Gets a reference to a blob container given a storage account and container name.
+</summary>
+</member>
+<member name="T:Marvel.AzureStorage.AzureBlob.Container">
+<summary>
+ Gets a blob container reference.
+</summary>
+</member>
+<member name="T:Marvel.AzureStorage.AzureBlob">
+<summary>
+ Operations on Azure blobs.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueCodec.jsonValueAzureQueueT``1">
+<summary>
+ Creates a codec CloudQueueMessage based on existing JsonValue mappings.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueCodec.toAzureQueueT``1(``0)">
+<summary>
+ Encodes a value of type &apos;a into a message.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueCodec.fromAzureQueueT``1(Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage)">
+<summary>
+ Decodes a message into a value of type &apos;a.
+</summary>
+</member>
+<member name="T:Marvel.AzureStorage.AzureQueueCodec">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.toAsyncRxDequeueBatch(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.TimeSpan})">
+<summary>
+ Exposes a queue as an observable sequence deleting messages after processing by the observer.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.dequeRxBatch(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage}},Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Control.FSharpAsync{Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Augments a stream of cloud messages with deletion after proccessing.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.toAsyncRxBatch(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.TimeSpan})">
+<summary>
+ Exposes a queue as an observable sequence (without deletion).
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.toAsyncSeqMaxBatch(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.FSharp.Core.FSharpOption{System.TimeSpan})">
+<summary>
+ Enumerates messages in a queue, reading with the max batch size of 32. 
+ Iteration makes messages invisible for a specified time.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.toAsyncSeq(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.TimeSpan})">
+<summary>
+ Enumerates messages in a queue, reading with the specified batch size. 
+ Iteration makes messages invisible for a specified time.
+ When it reaches the end of the queue, it will keep polling at a 500ms interval.
+ Stops if it gets an error calling GetMessages.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.toAsyncSeqStop(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.TimeSpan},Microsoft.WindowsAzure.Storage.Queue.QueueRequestOptions)">
+<summary>
+ Enumerates messages in a queue, reading with the specified batch size.
+ When the end of the queue is reached, the resulting sequence completes.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.addAll(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,System.Collections.Generic.IEnumerable{Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage})">
+<summary>
+ Adds all specified messages to the queue in parallel.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.add(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage)">
+<summary>
+ Adds a message to the queue.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.delete(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage)">
+<summary>
+ Deletes a message from a queue.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.fromAccountStr(System.String,System.String)">
+<summary>
+ Gets a reference to a queue given a storage account connection string and a queue name.               
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.Filter.enqueue``2(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,``1},Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage})">
+ <summary>
+ Enqueues the output of a service to an Azure Queue.
+ </summary>
+ <param name="q">The destination queue.</param>
+ <param name="m">A function which encodes a CloudQueueMessage using both the input and output.</param>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.Filter.dequeue``2(Microsoft.WindowsAzure.Storage.Queue.CloudQueue,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage})">
+ <summary>
+ Modifies a service such that after handling an incoming queue message, the message is removed from the queue.
+ </summary>
+ <param name="q">The queue to remove from.</param>
+ <param name="m">A function which extracts from the input the CloudQueueMessage to dequeue.</param>
+</member>
+<member name="M:Marvel.AzureStorage.AzureQueueModule.Filter.logMessageTo``1(NLog.Logger)">
+<summary>
+ Prints the id of the incoming CloudQueueMessage before it is processed.
+</summary>
+</member>
+<member name="T:Marvel.AzureStorage.AzureQueueModule.Filter">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureQueueModule.MessageModule">
+<summary>
+ Operations CloudQueueMessage.
+</summary>
+</member>
+<member name="T:Marvel.AzureStorage.AzureQueueModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Marvel.AzureStorage.AzureTableModule.EntityModule.fromProps``1(System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,``0}})">
+<summary>
+ Creates a table entity from a collection of key value pair corresponding to the properties of the entity.
+</summary>
+</member>
+<member name="M:Marvel.AzureStorage.AzureTableModule.EntityModule.fromObj``1(System.String,System.String,``0)">
+<summary>
+ Creates a table entity from the public properties of an object.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureTableModule.EntityModule">
+<summary>
+ Entity builders.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureTableModule.QueryModule">
+<summary>
+ Query functions.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureTableModule.PermissionsModule">
+
+</member>
+<member name="T:Marvel.AzureStorage.AzureTableModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Marvel.AzureStorage.Bridges.SQL.FromQuery">
+
+</member>
+</members>
+</doc>

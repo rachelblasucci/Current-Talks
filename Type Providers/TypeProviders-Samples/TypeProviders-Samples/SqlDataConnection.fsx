@@ -1,7 +1,7 @@
 #r "FSharp.Data.TypeProviders"
 #r "System.Data.Linq"
 
-#load @"../packages/FSharp.Charting.0.90.9/FSharp.Charting.fsx"
+#load @"../packages/FSharp.Charting/FSharp.Charting.fsx"
 
 open Microsoft.FSharp.Data.TypeProviders
 open System.Data.Linq

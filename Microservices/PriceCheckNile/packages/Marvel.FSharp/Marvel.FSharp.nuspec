@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Marvel.FSharp</id>
+    <version>2.0.386</version>
+    <authors>Jet.com</authors>
+    <owners>Jet.com</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Marvel FSharp</description>
+    <releaseNotes />
+    <dependencies>
+      <dependency id="NLog" version="3.1.0.0" />
+    </dependencies>
+  </metadata>
+</package>

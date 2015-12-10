@@ -1,0 +1,16 @@
+EventStore.Client
+FSharp.Data
+Marvel.AzureStorage.FSharp
+Marvel.EventStore.FSharp
+Marvel.FSharp
+Marvel.Json.FSharp
+Microsoft.Data.Edm
+Microsoft.Data.OData
+Microsoft.Data.Services.Client
+Microsoft.WindowsAzure.ConfigurationManager
+Newtonsoft.Json
+NLog
+Nova.Api
+System.Spatial
+Torch.Host.Api
+WindowsAzure.Storage

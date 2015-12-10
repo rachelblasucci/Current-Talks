@@ -1,8 +1,8 @@
-#r @"../packages/R.NET.Community.FSharp.0.1.8/lib/net40/RDotNet.FSharp.dll"
-#r @"../packages/RProvider.1.0.17/lib/net40/RProvider.dll"
-#r @"../packages/RProvider.1.0.17/lib/net40/RProvider.Runtime.dll"
-#r @"../packages/R.NET.Community.1.5.15/lib/net40/RDotNet.dll"
-#r @"../packages/FSharp.Data.2.1.1/lib/net40/FSharp.Data.dll"
+#r @"../packages/R.NET.Community.FSharp/lib/net40/RDotNet.FSharp.dll"
+#r @"../packages/RProvider/lib/net40/RProvider.dll"
+#r @"../packages/RProvider/lib/net40/RProvider.Runtime.dll"
+#r @"../packages/R.NET.Community/lib/net40/RDotNet.dll"
+#r @"../packages/FSharp.Data/lib/net40/FSharp.Data.dll"
 
 open RDotNet
 open FSharp.Data

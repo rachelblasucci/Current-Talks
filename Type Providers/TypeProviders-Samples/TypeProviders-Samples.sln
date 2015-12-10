@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{E2B3C23A-D4D7-439D-85BB-C96D2E20AE99}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProviders-Samples", "TypeProviders-Samples\TypeProviders-Samples.fsproj", "{07018AF0-6FC0-4FB6-9C47-0FD9396359BD}"
 EndProject
 Global
