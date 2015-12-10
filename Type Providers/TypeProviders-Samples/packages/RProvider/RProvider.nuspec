@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>RProvider</id>
+    <version>1.0.17</version>
+    <authors>BlueMountain Capital</authors>
+    <owners>BlueMountain Capital</owners>
+    <licenseUrl>https://github.com/BlueMountainCapital/FSharpRProvider/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/BlueMountainCapital/FSharpRProvider</projectUrl>
+    <iconUrl>https://raw.github.com/BlueMountainCapital/FSharpRProvider/master/docs/files/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An F# Type Provider providing strongly typed access to the R statistical package. The type provider automatically discovers available R packages and makes them easily accessible from F#, so you can easily call powerful packages and visualization libraries from code running on the .NET platform.</description>
+    <summary>An F# Type Provider providing strongly typed access to the R statistical package.</summary>
+    <releaseNotes>Fix shadow copying when referenced via a NuGet package.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <language>en-US</language>
+    <tags>F# fsharp R TypeProvider visualization statistics</tags>
+    <dependencies>
+      <dependency id="R.NET.Community" version="[1.5.15]" />
+      <dependency id="R.NET.Community.FSharp" version="[0.1.8]" />
+    </dependencies>
+  </metadata>
+</package>

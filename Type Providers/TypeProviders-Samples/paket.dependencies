@@ -1,0 +1,12 @@
+source https://jet.myget.org/F/jenkins/auth/9a8911cc-da03-4136-acfe-4f7b9a4fa3d6
+source https://api.nuget.org/v3/index.json
+framework >= net45
+
+nuget FSharp.Charting
+nuget FSharp.Data 
+nuget FSharp.Management 0.1.1
+nuget PowerShellTypeProvider 
+nuget R.NET.Community 1.5.15
+nuget R.NET.Community.FSharp 0.1.8
+nuget RProvider 1.0.17
+nuget SQLProvider

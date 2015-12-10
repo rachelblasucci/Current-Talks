@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>PowerShellTypeProvider</id>
+        <version>0.3.1</version>
+        <authors>Sergey Tihon</authors>
+        <owners>Sergey Tihon</owners>
+        <licenseUrl>https://github.com/sergey-tihon/PowerShellTypeProvider/blob/master/LICENSE</licenseUrl>
+        <projectUrl>http://fsprojects.github.io/FSharp.Management/PowerShellProvider.html</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>PowerShell Type Provider</description>
+        <summary>An F# Type Provider providing strongly typed access to PowerShell cmdlets.</summary>
+        <language>en-US</language>
+        <tags>F# PowerShell TypeProvider</tags>
+        <dependencies>
+            <dependency id="FSharp.Management" version="0.1.0" />
+        </dependencies>
+    </metadata>
+</package>

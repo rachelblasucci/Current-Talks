@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FSharp.Management</id>
+    <version>0.1.1</version>
+    <authors>Steffen Forkmann, Sergey Tihon, Daniel Mohl, Tomas Petricek, Ryan Riley, Mauricio Scheffer, Phil Trelford, Vasily Kirichenko, Reed Copsey, Jr.</authors>
+    <owners>Steffen Forkmann, Sergey Tihon, Daniel Mohl, Tomas Petricek, Ryan Riley, Mauricio Scheffer, Phil Trelford, Vasily Kirichenko, Reed Copsey, Jr.</owners>
+    <licenseUrl>http://github.com/fsprojects/FSharp.Management/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://fsprojects.github.com/FSharp.Management</projectUrl>
+    <iconUrl>https://raw2.github.com/fsprojects/FSharp.Management/master/docs/files/img/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Various type providers for management of the machine.</description>
+    <summary>Various type providers for management of the machine.</summary>
+    <releaseNotes>Fix memory leak - https://github.com/fsprojects/FSharp.Management/pull/42</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>F# fsharp typeproviders Management PowerShell</tags>
+  </metadata>
+</package>

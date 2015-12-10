@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>R.NET.Community</id>
+    <version>1.5.15</version>
+    <title>R.NET</title>
+    <authors>RecycleBin,  jperraud</authors>
+    <owners>kos59125</owners>
+    <licenseUrl>http://rdotnet.codeplex.com/license</licenseUrl>
+    <projectUrl>http://rdotnet.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Library for in-process interoperability of the .NET Framework with the R statistical computing software. This requires the R binaries, which are available at http://www.r-project.org. This nuget package is a newer version of R.NET previously found at https://www.nuget.org/packages/R.NET. For logistical reasons, the previous nuget feed cannot be used yet.</description>
+    <summary>Library for interoperability of the .NET Framework with the R statistical computing software</summary>
+    <releaseNotes>Fixing a stack imbalance introduced by the use of a protected pointer not disposed of. Noticed issues when used from http://rClr.codeplex.com, currently under development. Other impacts unknown, but upgrading from 1.5.14 to 1.5.15 is recommended. See https://rdotnet.codeplex.com/workitem/120 and https://rclr.codeplex.com/workitem/31 for details.</releaseNotes>
+    <copyright>Copyright 2014 RecycleBin, Copyright 2014 CSIRO</copyright>
+    <tags>R R.NET statistics</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Numerics" targetFramework="" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="RDotNet.dll" />
+      <reference file="RDotNet.NativeLibrary.dll" />
+    </references>
+  </metadata>
+</package>
