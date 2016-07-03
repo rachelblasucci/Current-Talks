@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FsLab</id>
+    <version>0.3.6</version>
+    <authors>F# Data Science Working Group</authors>
+    <owners>F# Data Science Working Group</owners>
+    <licenseUrl>http://github.com/fslaborg/FsLab/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://www.fslab.org</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/fslaborg/FsLab/master/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FsLab is a single package that gives you all you need for doing data science with F#. FsLab includes explorative data manipulation library, type providers for easy data access, simple charting library, support for integration with R and numerical computing libraries. All available in a single package and ready to use!</description>
+    <summary>F# Data science package</summary>
+    <releaseNotes>Add journal extension support for Visual Studio 2012 and 2015 (#23, #82).</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <language>en-US</language>
+    <tags>F# fsharp deedle series statistics data science r type provider mathnet</tags>
+    <dependencies>
+      <dependency id="Deedle" version="[1.2.4]" />
+      <dependency id="Deedle.RPlugin" version="[1.2.4]" />
+      <dependency id="FSharp.Charting" version="[0.90.12]" />
+      <dependency id="FSharp.Data" version="[2.2.5]" />
+      <dependency id="Foogle.Charts" version="[0.0.5]" />
+      <dependency id="MathNet.Numerics" version="[3.7.0]" />
+      <dependency id="MathNet.Numerics.FSharp" version="[3.7.0]" />
+      <dependency id="RProvider" version="[1.1.13]" />
+      <dependency id="R.NET.Community" version="[1.6.4]" />
+      <dependency id="R.NET.Community.FSharp" version="[1.6.4]" />
+      <dependency id="XPlot.Plotly" version="[1.2.1]" />
+      <dependency id="XPlot.GoogleCharts" version="[1.2.1]" />
+      <dependency id="XPlot.GoogleCharts.Deedle" version="[1.2.1]" />
+      <dependency id="Google.DataTable.Net.Wrapper" version="[3.1.2.0]" />
+      <dependency id="Newtonsoft.Json" version="[7.0.1]" />
+    </dependencies>
+  </metadata>
+</package>

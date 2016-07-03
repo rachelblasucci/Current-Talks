@@ -2,18 +2,22 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>R.NET.Community</id>
-    <version>1.5.15</version>
+    <version>1.6.4</version>
     <title>R.NET</title>
-    <authors>RecycleBin,  jperraud</authors>
-    <owners>kos59125</owners>
+    <authors>Kosei Abe, Jean-Michel Perraud</authors>
+    <owners>Kosei Abe, Jean-Michel Perraud</owners>
     <licenseUrl>http://rdotnet.codeplex.com/license</licenseUrl>
     <projectUrl>http://rdotnet.codeplex.com/</projectUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Library for in-process interoperability of the .NET Framework with the R statistical computing software. This requires the R binaries, which are available at http://www.r-project.org. This nuget package is a newer version of R.NET previously found at https://www.nuget.org/packages/R.NET. For logistical reasons, the previous nuget feed cannot be used yet.</description>
-    <summary>Library for interoperability of the .NET Framework with the R statistical computing software</summary>
-    <releaseNotes>Fixing a stack imbalance introduced by the use of a protected pointer not disposed of. Noticed issues when used from http://rClr.codeplex.com, currently under development. Other impacts unknown, but upgrading from 1.5.14 to 1.5.15 is recommended. See https://rdotnet.codeplex.com/workitem/120 and https://rclr.codeplex.com/workitem/31 for details.</releaseNotes>
-    <copyright>Copyright 2014 RecycleBin, Copyright 2014 CSIRO</copyright>
-    <tags>R R.NET statistics</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET interoperability library to access the R statistical package from .NET languages. The library is designed for fast data exchange of arrays, in process.</description>
+    <summary>Interoperability library to access R from .NET languages</summary>
+    <releaseNotes>Fixed github #17 (do not crash when R_Visible is not exported).</releaseNotes>
+    <copyright>Copyright 2011-2014 RecycleBin, Copyright 2014-2015 CSIRO</copyright>
+    <language>en-US</language>
+    <tags>.NET R R.NET visualization statistics C# F#</tags>
+    <dependencies>
+      <dependency id="DynamicInterop" version="[0.7.4]" />
+    </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Numerics" targetFramework="" />
     </frameworkAssemblies>

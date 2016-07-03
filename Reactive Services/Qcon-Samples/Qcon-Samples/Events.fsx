@@ -41,5 +41,4 @@ let rec loop count =
     }
 let start = Async.StartImmediate <| loop 1
 
-
 form.Show()

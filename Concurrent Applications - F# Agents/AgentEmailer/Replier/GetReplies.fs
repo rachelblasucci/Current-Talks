@@ -11,7 +11,7 @@ module GetReplies
     let agent = Agent<Message>.Start(fun inbox ->
         let rec loop () =
             async {
-                    let! (message, replyChannel) = inbox.Receive();
+                    let! (message, replyChannel) = inbox.Receive()
                     replyChannel.Reply(String.Format(formatString, message))
                     do! loop ()
             }

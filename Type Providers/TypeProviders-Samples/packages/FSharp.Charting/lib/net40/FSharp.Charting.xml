@@ -2,6 +2,9 @@
 <doc>
 <assembly><name>FSharp.Charting</name></assembly>
 <members>
+<member name="">
+
+</member>
 <member name="M:FSharp.Charting.LiveChart.ThreeLineBreak``3(System.IObservable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Displays a series of vertical boxes, or lines, that reflect changes in price values.</summary>
  <param name="data">The data for the chart. Each observation replaces the entire data on the chart.</param>
@@ -291,7 +294,7 @@
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
 </member>
-<member name="M:FSharp.Charting.LiveChart.ColumnIncremental``2(System.IObservable{System.Tuple{``0,``1}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double})">
+<member name="M:FSharp.Charting.LiveChart.ColumnIncremental``2(System.IObservable{System.Tuple{``0,``1}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Uses a sequence of columns to compare values across categories.</summary>
  <param name="data">The data for the chart. Each observation adds a data element to the chart.</param>
  <param name="Name">The name of the data set.</param>
@@ -299,9 +302,8 @@
  <param name="Color">The color for the data.</param>
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
- <param name="ColumnWidth">The width of columns versus whitespace as a percentage.</param>
 </member>
-<member name="M:FSharp.Charting.LiveChart.Column``3(System.IObservable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double})">
+<member name="M:FSharp.Charting.LiveChart.Column``3(System.IObservable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Uses a sequence of columns to compare values across categories.</summary>
  <param name="data">The data for the chart. Each observation replaces the entire data on the chart.</param>
  <param name="Name">The name of the data set.</param>
@@ -309,7 +311,6 @@
  <param name="Color">The color for the data.</param>
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
- <param name="ColumnWidth">The width of columns versus whitespace as a percentage.</param>
 </member>
 <member name="M:FSharp.Charting.LiveChart.CandlestickIncremental``5(System.IObservable{System.Tuple{``0,``1,``2,``3,``4}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Used to display stock information using high, low, open and close values.</summary>
@@ -896,18 +897,6 @@
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
 </member>
-<member name="M:FSharp.Charting.Chart.Histogram``1(System.Collections.Generic.IEnumerable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double},Microsoft.FSharp.Core.FSharpOption{System.Double},Microsoft.FSharp.Core.FSharpOption{System.Double})">
- <summary>Generates a Histogram with reasonable defaults.</summary>
- <param name="data">The data for the chart.</param>
- <param name="Name">The name of the data set.</param>
- <param name="Title">The title of the chart.</param>
- <param name="Color">The color for the data.</param>
- <param name="XTitle">The title of the X-axis.</param>
- <param name="YTitle">The title of the Y-axis.</param>
- <param name="LowerBound">The lower bound of the histogram.</param>
- <param name="UpperBound">The upper bound of the histogram.</param>
- <param name="Intervals">The number of intervals in the histogram.</param>
-</member>
 <member name="M:FSharp.Charting.Chart.Funnel``2(System.Collections.Generic.IEnumerable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Displays in a funnel shape data that equals 100% when totaled.</summary>
  <param name="data">The data for the chart.</param>
@@ -998,6 +987,9 @@
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
 </member>
+<member name="">
+
+</member>
 <member name="M:FSharp.Charting.Chart.Combine(System.Collections.Generic.IEnumerable{FSharp.Charting.ChartTypes.GenericChart})">
 <summary>
  Create a combined chart with the given charts merged
@@ -1008,7 +1000,7 @@
  Create a combined chart with the given charts placed in columns
 </summary>
 </member>
-<member name="M:FSharp.Charting.Chart.Column``2(System.Collections.Generic.IEnumerable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double})">
+<member name="M:FSharp.Charting.Chart.Column``2(System.Collections.Generic.IEnumerable{``0},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Uses a sequence of columns to compare values across categories.</summary>
  <param name="data">The data for the chart.</param>
  <param name="Name">The name of the data set.</param>
@@ -1017,9 +1009,8 @@
  <param name="Color">The color for the data.</param>
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
- <param name="ColumnWidth">The width of columns versus whitespace as a percentage.</param>
 </member>
-<member name="M:FSharp.Charting.Chart.Column``3(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double})">
+<member name="M:FSharp.Charting.Chart.Column``3(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Uses a sequence of columns to compare values across categories.</summary>
  <param name="data">The data for the chart.</param>
  <param name="Name">The name of the data set.</param>
@@ -1028,7 +1019,6 @@
  <param name="Color">The color for the data.</param>
  <param name="XTitle">The title of the X-axis.</param>
  <param name="YTitle">The title of the Y-axis.</param>
- <param name="ColumnWidth">The width of columns versus whitespace as a percentage.</param>
 </member>
 <member name="M:FSharp.Charting.Chart.Candlestick``5(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1,``2,``3}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
  <summary>Used to display stock information using high, low, open and close values.</summary>
@@ -1144,10 +1134,106 @@
  Provides a set of static methods for creating charts.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.value">
 <summary>
  A primitive value for a point on a chart. An abbreviation for the IConvertible type.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="M:FSharp.Charting._ChartStyleExtensions.Chart.WithStyling.Static``1(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{FSharp.Charting.ChartTypes.Background},Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.Double,System.Double,System.Double,System.Double}},Microsoft.FSharp.Core.FSharpOption{FSharp.Charting.ChartTypes.Background},Microsoft.FSharp.Core.FSharpOption{System.Drawing.Color},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Double})">
  <summary>Apply additional styling to the chart</summary>
@@ -1203,7 +1289,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1223,7 +1309,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1243,7 +1329,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1262,7 +1348,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1336,7 +1422,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1356,7 +1442,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1376,7 +1462,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1396,7 +1482,7 @@
  <param name="Enabled">If false, disables the axis</param>
  <param name="Title">The title of the axis</param>
  <param name="Max">The maximum value for the axis</param>
- <param name="Min">The minimum value for the axis</param>
+ <param name="Max">The minimum value for the axis</param>
  <param name="Log">The axis scale is logarithmic</param>
  <param name="ArrowStyle">The arrow style for the axis</param>
  <param name="LabelStyle">The label style for the axis</param>
@@ -1411,10 +1497,124 @@
  <param name="TitleColor">The color of the title of the axis</param>
  <param name="Tooltip">The tooltip to use for the axis</param>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Charting._ChartStyleExtensions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ChartControl">
 <summary>
  A Windows Forms control to host a GenericChart specification
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="P:FSharp.Charting.ChartTypes.ThreeLineBreakChart.UsedYValue(System.Int32)">
  <summary>
@@ -1452,6 +1652,9 @@
  The number of lines to use in a Three Line Break chart. Any integer &gt; 0
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ThreeLineBreakChart">
 <summary>
  Displays a series of vertical boxes, or lines, that reflect changes in price values.
@@ -1486,6 +1689,9 @@
 <summary>
  The Y value to use as the data point label.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.StockChart">
 <summary>
@@ -1529,6 +1735,9 @@
  Figure charts.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.RenkoChart">
 <summary>
  Displays a series of connecting vertical lines where the thickness
@@ -1557,6 +1766,9 @@
  The text orientation of the axis labels in Radar
  and Polar charts.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.RadarChart">
 <summary>
@@ -1656,6 +1868,9 @@
  point labels of Funnel or Pyramid charts.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PyramidChart">
 <summary>
  Displays data that, when combined, equals 100%.
@@ -1682,6 +1897,9 @@
  The text orientation of the axis labels in Radar
  and Polar charts.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.PolarChart">
 <summary>
@@ -1762,6 +1980,9 @@
 <summary>
  The box size in the Renko or Point and Figure charts.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.PointAndFigureChart">
 <summary>
@@ -1858,6 +2079,9 @@
  Specifies whether the Pie or Doughnut data point is exploded.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PieChart">
 <summary>
  Shows how proportions of data, shown as pie-shaped pieces, contribute to
@@ -1891,6 +2115,9 @@
 <summary>
  The data point color that indicates an increasing trend.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.KagiChart">
 <summary>
@@ -2001,6 +2228,9 @@
  The line color of the callout for the data point labels of Funnel or Pyramid charts.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.FunnelChart">
 <summary>
  Displays in a funnel shape data that equals 100% when
@@ -2048,6 +2278,9 @@
 <summary>
  The appearance of the marker at the center value of the error bar.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.ErrorBarChart">
 <summary>
@@ -2163,6 +2396,9 @@
  </summary>
  <remarks>Any integer from 0 to 100.</remarks>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.DoughnutChart">
 <summary>
  Similar to the Pie chart type, except that it has
@@ -2203,10 +2439,76 @@
  label.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.CandlestickChart">
 <summary>
  Used to display stock information using high, low, open and close values.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="P:FSharp.Charting.ChartTypes.GenericChart.TryTitle">
 <summary>
@@ -2228,15 +2530,63 @@
  Return the object that holds the configuration preoperties for the chart series
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="P:FSharp.Charting.ChartTypes.GenericChart.Area">
 <summary>
  Return the object that holds the configuration preoperties for the chart area
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="M:FSharp.Charting.ChartTypes.GenericChart.SaveChartAs(System.String,FSharp.Charting.ChartTypes.ChartImageFormat)">
 <summary>
  Save the chart as an image in the specified image format
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="M:FSharp.Charting.ChartTypes.GenericChart.ForceTitle">
 <summary>
@@ -2247,6 +2597,12 @@
 <summary>
  Ensure the chart has a Legend
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="M:FSharp.Charting.ChartTypes.GenericChart.CopyChartToClipboardEmf(System.Windows.Forms.Control)">
 <summary>
@@ -2263,15 +2619,96 @@
  Copy the contents of the chart as a bitmap
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ShowOpenClose">
 <summary>
  Specifies whether markers for open and close prices are displayed.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.RadarDrawingStyle">
 <summary>
  The drawing style of the Radar chart.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.PyramidValueType">
 <summary>
@@ -2279,16 +2716,52 @@
  or the surface of the segment.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PyramidOutsideLabelPlacement">
 <summary>
  The placement of the data point labels in the
  Pyramid chart when the labels are placed outside the pyramid.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PyramidLabelStyle">
 <summary>
  The style of data point labels in the Pyramid chart.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.PyramidInsideLabelAlignment">
 <summary>
@@ -2296,40 +2769,151 @@
  Pyramid chart when they are placed inside the pyramid.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PolarDrawingStyle">
 <summary>
  The drawing style of the Polar chart type.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.PieLabelStyle">
 <summary>
  The label style of the data points.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PieDrawingStyle">
 <summary>
  The drawing style of the data points.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.OpenCloseStyle">
 <summary>
  The marker style for open and close values.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.LabelValueType">
 <summary>
  The Y value to use as the data point label.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.LabelPosition">
 <summary>
  The label position of the data point.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.FunnelStyle">
 <summary>
  The style of the Funnel chart type.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.FunnelOutsideLabelPlacement">
 <summary>
@@ -2337,10 +2921,37 @@
  when FunnelLabelStyle is set to Outside or OutsideInColumn.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.FunnelLabelStyle">
 <summary>
  The data point label style of the Funnel chart type.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.FunnelInsideLabelAlignment">
 <summary>
@@ -2348,10 +2959,34 @@
  type when the FunnelLabelStyle is set to Inside.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.Funnel3DDrawingStyle">
 <summary>
  The 3D drawing style of the Funnel chart type.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.ErrorBarType">
 <summary>
@@ -2359,10 +2994,58 @@
  for the center values of the ErrorBarSeries.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ErrorBarStyle">
 <summary>
  The visibility of the upper and lower error values.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.ErrorBarCenterMarkerStyle">
 <summary>
@@ -2370,22 +3053,79 @@
  of the error bar.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.DrawSideBySide">
 <summary>
  Specifies whether series of the same chart type are drawn
  next to each other instead of overlapping each other.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.PointStyle">
 <summary>
  The drawing style of data points.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.CircularLabelStyle">
 <summary>
  The text orientation of the axis labels in Radar
  and Polar charts.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.BarLabelPosition">
 <summary>
@@ -2447,6 +3187,9 @@
  Automatically determined by the Chart control.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.DateTimeIntervalType">
 <summary>
  Specifies an interval type
@@ -2502,6 +3245,9 @@
  No marker is displayed for the series or data point.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.MarkerStyle">
 <summary>
  Specifies a style for markers
@@ -2527,6 +3273,9 @@
  Docked to the top of either the chart image or a ChartArea object
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.Docking">
 <summary>
  Specifies where a chart element, such as a legend or title, will be docked on the chart
@@ -2546,6 +3295,9 @@
 <summary>
  No lighting is applied.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.LightStyle">
 <summary>
@@ -2577,6 +3329,9 @@
  Default text drawing style
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.TextStyle">
 <summary>
  Specifies text drawing styles
@@ -2606,6 +3361,9 @@
 <summary>
  Text orientation is automatically determined, based on the type of chart element in which the text appears.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.TextOrientation">
 <summary>
@@ -2642,6 +3400,9 @@
  The line style is not set.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.DashStyle">
 <summary>
  Specifies a line style
@@ -2666,6 +3427,9 @@
 <summary>
  No arrow is used for the relevant axis.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.AxisArrowStyle">
 <summary>
@@ -2712,45 +3476,373 @@
  A JPEG image format.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ChartImageFormat">
 <summary>
  Specifies the image type of the chart.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.DataSet">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.SixXYDataPoint">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.FourXYDataPoint">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.ThreeXYDataPoint">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="T:FSharp.Charting.ChartTypes.TwoXYDataPoint">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Charting.ChartTypes.DataPoint">
 <summary>
  An implementation type for labelled points on chart. This type should not be used directly.
 </summary>
 </member>
-<member name="T:FSharp.Charting.ChartTypes.Bin">
-<summary>
- An implementation of a histogram bin.
-</summary>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Charting.ChartTypes">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Charting.KeyConversions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="M:FSharp.Charting.NotifySeq.ofObservableCollection``1(System.Collections.ObjectModel.ObservableCollection{``0})">
 <summary>
@@ -2779,6 +3871,9 @@
  Zip two notifying IEnumerables and propagate notifications.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="M:FSharp.Charting.NotifySeq.ignoreReset``1(FSharp.Charting.INotifyEnumerableInternal{``0})">
 <summary>
  Returns an INotifyEnumerableInternal that supports Reset without failing.
@@ -2797,10 +3892,46 @@
  The Reset method is called by the .NET charting library.
 </summary>
 </member>
+<member name="T:FSharp.Charting.NotifySeq">
+
+</member>
 <member name="M:FSharp.Charting.Seq.once``1(System.Collections.Generic.IEnumerable{``0})">
 <summary>
  Evaluate once only. Unlike Seq.cache this evaluates once to an array all at once.
 </summary>
+</member>
+<member name="T:FSharp.Charting.Seq">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Charting.ClipboardMetafileHelper">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:System.AssemblyVersionInformation">
+
 </member>
 </members>
 </doc>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:creator>[Taha Hachana]</dc:creator>
+  <dc:description>XPlot is a cross-platform data visualization library that supports creating charts using Google Charts and Plotly. The library provides a composable domain specific language for building charts and specifying their properties.</dc:description>
+  <dc:identifier>XPlot.GoogleCharts</dc:identifier>
+  <version>Some(1.2.1)</version>
+  <keywords />
+  <dc:title>XPlot.GoogleCharts</dc:title>
+  <lastModifiedBy>paket</lastModifiedBy>
+</Relationships>

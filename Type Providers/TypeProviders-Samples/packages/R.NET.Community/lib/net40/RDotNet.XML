@@ -198,6 +198,14 @@
             <param name="args">The arguments passed to function call.</param>
             <returns>The result of the function evaluation.</returns>
         </member>
+        <member name="M:RDotNet.Function.InvokeNamedFast(System.Tuple{System.String,RDotNet.SymbolicExpression}[])">
+            <summary>
+            Invoke the function with optionally named arguments by order.
+            </summary>
+            <param name="args">one or more tuples, conceptually a pairlist of arguments.
+            The argument names must be unique; null or empty string indicates unnamed argument. </param>
+            <returns>The result of the function evaluation</returns>
+        </member>
         <member name="M:RDotNet.Closure.#ctor(RDotNet.REngine,System.IntPtr)">
             <summary>
             Creates a closure object.
@@ -372,7 +380,7 @@
         </member>
         <member name="M:RDotNet.ComplexVector.GetArrayFast">
             <summary>
-            Gets an array representation in the CLR of a vector in R. 
+            Gets an array representation in the CLR of a vector in R.
             </summary>
             <returns></returns>
         </member>
@@ -603,7 +611,7 @@
         </member>
         <member name="M:RDotNet.ComplexMatrix.GetArrayFast">
             <summary>
-            Gets a rectangular array representation in the CLR, equivalent of a matrix in R. 
+            Gets a rectangular array representation in the CLR, equivalent of a matrix in R.
             </summary>
             <returns>Rectangular array with values representing the content of the R matrix. Beware NA codes</returns>
         </member>
@@ -656,7 +664,7 @@
             Function .slotNames
             </summary>
             <remarks>
-            slotNames, when used on the class representation object, returns the slot names of 
+            slotNames, when used on the class representation object, returns the slot names of
             instances of the class, rather than the slot names of the class object itself. '.slotNames' is what we want.
             </remarks>
         </member>
@@ -695,7 +703,7 @@
         </member>
         <member name="P:RDotNet.S4Object.SlotNames">
             <summary>
-            Gets the slot names for this object. The values are cached once retrieved the first time. 
+            Gets the slot names for this object. The values are cached once retrieved the first time.
             Note this is equivalent to the function '.slotNames' in R, not 'slotNames'
             </summary>
         </member>
@@ -740,6 +748,17 @@
             <summary>
             Initializes a new instance.
             </summary>
+        </member>
+        <member name="F:RDotNet.Devices.CharacterDeviceAdapter.lastDevice">
+             <summary>
+             When R calls the character device (unamanged R calling managed code),
+             it sometimes calls the method with 'this == null' when writing/reading
+             from console (this seems to happen on Mono and may be a bug).
+            
+             The (somewhat incorrect) workaround is to keep the last device in a static
+             field and use it when 'this == null' (the check is done in 'this.Device').
+             This workarounds: http://rdotnet.codeplex.com/workitem/154
+             </summary>
         </member>
         <member name="M:RDotNet.Devices.CharacterDeviceAdapter.#ctor(RDotNet.Devices.ICharacterDevice)">
             <summary>
@@ -1101,7 +1120,7 @@
         </member>
         <member name="M:RDotNet.Devices.NullCharacterDevice.ShowFiles(System.String[],System.String[],System.String,System.Boolean,System.String)">
             <summary>
-            Always returns false, no other side effect 
+            Always returns false, no other side effect
             </summary>
             <param name="files"></param>
             <param name="headers"></param>
@@ -1112,7 +1131,7 @@
         </member>
         <member name="M:RDotNet.Devices.NullCharacterDevice.ChooseFile(System.Boolean)">
             <summary>
-            Always returns null; no other side effect 
+            Always returns null; no other side effect
             </summary>
             <param name="create">ignored</param>
             <returns>null</returns>
@@ -1261,14 +1280,15 @@
         </member>
         <member name="M:RDotNet.Factor.GetLevels">
             <summary>
-            Gets the levels of the factor.
+            Gets the levels of this factor.
             </summary>
+            <returns>Levels of this factor</returns>
         </member>
         <member name="M:RDotNet.Factor.GetFactors">
             <summary>
-            Gets the levels of the factor.
+            Gets the values in this factor.
             </summary>
-            <returns>Factors.</returns>
+            <returns>Values of this factor</returns>
         </member>
         <member name="M:RDotNet.Factor.GetFactors``1(System.Boolean)">
              <summary>
@@ -1347,6 +1367,12 @@
              </code>
              </remarks>
              <returns></returns>
+        </member>
+        <member name="T:RDotNet.Internals.Rf_PrintValue">
+            <summary>
+            A delegate for the R native Rf_PrintValue function
+            </summary>
+            <param name="value">Pointer to a symbolic expression</param>
         </member>
         <member name="T:RDotNet.Internals.OutputMode">
             <summary>
@@ -2060,7 +2086,7 @@
         </member>
         <member name="M:RDotNet.LogicalMatrix.GetArrayFast">
             <summary>
-            Gets a rectangular array representation in the CLR, equivalent of a matrix in R. 
+            Gets a rectangular array representation in the CLR, equivalent of a matrix in R.
             </summary>
             <returns>Rectangular array with values representing the content of the R matrix. Beware NA codes</returns>
         </member>
@@ -2191,7 +2217,7 @@
         </member>
         <member name="M:RDotNet.NumericMatrix.GetArrayFast">
             <summary>
-            Gets a rectangular array representation in the CLR, equivalent of a matrix in R. 
+            Gets a rectangular array representation in the CLR, equivalent of a matrix in R.
             </summary>
             <returns>Rectangular array with values representing the content of the R matrix. Beware NA codes</returns>
         </member>
@@ -2248,7 +2274,7 @@
         </member>
         <member name="M:RDotNet.IntegerMatrix.GetArrayFast">
             <summary>
-            Gets a rectangular array representation in the CLR, equivalent of a matrix in R. 
+            Gets a rectangular array representation in the CLR, equivalent of a matrix in R.
             </summary>
             <returns>Rectangular array with values representing the content of the R matrix. Beware NA codes</returns>
         </member>
@@ -3135,43 +3161,13 @@
             <summary>
             Perform the necessary setup for the PATH and R_HOME environment variables.
             </summary>
-            <param name="rPath">The path of the directory containing the R native library. 
+            <param name="rPath">The path of the directory containing the R native library.
             If null (default), this function tries to locate the path via the Windows registry, or commonly used locations on MacOS and Linux</param>
-            <param name="rHome">The path for R_HOME. If null (default), the function checks the R_HOME environment variable. If none is set, 
+            <param name="rHome">The path for R_HOME. If null (default), the function checks the R_HOME environment variable. If none is set,
             the function uses platform specific sensible default behaviors.</param>
             <remarks>
             This function has been designed to limit the tedium for users, while allowing custom settings for unusual installations.
             </remarks>
-        </member>
-        <member name="M:RDotNet.REngine.SetDangerousInt32(System.String,System.Int32)">
-            <summary>
-            Set a global variable in native memory, of type int or compatible (e.g. uintptr_t)
-            </summary>
-            <param name="varname">variable name</param>
-            <param name="value">Value.</param>
-            <example>
-            <code>
-            SetDangerousInt32 ("R_CStackLimit", -1)
-            </code></example>
-        </member>
-        <member name="M:RDotNet.REngine.GetDangerousInt32(System.String)">
-            <summary>
-            Gets the value of a a global variable in native memory, of type int or compatible (e.g. uintptr_t)
-            </summary>
-            <param name="varname">variable name</param>
-            <example>
-            <code>
-            int stackLimit = GetDangerousInt32 ("R_CStackLimit")
-            </code></example>
-            <returns>The value, as read by Marshal.ReadInt32</returns>
-        </member>
-        <member name="M:RDotNet.REngine.GetDangerousChar(System.String)">
-            <summary>
-            Gets the value of a character string
-            </summary>
-            <param name="varname">The variable name exported by the R dynamic library, e.g. R_ParseErrorMsg</param>
-            <returns>The Unicode equivalent of the native ANSI string</returns>
-            <example><code></code></example>
         </member>
         <member name="M:RDotNet.REngine.Initialize(RDotNet.StartupParameter,RDotNet.Devices.ICharacterDevice,System.Boolean)">
             <summary>
@@ -3187,9 +3183,9 @@
             </summary>
             <param name="parameter"></param>
             <returns></returns>
-            <remarks>While not obvious from the R documentation, it seems that command line arguments need to be passed 
-            to get the startup parameters taken into account. Passing the StartupParameter to the API seems not to work as expected. 
-            While this function may appear like an oddity to a reader, it proved necessary to the initialisation of the R engine 
+            <remarks>While not obvious from the R documentation, it seems that command line arguments need to be passed
+            to get the startup parameters taken into account. Passing the StartupParameter to the API seems not to work as expected.
+            While this function may appear like an oddity to a reader, it proved necessary to the initialisation of the R engine
             after much trial and error.</remarks>
         </member>
         <member name="M:RDotNet.REngine.ForceGarbageCollection">
@@ -3259,8 +3255,8 @@
             <summary>
             A cache of the unevaluated R expression 'geterrmessage'
             </summary>
-            <remarks>do_geterrmessage is in Rdll.hide, so we cannot access at the C API level. 
-            We use the 'geterrmessage()' R evaluation, but not using the same mechanism as other REngine evaluation 
+            <remarks>do_geterrmessage is in Rdll.hide, so we cannot access at the C API level.
+            We use the 'geterrmessage()' R evaluation, but not using the same mechanism as other REngine evaluation
             to avoid recursions issues</remarks>
         </member>
         <member name="M:RDotNet.REngine.SetCommandLineArguments(System.String[])">
@@ -3288,6 +3284,13 @@
             <param name="name">The name.</param>
             <returns>The symbol.</returns>
         </member>
+        <member name="M:RDotNet.REngine.CreateFromNativeSexp(System.IntPtr)">
+            <summary>
+            Create a SymbolicExpression wrapping an existing native R symbolic expression
+            </summary>
+            <param name="sexp">A pointer to the R symbolic expression</param>
+            <returns></returns>
+        </member>
         <member name="M:RDotNet.REngine.ClearGlobalEnvironment(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String[])">
             <summary>
             Removes variables from the R global environment, and whether garbage collections should be forced
@@ -3296,12 +3299,17 @@
             <param name="garbageCollectDotNet">If true (default), triggers CLR garbage collection and wait for pending finalizers.</param>
             <param name="removeHiddenRVars">Should hidden variables (starting with '.', such as '.Random.seed') be removed. Default is false.</param>
             <param name="detachPackages">If true, detach some packages and other attached resources. Default is false. See 'detach' function in R</param>
-            <param name="toDetach">names of resources to dettach, e.g. an array of names such as 'mpg', 'package:lattice'. 
+            <param name="toDetach">names of resources to dettach, e.g. an array of names such as 'mpg', 'package:lattice'.
             If null, entries found in 'search()' between the first item and 'package:base' are detached. See 'search' function documentation in R</param>
+        </member>
+        <member name="M:RDotNet.REngine.DoDotNetGarbageCollection">
+            <summary>
+            Triggers a .NET garbage collection. May be useful in some testing circumstance, but users should avoid using this.
+            </summary>
         </member>
         <member name="P:RDotNet.REngine.EnableLock">
             <summary>
-            Gets/sets whether the call to Preserve and Unpreserve on symbolic expressions 
+            Gets/sets whether the call to Preserve and Unpreserve on symbolic expressions
             should be using a lock to prevent thread concurrency issues. Default is false;
             </summary>
             <remarks>Thanks to gchapman for proposing the fix. See https://rdotnet.codeplex.com/workitem/67 for details</remarks>
@@ -3350,6 +3358,12 @@
             <summary>
             Gets the name of the R engine instance (singleton).
             </summary>
+        </member>
+        <member name="P:RDotNet.REngine.AutoPrint">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:RDotNet.REngine"/> auto print R evaluation results, if they are visible.
+            </summary>
+            <value><c>true</c> if auto print; otherwise, <c>false</c>.</value>
         </member>
         <member name="P:RDotNet.REngine.LastErrorMessage">
             <summary>
@@ -3617,7 +3631,117 @@
             <param name="expression">The expression.</param>
             <returns>The factor.</returns>
         </member>
-        <member name="T:RDotNet.Utility">
+        <member name="T:RDotNet.Utilities.ArrayConverter">
+            <summary>
+            A set of helpers to convert, query and transform arrays
+            </summary>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertAll``2(``0[0:,0:],System.Func{``0,``1})">
+            <summary>
+            Convert all elements of a rectangular array, using a function to cast/transform each element.
+            </summary>
+            <typeparam name="T">The type of the input array elements</typeparam>
+            <typeparam name="U">The type of the output array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="fun">A conversion function taking in an object of type T and returning one of type U</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertAll``2(``0[][],System.Func{``0,``1})">
+            <summary>
+            Convert all elements of a rectangular, jagged array, using a function to cast/transform each element.
+            </summary>
+            <typeparam name="T">The type of the input array elements</typeparam>
+            <typeparam name="U">The type of the output array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="fun">A conversion function taking in an object of type T and returning one of type U</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.CreateMatrixJagged``1(System.Int32,System.Int32)">
+            <summary>
+            Creates a jagged array with elements of the same length
+            </summary>
+            <typeparam name="T">The element type of the array</typeparam>
+            <param name="outerDim">length of the outer dimension</param>
+            <param name="innerDim">length of the inner dimension</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertAllOneDim``2(``0[0:,0:],System.Func{``0,``1})">
+            <summary>
+            Convert all elements of a rectangular array to a vector, using a function to cast/transform each element.
+            The dimension reduction is column-first, appending each line of the input array into the result vector.
+            </summary>
+            <typeparam name="T">The type of the input array elements</typeparam>
+            <typeparam name="U">The type of the output array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="fun">A conversion function taking in an object of type T and returning one of type U</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertOneDim``1(``0[0:,0:])">
+            <summary>
+            Convert a rectangular array to a vector.
+            The dimension reduction is column-first, appending each line of the input array into the result vector.
+            </summary>
+            <typeparam name="U"></typeparam>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertAllTwoDim``2(``0[],System.Func{``0,``1},System.Int32,System.Int32)">
+            <summary>
+            Convert all elements of a vector into a rectangular array, using a function to cast/transform each element.
+            Vector to matrix augmentation is done column first, i.e. "appending" successive lines to the bottom of the new matrix
+            </summary>
+            <typeparam name="T">The type of the input array elements</typeparam>
+            <typeparam name="U">The type of the output array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="fun">A conversion function taking in an object of type T and returning one of type U</param>
+            <param name="rows">The number of rows in the output</param>
+            <param name="cols">The number of columns in the output</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.ArrayConvertAllTwoDim``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Converts a vector into a rectangular array.
+            Vector to matrix augmentation is done column first, i.e. "appending" successive lines to the bottom of the new matrix
+            </summary>
+            <typeparam name="U">The type of the output array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="rows">The number of rows in the output</param>
+            <param name="cols">The number of columns in the output</param>
+            <returns></returns>
+        </member>
+        <member name="M:RDotNet.Utilities.ArrayConverter.Subset``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Subset an array
+            </summary>
+            <typeparam name="T">The type of the input array elements</typeparam>
+            <param name="array">Input array</param>
+            <param name="from">Index of the first element to subset</param>
+            <param name="to">Index of the last element to subset</param>
+            <returns></returns>
+        </member>
+        <member name="T:RDotNet.Utilities.REngineExtensionsAdvanced">
+            <summary>
+            Advanced, less usual extension methods for the R.NET REngine
+            </summary>
+        </member>
+        <member name="M:RDotNet.Utilities.REngineExtensionsAdvanced.EqualsRNilValue(RDotNet.REngine,System.IntPtr)">
+            <summary>
+            Checks the equality in native memory of a pointer against a pointer to the R 'NULL' value
+            </summary>
+            <param name="engine">R.NET Rengine</param>
+            <param name="pointer">Pointer to test</param>
+            <returns>True if the pointer and pointer to R NULL are equal</returns>
+        </member>
+        <member name="M:RDotNet.Utilities.REngineExtensionsAdvanced.CheckUnbound(RDotNet.REngine,System.IntPtr)">
+            <summary>
+            Checks the equality in native memory of a pointer against a pointer to the R 'R_UnboundValue',
+            i.e. whether a symbol exists (i.e. functional equivalent to "exists('varName')" in R)
+            </summary>
+            <param name="engine">R.NET Rengine</param>
+            <param name="pointer">Pointer to test</param>
+            <returns>True if the pointer is not bound to a value</returns>
+        </member>
+        <member name="T:RDotNet.Utilities.RTypesUtil">
             <summary>
             An internal helper class to convert types of arrays, primarily for data operations necessary for .NET types to/from R concepts.
             </summary>

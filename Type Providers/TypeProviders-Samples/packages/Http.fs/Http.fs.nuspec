@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Http.fs</id>
+    <version>1.5.1</version>
+    <authors>Grant Crofton</authors>
+    <owners>Grant Crofton</owners>
+    <projectUrl>https://github.com/relentless/Http.fs</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/relentless/http.fs/master/docs/files/img/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A gloriously functional HTTP client library for F#!</description>
+    <releaseNotes>Corrected assembly version</releaseNotes>
+    <copyright>Copyright G Crofton 2014</copyright>
+    <tags>http client fsharp f# request response</tags>
+  </metadata>
+</package>

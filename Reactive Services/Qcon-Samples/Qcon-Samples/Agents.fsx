@@ -6,7 +6,7 @@ type Agent<'T> = MailboxProcessor<'T>
 // 100k agents
 let alloftheagents =
     [ for i in 0 .. 100000 ->
-        Agent.Start(fun inbox ->
+        Agent<string>.Start(fun inbox ->
             async { while true do
                     let! msg = inbox.Receive()
                     if i % 10000 = 0 then

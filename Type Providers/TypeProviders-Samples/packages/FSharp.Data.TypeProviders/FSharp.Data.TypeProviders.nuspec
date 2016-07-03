@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>FSharp.Data.TypeProviders</id>
+    <version>5.0.0.2</version>
+    <title>FSharp.Data.TypeProviders</title>
+    <authors>Microsoft Corporation and other contributors</authors>
+    <owners>Don Syme, Sergey Tihon</owners>
+    <licenseUrl>http://github.com/fsprojects/FSharp.Data.TypeProviders/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://github.com/fsprojects/FSharp.Data.TypeProviders</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/fsprojects/FSharp.Data.TypeProviders/master/docs/files/img/logo.png</iconUrl>
+    <description>F# Type Providers using .NET Framework generators, for Linq-to-SQL, Linq-to-Entities, OData and WSDL</description>
+    <summary>F# Type Providers using .NET Framework generators, was FSharp.Data.TypeProviders.dll</summary>
+    <releaseNotes>First non-beta release</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>FSharp OData SQL LINQ WSDL</tags>
+    <dependencies>
+      <dependency id="FSharp.Core" version="3.1.2.5" />
+    </dependencies>
+  </metadata>
+</package>

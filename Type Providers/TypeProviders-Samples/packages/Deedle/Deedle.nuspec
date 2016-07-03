@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Deedle</id>
+    <version>1.2.4</version>
+    <authors>BlueMountain Capital</authors>
+    <owners>BlueMountain Capital</owners>
+    <licenseUrl>http://github.com/BlueMountainCapital/Deedle/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://BlueMountainCapital.github.com/Deedle</projectUrl>
+    <iconUrl>https://raw.github.com/BlueMountainCapital/Deedle/master/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Deedle implements an efficient and robust frame and series data structures for manipulating with structured data. It supports handling of missing values, aggregations, grouping, joining, statistical functions and more. For frames and series with ordered indices (such as time series), automatic alignment is also available.</description>
+    <summary>Easy to use .NET library for data manipulation and scientific programming</summary>
+    <releaseNotes>Fix RowsDense broken by BigDeedle changes (#319) Make ChunkSizeInto behave according to documentation (#314) Expand public fields (#313) Keep order of columns/rows in FrameBuilder (#322)</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>F# fsharp deedle dataframe series statistics data science</tags>
+  </metadata>
+</package>

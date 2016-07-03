@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Google.DataTable.Net.Wrapper</id>
+        <version>3.1.2.0</version>
+        <title>Google.DataTable.Net.Wrapper</title>
+        <authors>Zoran Maksimovic</authors>
+        <owners>Zoran Maksimovic</owners>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <projectUrl>http://googledatatablelib.codeplex.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This library enables the end users to create a lightweight representation of the  google.visualization.DataTable object directly in Microsoft.NET and the creation of the necessary JSON as needed by the Google Chart Tools Javascript library.</description>
+        <summary />
+        <releaseNotes>Version 3.1.2.0 includes two changes:
+
+- Default Column Label value set to be the same as the Column Name
+- Bug Fix: Changing the "columnType" to "type" when serializing the DataTable.Column object. This now supports the serialization without using the GetJson() method.
+
+for more information visit http://www.agile-code.com</releaseNotes>
+        <copyright>Zoran Maksimovic (c) www.agile-code.com</copyright>
+        <language>en-US</language>
+        <tags>Google.Visualization, DataTable, Microsoft.NET, JSON, Javascript charts</tags>
+    </metadata>
+</package>

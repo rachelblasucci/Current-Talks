@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FSharp.Charting</id>
-    <version>0.90.13</version>
+    <version>0.90.12</version>
     <authors>Carl Nolan, Tomas Petricek</authors>
     <owners>Carl Nolan, Tomas Petricek</owners>
     <licenseUrl>http://github.com/fslaborg/FSharp.Charting/blob/master/LICENSE.md</licenseUrl>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The F# Charting library (FSharp.Charting.dll) is a compositional library for creating charts from F#. It is designed to be a great fit for data scripting in F# Interactive, but charts can also be embedded in Windows applications. The library is a wrapper for .NET Chart Controls, which are only supported on Windows.</description>
     <summary>A Charting Library for F#</summary>
-    <releaseNotes>Fix problem https://github.com/fslaborg/FSharp.Charting/issues/33</releaseNotes>
+    <releaseNotes>Fix problem with Gtk by removing use of Gtk nuget package</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>F# FSharpChart charting plotting visualization</tags>
   </metadata>

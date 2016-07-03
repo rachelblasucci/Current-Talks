@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Foogle.Charts</id>
+    <version>0.0.5</version>
+    <authors>F# Data Science and Machine Learning working group</authors>
+    <owners>F# Data Science and Machine Learning working group</owners>
+    <licenseUrl>http://github.com/fsprojects/Foogle.Charts/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://fsprojects.github.com/Foogle.Charts</projectUrl>
+    <iconUrl>https://raw.github.com/fsprojects/Foogle.Charts/master/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Foogle Charts is an easy to use F# wrapper for Google Charts visualization library. It supports Pie charts, Geo charts and lots more...</description>
+    <summary>Foogle Charts is an easy to use F# wrapper for Google Charts visualization library</summary>
+    <releaseNotes>Add primitive support for line charts (Google only).</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>fsharp charting google visualization</tags>
+  </metadata>
+</package>

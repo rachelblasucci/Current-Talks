@@ -1,8 +1,6 @@
-#r @"../packages/R.NET.Community.FSharp/lib/net40/RDotNet.FSharp.dll"
-#r @"../packages/RProvider/lib/net40/RProvider.dll"
-#r @"../packages/RProvider/lib/net40/RProvider.Runtime.dll"
-#r @"../packages/R.NET.Community/lib/net40/RDotNet.dll"
 #r @"../packages/FSharp.Data/lib/net40/FSharp.Data.dll"
+#I @"../packages/RProvider/"
+#load "RProvider.fsx"
 
 open RDotNet
 open FSharp.Data
@@ -14,25 +12,25 @@ open System
 let wb = WorldBankData.GetDataContext()
 
 let countries = [|
-    wb.Countries.Australia;
-    wb.Countries.Algeria;
-    wb.Countries.Botswana;
-    wb.Countries.Chile;
-    wb.Countries.Iceland;
-    wb.Countries.``Saudi Arabia``;
-    wb.Countries.``United States``;
-    wb.Countries.Uruguay;
-    wb.Countries.Ghana;
-    wb.Countries.Kuwait;
-    wb.Countries.``Russian Federation``;
-    wb.Countries.India;
-    wb.Countries.Belgium;
-    wb.Countries.Cambodia;
-    wb.Countries.Bulgaria;
-    wb.Countries.Argentina;
-    wb.Countries.Denmark;
-    wb.Countries.``United Arab Emirates``;
-    wb.Countries.``Cote d'Ivoire``;
+    wb.Countries.Australia
+    wb.Countries.Algeria
+    wb.Countries.Botswana
+    wb.Countries.Chile
+    wb.Countries.Iceland
+    wb.Countries.``Saudi Arabia``
+    wb.Countries.``United States``
+    wb.Countries.Uruguay
+    wb.Countries.Ghana
+    wb.Countries.Kuwait
+    wb.Countries.``Russian Federation``
+    wb.Countries.India
+    wb.Countries.Belgium
+    wb.Countries.Cambodia
+    wb.Countries.Bulgaria
+    wb.Countries.Argentina
+    wb.Countries.Denmark
+    wb.Countries.``United Arab Emirates``
+    wb.Countries.``Cote d'Ivoire``
     |]
 
 let consumptionPC = [for country in countries -> country.Indicators.``Electric power consumption (kWh per capita)``.[2010]]

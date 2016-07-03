@@ -3,7 +3,7 @@
 
 open Microsoft.FSharp.Data.TypeProviders
 open Samples.HelloWorldTypeProvider
-open Philly.OneType
+open PrairieDevCon.OneType
 
 module OneTypeSample = 
     type OneType = OnePropertyType
@@ -11,7 +11,7 @@ module OneTypeSample =
 
 module HelloWorldSample = 
     let getData = 
-        let thirtysix = Type36("36")
+        let thirtysix = Type36("345345345")
         let twentytwo = Type22("twentytwo")
         let fortysix = Type46("FORTY-SIX")
         let nineteen = Type19("76")

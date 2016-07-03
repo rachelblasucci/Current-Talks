@@ -1,12 +1,14 @@
-﻿#r "FSharp.Data.TypeProviders"
-#r "System.ServiceModel"
+﻿#r "System.ServiceModel"
 #r "System.Runtime.Serialization"
+#r "System.Xml"
+#r "../packages/FSharp.Data.TypeProviders/lib/net40/FSharp.Data.TypeProviders.dll"
 #load @"../packages/FSharp.Charting/FSharp.Charting.fsx"
 
 open FSharp.Charting
 open System.Runtime.Serialization
 open System.ServiceModel
-open Microsoft.FSharp.Data.TypeProviders
+open FSharp.Data.TypeProviders
+open System.Xml
 
 // show temps by zip code for following cities
 let cities = 
@@ -17,34 +19,27 @@ let cities =
     ("Panama City Beach", "FL")
     ("Knoxville", "TN")
     ("Sandusky", "OH")
-    ("Chicago", "IL")
-//    ("Casper", "WY") 
-    ("Denver", "CO")
-    ("Phoenix", "AZ")
-    ("Los Angeles", "CA")
-    ("Seattle", "WA")
+    ("Casper", "WY") 
+    ("Montclair", "NJ")
     ]
 
 module CheckAddress = 
-    type ZipLookup = Microsoft.FSharp.Data.TypeProviders.WsdlService<
-                        ServiceUri = "http://www.webservicex.net/uszip.asmx", 
-                        ForceUpdate=false, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
+    // Can only call once every two hours!! 
+    type ZipLookup = WsdlService<
+                        ServiceUri = "http://ws.cdyne.com/psaddress/addresslookup.asmx?WSDL", 
+                        ForceUpdate=true, LocalSchemaFile = "ZipLookup.wsdlschema"> // cached
 
     // get zip for (city, state) pair
     let GetZip citySt =
         let (city, state) = citySt
 
-        let findCorrectState (node:System.Xml.XmlNode) = 
-            state = node.SelectSingleNode("STATE/text()").Value
-
         // return top zip code
-        let results = ZipLookup.GetUSZipSoap().GetInfoByCity(city).SelectNodes("Table") 
-                        |> Seq.cast<System.Xml.XmlNode> 
-                        |> Seq.filter findCorrectState
-        (results |> Seq.item 0).SelectSingleNode("ZIP/text()").Value
+        let topResult = ZipLookup.GetAddressLookupSoap().CityStateToZipCodeMatcher(city, state, true, "0") |> Seq.item 0
+
+        topResult.ToString() //.SelectSingleNode("ZIP/text()").Value
 
 module GetTemps = 
-    type WeatherService = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx">
+    type WeatherService = WsdlService<ServiceUri = "http://wsf.cdyne.com/WeatherWS/Weather.asmx">
 
     // alias
     let weather = WeatherService.GetWeatherSoap().GetCityWeatherByZIP
